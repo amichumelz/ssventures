@@ -1,0 +1,3794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>SS Langkawi Ventures — Tours, Transport &amp; Rentals on Langkawi Island</title>
+<meta name="description" content="Family-run Langkawi operator. Private tours, mangrove kayak, sunset cruise, JetSki, ATV, and self-drive rentals. Honest pricing. Local guides.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FCFBF7;
+    --cream: #FAF8F2;
+    --cream-deep: #FAF2DF;
+    --paper: #FFFFFF;
+    --white: #FFFFFF;
+    --gold: #B8924A;
+    --gold-bright: #D4AF6B;
+    --gold-deep: #8B6B2E;
+    --gold-soft: #EFE3C4;
+    --gold-mist: rgba(212, 175, 107, 0.08);
+    --ink: #1B1611;
+    --ink-soft: #4A413A;
+    --ink-mute: #8A7E72;
+    --line: #ECE3CD;
+    --shadow: 0 30px 60px -20px rgba(139, 107, 46, 0.12);
+    --shadow-sm: 0 10px 30px -10px rgba(139, 107, 46, 0.14);
+    --x: 50%;
+    --y: 50%;
+    --pad: 48px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse 800px 600px at 0% 0%, rgba(212, 175, 107, 0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 30%, rgba(184, 146, 74, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 900px 700px at 50% 100%, rgba(212, 175, 107, 0.07) 0%, transparent 60%);
+    background-attachment: fixed;
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; }
+
+  h1, h2, h3, h4 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  /* Replace italic emphasis with weight + colour — no italic, no fancy */
+  h1 em, h2 em, h3 em, h4 em {
+    font-style: normal;
+    color: var(--gold-deep);
+    font-weight: 700;
+  }
+
+  /* ==== NAV ==== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px var(--pad);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(251, 247, 238, 0.78);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(229, 220, 200, 0.5);
+  }
+  .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .brand-mark {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+    display: grid; place-items: center;
+    color: var(--paper);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    box-shadow: 0 4px 12px rgba(139, 107, 46, 0.25);
+    flex-shrink: 0;
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+  }
+  .brand-sub {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-links a {
+    color: var(--ink); text-decoration: none;
+    font-size: 13px; letter-spacing: 0.14em;
+    text-transform: uppercase; font-weight: 500;
+    position: relative; transition: color .3s;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute;
+    bottom: -6px; left: 50%;
+    width: 4px; height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0);
+    transition: transform .3s;
+  }
+  .nav-links a:hover { color: var(--gold-deep); }
+  .nav-links a:hover::after { transform: translateX(-50%) scale(1); }
+
+  .nav-cta {
+    padding: 11px 22px;
+    border: 1px solid var(--gold);
+    color: var(--gold-deep);
+    background: transparent;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all .3s;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--paper); }
+
+  /* Mobile menu button */
+  .menu-btn {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    padding: 10px 16px;
+    color: var(--ink);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .menu-btn .icon { display: inline-block; margin-left: 8px; }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--ink);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    padding: 90px 32px 40px;
+    transform: translateY(-100%);
+    transition: transform .5s cubic-bezier(.6,0,.3,1);
+    overflow-y: auto;
+  }
+  .mobile-menu.open { transform: translateY(0); }
+  .mobile-menu a {
+    color: var(--paper);
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(212, 175, 107, 0.18);
+    transition: color .3s;
+  }
+  .mobile-menu a:hover { color: var(--gold-bright); }
+  .mobile-menu a em { font-style: normal; color: var(--gold-bright); font-size: 14px; margin-left: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .mobile-cta {
+    margin-top: 32px;
+    background: var(--gold-bright);
+    color: var(--ink);
+    padding: 18px 24px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .mobile-meta {
+    margin-top: auto;
+    padding-top: 32px;
+    color: rgba(251, 247, 238, 0.5);
+    font-size: 12px;
+    border-top: 1px solid rgba(212, 175, 107, 0.18);
+  }
+  .mobile-meta a { color: var(--gold-bright); text-decoration: none; font-size: 12px; padding: 0; border: none; font-family: inherit; }
+
+  /* ==== HERO ==== */
+  .hero {
+    padding: 130px var(--pad) 80px;
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* Island background image */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -10% 0 0 0;
+    background-image: url('https://images.unsplash.com/photo-1583244532610-2a234f57c12c?w=2400&q=80');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    opacity: 0.55;
+    filter: saturate(0.9);
+    transform: translateY(var(--hero-parallax, 0));
+    will-change: transform;
+  }
+
+  /* Overlay gradient — softer so the island image shows through behind text */
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      /* Subtle white mist — uniformly soft */
+      linear-gradient(to right,
+        rgba(252, 251, 247, 0.55) 0%,
+        rgba(252, 251, 247, 0.40) 45%,
+        rgba(252, 251, 247, 0.25) 100%),
+      /* Vertical fade — stronger at bottom for ground feel */
+      linear-gradient(to bottom,
+        rgba(252, 251, 247, 0.15) 0%,
+        transparent 35%,
+        rgba(252, 251, 247, 0.55) 100%),
+      /* Gold halo behind the headline area */
+      radial-gradient(ellipse 700px 500px at 22% 38%, rgba(212, 175, 107, 0.22) 0%, transparent 60%);
+    z-index: -1;
+  }
+
+  .hero-left { position: relative; z-index: 2; }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 600;
+  }
+  .eyebrow::before {
+    content: ""; width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 7.5vw, 104px);
+    line-height: 1.02;
+    margin-bottom: 28px;
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    /* Soft white halo so text reads cleanly over the island bg */
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.6),
+      0 0 24px rgba(255, 253, 248, 0.45);
+  }
+  .hero h1 .accent {
+    color: var(--gold-deep);
+    font-weight: 700;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.5),
+      0 0 24px rgba(255, 253, 248, 0.4);
+  }
+
+  /* Word-by-word reveal masks for the headline */
+  .hero h1 .word-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    line-height: 1.05;
+    padding-bottom: 0.08em;
+    margin-right: 0.18em;
+  }
+  .hero h1 .word-mask > span {
+    display: inline-block;
+    transform: translateY(110%);
+    opacity: 0;
+    animation: wordRise 0.95s cubic-bezier(.2, .9, .25, 1) forwards;
+    animation-delay: calc(0.25s + 0.085s * var(--wd, 0));
+  }
+  @keyframes wordRise {
+    0% { transform: translateY(110%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Reveal-up util — used for eyebrow, desc, buttons, stats */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealUp 0.85s cubic-bezier(.2, .8, .25, 1) forwards;
+    animation-delay: calc(var(--reveal-delay, 0ms));
+  }
+  @keyframes revealUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ==== FLOATING GOLD PARTICLES ==== */
+  .particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 107, 0.7) 0%, rgba(212, 175, 107, 0.2) 40%, transparent 70%);
+    filter: blur(0.5px);
+    will-change: transform, opacity;
+  }
+  .particle.p1 { top: 18%; left: 12%; animation: drift1 16s ease-in-out infinite; }
+  .particle.p2 { top: 42%; left: 28%; width: 6px; height: 6px; animation: drift2 22s ease-in-out infinite -3s; }
+  .particle.p3 { top: 65%; left: 18%; width: 10px; height: 10px; animation: drift1 20s ease-in-out infinite -6s; }
+  .particle.p4 { top: 25%; left: 45%; width: 5px; height: 5px; animation: drift2 18s ease-in-out infinite -9s; }
+  .particle.p5 { top: 78%; left: 35%; width: 7px; height: 7px; animation: drift1 24s ease-in-out infinite -12s; }
+  .particle.p6 { top: 15%; left: 62%; width: 6px; height: 6px; animation: drift2 26s ease-in-out infinite -4s; }
+  .particle.p7 { top: 55%; left: 72%; width: 9px; height: 9px; animation: drift1 28s ease-in-out infinite -15s; }
+  .particle.p8 { top: 85%; left: 80%; width: 5px; height: 5px; animation: drift2 19s ease-in-out infinite -8s; }
+
+  @keyframes drift1 {
+    0%, 100% { transform: translate(0, 0); opacity: 0.4; }
+    25%      { transform: translate(40px, -30px); opacity: 0.85; }
+    50%      { transform: translate(80px, 20px); opacity: 0.55; }
+    75%      { transform: translate(20px, 50px); opacity: 0.75; }
+  }
+  @keyframes drift2 {
+    0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+    33%      { transform: translate(-50px, 40px); opacity: 0.7; }
+    66%      { transform: translate(30px, -60px); opacity: 0.9; }
+  }
+
+  .hero-desc {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin-bottom: 36px;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+  .btn {
+    padding: 16px 30px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color .35s ease, color .35s ease, border-color .35s ease, transform .25s cubic-bezier(.2, .7, .3, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    will-change: transform;
+  }
+  .btn-primary { background: var(--ink); color: var(--cream); }
+  .btn-primary:hover { background: var(--gold-deep); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--cream); }
+  .btn-arrow { font-size: 18px; transition: transform .3s; }
+  .btn:hover .btn-arrow { transform: translateX(4px); }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .stat-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--gold-deep);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 8px;
+  }
+
+  .hero-right { position: relative; height: 720px; z-index: 2; }
+  .hero-img {
+    position: absolute;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .hero-img-1 { top: 0; right: 0; width: 78%; height: 60%; }
+  .hero-img-2 { bottom: 0; left: 0; width: 55%; height: 50%; border: 8px solid var(--paper); }
+  .hero-img-3 {
+    top: 12%; left: 8%;
+    width: 30%; height: 24%;
+    border: 6px solid var(--paper);
+    transform: rotate(-4deg);
+    z-index: 3;
+  }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .hero-tag {
+    position: absolute;
+    top: 48%; right: -20px;
+    background: var(--paper);
+    padding: 18px 22px;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(139, 107, 46, 0.18);
+    z-index: 4;
+    border-left: 3px solid var(--gold);
+  }
+  .hero-tag-num { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; color: var(--gold-deep); line-height: 1; letter-spacing: -0.01em; }
+  .hero-tag-text { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin-top: 4px; }
+
+  .ornament {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 107, 0.18) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(10px);
+  }
+  .ornament-1 { top: 100px; right: 30%; }
+
+  /* ==== MARQUEE ==== */
+  .marquee {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 26px 0;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid var(--gold-deep);
+    border-bottom: 1px solid var(--gold-deep);
+  }
+  .marquee-track {
+    display: flex; gap: 56px;
+    animation: marquee 38s linear infinite;
+    white-space: nowrap; width: max-content;
+  }
+  .marquee span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    color: var(--cream);
+    display: flex; align-items: center; gap: 56px;
+  }
+  .marquee span::after { content: "✦"; color: var(--gold-bright); }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+
+  /* ==== SCROLL REVEAL — sections fade-up as they enter viewport ==== */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .9s cubic-bezier(.2, .7, .25, 1), transform .9s cubic-bezier(.2, .7, .25, 1);
+  }
+  .scroll-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger child reveal inside grids */
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .7s cubic-bezier(.2, .7, .25, 1), transform .7s cubic-bezier(.2, .7, .25, 1);
+  }
+  .stagger-children.in-view > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stagger-children.in-view > *:nth-child(1) { transition-delay: 0ms; }
+  .stagger-children.in-view > *:nth-child(2) { transition-delay: 90ms; }
+  .stagger-children.in-view > *:nth-child(3) { transition-delay: 180ms; }
+  .stagger-children.in-view > *:nth-child(4) { transition-delay: 270ms; }
+  .stagger-children.in-view > *:nth-child(5) { transition-delay: 360ms; }
+  .stagger-children.in-view > *:nth-child(6) { transition-delay: 450ms; }
+
+  /* ==== GENERIC SECTION ==== */
+  .section { padding: 120px var(--pad); position: relative; }
+  .container { max-width: 1400px; margin: 0 auto; }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 64px;
+    max-width: 1400px;
+    margin-left: auto; margin-right: auto;
+  }
+  .section-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold-deep);
+    letter-spacing: 0.3em;
+    padding-bottom: 10px;
+    width: fit-content;
+    white-space: nowrap;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .section-num::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 1s cubic-bezier(.2, .7, .25, 1) 0.2s;
+  }
+  .in-view .section-num::after,
+  .reviews-head.in-view .section-num::after,
+  .section-head.in-view .section-num::after {
+    width: 100%;
+  }
+  .section-title { font-size: clamp(32px, 4.6vw, 60px); line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
+  .section-title em { color: var(--gold-deep); font-weight: 700; font-style: normal; }
+
+  /* ==== ABOUT / WHY US ==== */
+  .why-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .why-image {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 100px;
+    /* Fallback bg in case video doesn't load */
+    background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+  .why-image img,
+  .why-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* Respect reduced-motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .why-image video { display: none; }
+  }
+  .why-image::after {
+    content: "EST. 2015 · LANGKAWI";
+    position: absolute;
+    bottom: 22px; left: 22px;
+    background: var(--paper);
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold-deep);
+    border-radius: 4px;
+  }
+  .why-intro {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .why-quote {
+    border-left: 3px solid var(--gold);
+    padding: 4px 0 4px 22px;
+    margin: 32px 0;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1.55;
+    font-weight: 500;
+  }
+
+  .why-points {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 36px;
+  }
+  .why-point {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+  }
+  .why-point-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .why-point h4 {
+    font-size: 19px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .why-point p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ==== HOW IT WORKS ==== */
+  .how {
+    background:
+      linear-gradient(180deg, rgba(212, 175, 107, 0.06) 0%, rgba(255, 255, 255, 0) 100%),
+      var(--paper);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .steps {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .step {
+    padding: 36px 28px;
+    background: var(--bg);
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    position: relative;
+    transition: all .3s;
+  }
+  .step:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-sm);
+  }
+  .step-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .step h4 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .step p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ==== PARALLAX VIDEO STRIP ==== */
+  .parallax-strip {
+    height: 460px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    color: var(--paper);
+    overflow: hidden;
+    /* Fallback image — shows if video fails or before it loads */
+    background-image: url('https://images.unsplash.com/photo-1583244532610-2a234f57c12c?w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+  .parallax-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .parallax-strip::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(27,22,17,0.55) 0%, rgba(27,22,17,0.4) 100%),
+      radial-gradient(ellipse at center, rgba(212, 175, 107, 0.1) 0%, transparent 70%);
+    z-index: 1;
+  }
+  .parallax-strip-content {
+    text-align: center;
+    position: relative; z-index: 2;
+    padding: 0 24px;
+  }
+  .parallax-strip-content .label {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .parallax-strip-content h3 {
+    font-size: clamp(28px, 4.5vw, 56px);
+    color: var(--paper);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+  }
+  .parallax-strip-content h3 .br { color: var(--gold-bright); }
+
+  /* Respect users who prefer less motion — hide video, show poster image */
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-video { display: none; }
+  }
+
+  /* ==== ACTIVITIES ==== */
+  .activities { padding: 120px var(--pad); position: relative; overflow: hidden; }
+  .activities::before {
+    content: "";
+    position: absolute;
+    top: 100px; left: -8%;
+    width: 380px; height: 380px;
+    background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?w=900&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    opacity: 0.08;
+    pointer-events: none;
+    filter: blur(2px);
+  }
+  .activities-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 290px;
+    gap: 18px;
+    position: relative;
+  }
+  .activity {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--ink);
+    transition: transform .25s cubic-bezier(.2, .7, .3, 1), box-shadow .35s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .activity::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle 200px at var(--mx, 50%) var(--my, 50%), rgba(212, 175, 107, 0.18), transparent 70%);
+    opacity: 0;
+    transition: opacity .35s ease;
+    pointer-events: none;
+    z-index: 4;
+    mix-blend-mode: screen;
+  }
+  .activity:hover::after { opacity: 1; }
+  .activity:hover { box-shadow: 0 30px 60px -20px rgba(27, 22, 17, 0.45); }
+  .activity img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease, opacity .6s;
+    opacity: 0.85;
+  }
+  .activity:hover img { transform: scale(1.06); opacity: 0.65; }
+  .activity-content {
+    position: absolute;
+    inset: 0;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--paper);
+    background: linear-gradient(to top, rgba(27,22,17,0.85), rgba(27,22,17,0.1) 60%);
+    z-index: 2;
+  }
+  .activity-tag {
+    position: absolute;
+    top: 22px; left: 22px;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    z-index: 3;
+  }
+  .activity-tag.duration { background: rgba(251, 247, 238, 0.18); color: var(--paper); top: auto; bottom: 22px; right: 22px; left: auto; backdrop-filter: blur(8px); }
+  .activity h3 {
+    font-size: 26px;
+    color: var(--paper);
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+  .activity-sub {
+    font-size: 13px;
+    color: rgba(255,253,248,0.78);
+    margin-bottom: 14px;
+  }
+  .activity-meta {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    font-size: 11px;
+    color: rgba(255,253,248,0.7);
+    letter-spacing: 0.05em;
+  }
+  .activity-meta span { display: inline-flex; align-items: center; gap: 5px; }
+  .activity-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    font-weight: 700;
+    width: fit-content;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+  }
+  .activity-cta::after { content: "→"; transition: transform .3s; }
+  .activity:hover .activity-cta::after { transform: translateX(4px); }
+  .activity-price {
+    position: absolute;
+    top: 22px; right: 22px;
+    background: rgba(27, 22, 17, 0.55);
+    backdrop-filter: blur(8px);
+    color: var(--paper);
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 3;
+    border: 1px solid rgba(212, 175, 107, 0.4);
+  }
+  .activity-price small { font-size: 10px; opacity: 0.7; font-family: 'Plus Jakarta Sans'; letter-spacing: 0.1em; }
+
+  .a-private { grid-column: span 3; grid-row: span 2; }
+  .a-mangrove { grid-column: span 3; grid-row: span 1; }
+  .a-sunset { grid-column: span 3; grid-row: span 1; }
+  .a-banana { grid-column: span 2; grid-row: span 1; }
+  .a-jetski { grid-column: span 2; grid-row: span 1; }
+  .a-atv { grid-column: span 2; grid-row: span 1; }
+
+  /* ==== INCLUSIONS / TRUST ==== */
+  .trust {
+    background:
+      radial-gradient(ellipse at top, rgba(212, 175, 107, 0.06) 0%, transparent 60%),
+      var(--paper);
+    padding: 120px var(--pad);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .trust-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .trust-item {
+    border-top: 2px solid var(--gold);
+    padding-top: 24px;
+  }
+  .trust-item .icon {
+    width: 48px; height: 48px;
+    margin-bottom: 18px;
+    display: grid;
+    place-items: center;
+    background: var(--gold-mist);
+    border: 1px solid var(--gold-soft);
+    border-radius: 12px;
+    color: var(--gold-deep);
+    font-size: 22px;
+  }
+  .trust-item h4 {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+  .trust-item p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ==== REVIEWS ==== */
+  .reviews {
+    padding: 120px var(--pad);
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(212, 175, 107, 0.04) 0%, rgba(255, 255, 255, 0) 100%),
+      var(--paper);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .reviews::before {
+    content: "";
+    position: absolute;
+    top: 0; right: -10%;
+    width: 600px; height: 600px;
+    background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    opacity: 0.07;
+    pointer-events: none;
+  }
+  .reviews-head {
+    max-width: 1400px;
+    margin: 0 auto 64px;
+    text-align: center;
+    position: relative;
+  }
+  .reviews-head .section-num { margin: 0 auto 22px; }
+  .reviews-head h2 { font-size: clamp(36px, 5vw, 68px); margin-bottom: 18px; }
+  .reviews-head h2 em { color: var(--gold-deep); font-weight: 300; }
+  .reviews-head p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .rating-bar {
+    max-width: 1400px;
+    margin: 0 auto 50px;
+    background: var(--paper);
+    border-radius: 6px;
+    padding: 32px 44px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 44px;
+    align-items: center;
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .rating-score { font-family: 'Outfit', sans-serif; font-size: 56px; font-weight: 700; line-height: 1; color: var(--ink); letter-spacing: -0.02em; }
+  .rating-mid { display: flex; flex-direction: column; gap: 8px; }
+  .rating-stars { color: var(--gold); font-size: 22px; letter-spacing: 4px; }
+  .rating-label { font-size: 14px; color: var(--ink-soft); }
+  .rating-label strong { color: var(--ink); font-weight: 600; }
+  .google-mark {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC04 66%, #34A853 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .reviews-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    position: relative;
+  }
+  .review-card {
+    background: var(--bg);
+    border-radius: 6px;
+    padding: 32px;
+    border: 1px solid var(--line);
+    position: relative;
+    transition: transform .4s ease, box-shadow .4s ease;
+  }
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--gold-soft);
+  }
+  .review-card::before {
+    content: "“";
+    position: absolute;
+    top: 4px; right: 24px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--gold-soft);
+    line-height: 1;
+  }
+  .review-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    color: var(--paper);
+    font-weight: 600;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .a1 { background: #2F6A4E; }
+  .a2 { background: #3B5BA9; }
+  .a3 { background: #B23F3F; }
+  .a4 { background: #6B3FB3; }
+  .review-name { font-weight: 600; font-size: 15px; }
+  .review-meta { font-size: 12px; color: var(--ink-mute); margin-top: 2px; }
+  .review-stars { color: var(--gold); margin: 10px 0 12px; letter-spacing: 3px; }
+  .review-text { font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; }
+
+  /* Mobile swipe cue — hidden on desktop, visible at <=820px */
+  .reviews-mobile-cue {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .reviews-dots {
+    display: flex;
+    gap: 8px;
+  }
+  .r-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--line);
+    transition: all .35s cubic-bezier(.2, .7, .3, 1);
+  }
+  .r-dot.active {
+    background: var(--gold);
+    width: 24px;
+    border-radius: 100px;
+  }
+  .swipe-hint {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-weight: 600;
+    animation: swipeNudge 2.4s ease-in-out infinite;
+  }
+  @keyframes swipeNudge {
+    0%, 100% { transform: translateX(0); opacity: 0.8; }
+    50%      { transform: translateX(8px); opacity: 1; }
+  }
+
+  /* ==== RENTAL ==== */
+  .rental {
+    padding: 120px var(--pad);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(212, 175, 107, 0.05) 100%),
+      var(--paper);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .rental::after {
+    content: "";
+    position: absolute;
+    bottom: -10%; right: -5%;
+    width: 500px; height: 500px;
+    background-image: url('https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+  .rental-head {
+    max-width: 1400px;
+    margin: 0 auto 50px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 60px;
+    align-items: end;
+    position: relative;
+  }
+  .tabs {
+    display: flex;
+    background: var(--paper);
+    border-radius: 100px;
+    padding: 5px;
+    border: 1px solid var(--line);
+  }
+  .tab {
+    padding: 12px 22px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--ink-mute);
+    transition: all .3s;
+    white-space: nowrap;
+  }
+  .tab.active { background: var(--ink); color: var(--paper); }
+
+  /* ==== SHOWROOM ==== */
+  .showroom {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .showroom-controls {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 8px 8px 8px 24px;
+    max-width: 480px;
+    margin: 0 auto 36px;
+    box-shadow: var(--shadow-sm);
+  }
+  .showroom-controls label {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .select-wrap {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .select-wrap select {
+    flex: 1;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 40px 12px 18px;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s;
+    width: 100%;
+  }
+  .select-wrap select:hover { background: var(--gold-deep); }
+  .select-wrap select:focus { outline: none; background: var(--gold-deep); }
+  .select-chev {
+    position: absolute;
+    right: 16px;
+    color: var(--gold-bright);
+    font-size: 14px;
+    pointer-events: none;
+    font-weight: 700;
+  }
+
+  /* Stage with "spotlight" floor */
+  .showroom-stage {
+    position: relative;
+    background:
+      radial-gradient(ellipse 65% 50% at 50% 75%, rgba(212, 175, 107, 0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 90% 70% at 50% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 65%),
+      linear-gradient(180deg, var(--paper) 0%, var(--bg) 100%);
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    padding: 44px;
+    min-height: 540px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .showroom-stage::before {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  /* Each car panel — only .active is visible. All absolute positioned. */
+  .showroom-car {
+    position: absolute;
+    inset: 44px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(60px) scale(0.96);
+    transition: opacity .55s cubic-bezier(.2, .7, .25, 1), transform .65s cubic-bezier(.2, .7, .25, 1);
+    pointer-events: none;
+  }
+  .showroom-car.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+  }
+  .showroom-car.exiting {
+    opacity: 0;
+    transform: translateX(-60px) scale(0.96);
+  }
+
+  .showroom-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .showroom-image-wrap .car-tag {
+    position: absolute;
+    top: 0; left: 0;
+    padding: 8px 14px;
+    background: var(--gold-soft);
+    color: var(--gold-deep);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 100px;
+    z-index: 5;
+  }
+  .showroom-image-wrap .car-tag.popular { background: var(--gold); color: var(--paper); }
+
+  .showroom-image {
+    width: 100%;
+    height: 100%;
+    max-width: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatCar 5s ease-in-out infinite;
+  }
+  .showroom-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 30px rgba(27, 22, 17, 0.22));
+  }
+
+  @keyframes floatCar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+  }
+
+  .showroom-info { padding: 0 0 8px; }
+  .car-class {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .showroom-info h3 {
+    font-size: clamp(32px, 4vw, 44px);
+    margin-bottom: 14px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .showroom-blurb {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+  .car-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 24px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 22px;
+  }
+  .car-spec-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 3px;
+    font-weight: 600;
+  }
+  .car-spec-val {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .showroom-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .car-price {
+    font-family: 'Outfit', sans-serif;
+  }
+  .car-price strong {
+    font-size: 28px;
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    display: block;
+  }
+  .car-price small {
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* Indicator dots below the stage */
+  .showroom-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--line);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all .35s cubic-bezier(.2, .7, .3, 1);
+  }
+  .dot:hover { background: var(--gold-soft); }
+  .dot.active {
+    background: var(--gold);
+    width: 32px;
+    border-radius: 100px;
+  }
+
+  .rental-policy {
+    max-width: 1400px;
+    margin: 60px auto 0;
+    background: var(--paper);
+    border-radius: 6px;
+    padding: 40px 44px;
+    border: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .rental-policy h4 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+  .rental-policy h4 + small {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+  .policy-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 28px;
+  }
+  .policy-list li {
+    font-size: 14px;
+    color: var(--ink-soft);
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .policy-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--gold-deep);
+    font-weight: 700;
+  }
+
+  /* ==== FAQ ==== */
+  .faq { padding: 120px var(--pad); }
+  .faq-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 24px 0;
+  }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    gap: 24px;
+  }
+  .faq-q h4 {
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.35;
+    font-weight: 600;
+    transition: color .3s;
+  }
+  .faq-item:hover .faq-q h4 { color: var(--gold-deep); }
+  .faq-toggle {
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    display: grid;
+    place-items: center;
+    transition: all .3s;
+    color: var(--gold-deep);
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .faq-item.open .faq-toggle { background: var(--gold); color: var(--paper); border-color: var(--gold); transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(.4,0,.2,1), padding .3s;
+  }
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    padding-top: 16px;
+  }
+  .faq-a p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    max-width: 800px;
+  }
+
+  /* ==== FOOTER ==== */
+  .footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 100px var(--pad) 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+  .footer-cta {
+    max-width: 1400px;
+    margin: 0 auto 80px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgba(212, 175, 107, 0.15);
+  }
+  .footer-cta .label {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    margin-bottom: 18px;
+  }
+  .footer-cta h2 {
+    font-size: clamp(30px, 4.6vw, 56px);
+    color: var(--paper);
+    line-height: 1.15;
+    margin-bottom: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .footer-cta h2 em { color: var(--gold-bright); font-weight: 700; font-style: normal; }
+  .footer-cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .btn-on-dark { background: var(--gold-bright); color: var(--ink); }
+  .btn-on-dark:hover { background: var(--paper); }
+  .btn-on-dark-ghost { background: transparent; color: var(--paper); border: 1px solid rgba(251, 247, 238, 0.4); }
+  .btn-on-dark-ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+  .footer-grid {
+    max-width: 1400px;
+    margin: 0 auto 50px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+    position: relative;
+  }
+  .footer h4 {
+    color: var(--paper);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+  }
+  .footer-brand {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--paper);
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+  .footer-brand .accent { color: var(--gold-bright); }
+  .footer p {
+    color: rgba(251, 247, 238, 0.6);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 360px;
+    margin-bottom: 18px;
+  }
+  .footer-list { list-style: none; }
+  .footer-list li { padding: 5px 0; }
+  .footer-list a, .footer-list span {
+    color: rgba(251, 247, 238, 0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color .3s;
+    display: inline-block;
+  }
+  .footer-list a:hover { color: var(--gold-bright); }
+  .footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 28px;
+    border-top: 1px solid rgba(212, 175, 107, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(251, 247, 238, 0.4);
+    font-size: 12px;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* WhatsApp float */
+  .wa-float {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 58px; height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+    cursor: pointer;
+    z-index: 90;
+    text-decoration: none;
+    transition: transform .3s;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+
+  /* =============================================
+     MODAL — Booking with circular reveal animation
+     ============================================= */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    pointer-events: none;
+  }
+  .ink-wipe {
+    position: fixed;
+    top: var(--y); left: var(--x);
+    width: 0; height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-bright) 0%, var(--gold) 40%, var(--gold-deep) 100%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 199;
+    opacity: 1;
+  }
+  .modal-overlay.opening .ink-wipe { animation: inkExpand 0.85s cubic-bezier(.7,0,.3,1) forwards; }
+  .modal-overlay.closing .ink-wipe { animation: inkContract 0.6s cubic-bezier(.7,0,.3,1) forwards; }
+  @keyframes inkExpand {
+    0%   { width: 0; height: 0; opacity: 1; }
+    60%  { width: 4500px; height: 4500px; opacity: 1; }
+    100% { width: 4500px; height: 4500px; opacity: 0; }
+  }
+  @keyframes inkContract {
+    0%   { width: 4500px; height: 4500px; opacity: 0; }
+    40%  { opacity: 1; }
+    100% { width: 0; height: 0; opacity: 0; }
+  }
+  .modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(27, 22, 17, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity .4s ease;
+    z-index: 198;
+    pointer-events: none;
+  }
+  .modal-overlay.open .modal-backdrop { opacity: 1; pointer-events: auto; }
+
+  .modal {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    width: min(1080px, 94vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--paper);
+    border-radius: 10px;
+    z-index: 201;
+    opacity: 0;
+    transition: opacity .5s ease .55s, transform .6s cubic-bezier(.2,1.1,.3,1) .55s;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.4);
+    pointer-events: none;
+    overscroll-behavior: contain;
+  }
+  .modal-overlay.open .modal {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+  .modal::-webkit-scrollbar { width: 8px; }
+  .modal::-webkit-scrollbar-track { background: var(--cream); }
+  .modal::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+  .modal-head {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 48px 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .modal-head-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.22;
+    z-index: 0;
+    transition: opacity .5s;
+  }
+  .modal-head > *:not(.modal-head-bg) { position: relative; z-index: 1; }
+  .modal-eyebrow {
+    color: var(--gold-bright);
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+  }
+  .modal-eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--gold-bright); }
+  .modal h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--paper);
+    line-height: 1.1;
+    margin-bottom: 14px;
+    opacity: 0;
+    transform: translateY(16px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .modal h2 em { color: var(--gold-bright); font-weight: 700; font-style: normal; }
+  .modal-tagline {
+    color: rgba(251, 247, 238, 0.78);
+    font-size: 16px;
+    max-width: 580px;
+    line-height: 1.6;
+    opacity: 0;
+  }
+  .modal-quick-stats {
+    display: flex;
+    gap: 28px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    opacity: 0;
+  }
+  .modal-quick-stats div {
+    font-size: 12px;
+    color: rgba(251, 247, 238, 0.7);
+  }
+  .modal-quick-stats div strong {
+    display: block;
+    color: var(--gold-bright);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: -0.01em;
+  }
+  .modal-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: rgba(251, 247, 238, 0.12);
+    border: 1px solid rgba(251, 247, 238, 0.3);
+    color: var(--paper);
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 5;
+    transition: all .3s;
+    font-family: inherit;
+  }
+  .modal-close:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+  .modal-body {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .modal-left { padding: 40px 36px 40px 48px; border-right: 1px solid var(--line); }
+  .modal-right { padding: 40px 48px 40px 36px; background: var(--cream); }
+
+  .modal-section-label {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .modal-section-label:not(:first-child) { margin-top: 32px; }
+
+  .highlights {
+    list-style: none;
+    margin-bottom: 12px;
+  }
+  .highlights li {
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  .highlights li:last-child { border-bottom: 1px solid var(--line); }
+  .highlights li::before {
+    content: "✦";
+    color: var(--gold);
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    margin-bottom: 8px;
+  }
+  .info-grid > div {
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+  }
+  .info-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 4px;
+  }
+  .info-val {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Package selector */
+  .pkg-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .pkg {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    padding: 16px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .25s;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+    align-items: center;
+  }
+  .pkg:hover { border-color: var(--gold); }
+  .pkg.selected {
+    border-color: var(--gold-deep);
+    background: #FBF4E5;
+  }
+  .pkg-radio {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid var(--ink-mute);
+    display: grid;
+    place-items: center;
+    transition: all .25s;
+    flex-shrink: 0;
+  }
+  .pkg.selected .pkg-radio {
+    border-color: var(--gold-deep);
+    background: var(--gold-deep);
+  }
+  .pkg.selected .pkg-radio::after {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--paper);
+  }
+  .pkg-info {}
+  .pkg-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .pkg-desc {
+    font-size: 12px;
+    color: var(--ink-mute);
+    line-height: 1.4;
+  }
+  .pkg-price-tag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    color: var(--gold-deep);
+    font-weight: 700;
+    text-align: right;
+    line-height: 1.1;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+  .pkg-price-tag small {
+    display: block;
+    font-size: 9px;
+    color: var(--ink-mute);
+    font-family: 'Plus Jakarta Sans';
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* Booking form */
+  .field { display: flex; flex-direction: column; margin-bottom: 14px; }
+  .field label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .field input, .field select {
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: var(--paper);
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .field input:focus, .field select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(184, 146, 74, 0.1);
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* Pax counter */
+  .pax-counter {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .pax-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: var(--gold-deep);
+    cursor: pointer;
+    transition: background .2s;
+    font-weight: 500;
+  }
+  .pax-btn:hover { background: var(--cream); }
+  .pax-btn:disabled { color: var(--line); cursor: not-allowed; }
+  .pax-input {
+    border: none !important;
+    text-align: center;
+    background: transparent !important;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 18px !important;
+    border-left: 1px solid var(--line) !important;
+    border-right: 1px solid var(--line) !important;
+    border-radius: 0 !important;
+    color: var(--ink) !important;
+  }
+  .pax-input:focus { box-shadow: none !important; }
+
+  /* Total summary */
+  .total-summary {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 6px;
+    padding: 22px;
+    margin-top: 18px;
+  }
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 13px;
+    color: rgba(251, 247, 238, 0.7);
+  }
+  .total-row.divider {
+    border-top: 1px solid rgba(212, 175, 107, 0.2);
+    margin-top: 8px;
+    padding-top: 14px;
+  }
+  .total-row.grand {
+    font-size: 14px;
+    color: var(--paper);
+    margin-top: 4px;
+  }
+  .total-row.grand .total-amount {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    color: var(--gold-bright);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .total-pricing-note {
+    font-size: 11px;
+    color: rgba(251, 247, 238, 0.45);
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+  .modal-cta-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-direction: column;
+  }
+  .modal-cta-row .btn { justify-content: center; width: 100%; }
+  .btn-gold-deep {
+    background: var(--gold-deep);
+    color: var(--paper);
+  }
+  .btn-gold-deep:hover { background: var(--ink); }
+  .btn-wa {
+    background: #25D366;
+    color: white;
+  }
+  .btn-wa:hover { background: #1da851; }
+
+  body.modal-open { overflow: hidden; }
+
+  /* ==== Stagger reveals when modal opens ==== */
+  .modal-overlay.open .modal-eyebrow { animation: fadeUp .55s cubic-bezier(.2,.7,.3,1) 0.85s both; }
+  .modal-overlay.open .modal h2 { animation: fadeUp .6s cubic-bezier(.2,.7,.3,1) 0.95s both; }
+  .modal-overlay.open .modal-tagline { animation: fadeUp .55s cubic-bezier(.2,.7,.3,1) 1.1s both; }
+  .modal-overlay.open .modal-quick-stats { animation: fadeUp .55s cubic-bezier(.2,.7,.3,1) 1.2s both; }
+  .modal-overlay.open .highlights li {
+    animation: slideRight .55s cubic-bezier(.2,.7,.3,1) both;
+    animation-delay: calc(1.3s + 0.06s * var(--i));
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ==== RESPONSIVE ==== */
+  @media (max-width: 1100px) {
+    :root { --pad: 32px; }
+    .hero-right { height: 540px; }
+    .why-grid { grid-template-columns: 1fr; gap: 40px; }
+    .why-image { aspect-ratio: 16/9; position: relative; top: 0; }
+    .why-points { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .fleet-grid { grid-template-columns: repeat(2, 1fr); }
+    .showroom-stage { padding: 32px; min-height: 720px; }
+    .showroom-car { inset: 32px; grid-template-columns: 1fr; gap: 24px; align-items: start; }
+    .showroom-image-wrap { height: 280px; }
+    .modal-body { grid-template-columns: 1fr; }
+    .modal-left { border-right: none; border-bottom: 1px solid var(--line); padding: 32px; }
+    .modal-right { padding: 32px; }
+    .rental-policy { grid-template-columns: 1fr; gap: 24px; }
+    .policy-list { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 820px) {
+    :root { --pad: 24px; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .menu-btn { display: inline-flex; align-items: center; }
+    .nav { padding: 16px 20px; }
+    .brand-mark { width: 42px; height: 42px; font-size: 15px; }
+    .brand-name { font-size: 15px; }
+    .brand-sub { font-size: 8px; }
+
+    .hero { grid-template-columns: 1fr; padding: 110px 24px 60px; gap: 40px; min-height: auto; }
+    /* On mobile, text is full width — strengthen the white overlay so it stays readable */
+    .hero::after {
+      background:
+        linear-gradient(to bottom,
+          rgba(252, 251, 247, 0.92) 0%,
+          rgba(252, 251, 247, 0.78) 40%,
+          rgba(252, 251, 247, 0.55) 70%,
+          rgba(252, 251, 247, 0.4) 100%),
+        radial-gradient(ellipse 500px 400px at 50% 30%, rgba(212, 175, 107, 0.16) 0%, transparent 70%);
+    }
+    .hero::before { opacity: 0.5; }
+    .hero-right { height: 420px; }
+    .hero-img-1 { width: 80%; height: 65%; }
+    .hero-img-2 { width: 60%; height: 50%; }
+    .hero-img-3 { width: 35%; height: 30%; }
+    .hero-tag { right: 0; padding: 12px 16px; }
+    .hero-tag-num { font-size: 22px; }
+    .hero-stats { gap: 24px; margin-top: 40px; }
+    .stat-num { font-size: 32px; }
+
+    .section { padding: 80px 24px; }
+    .activities { padding: 80px 24px; }
+    .reviews { padding: 80px 24px; }
+    .rental { padding: 80px 24px; }
+    .trust { padding: 80px 24px; }
+    .faq { padding: 80px 24px; }
+    .footer { padding: 80px 24px 32px; }
+
+    .section-head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 40px; }
+
+    .activities-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 280px;
+    }
+    .a-private, .a-mangrove, .a-sunset, .a-banana, .a-jetski, .a-atv {
+      grid-column: span 1; grid-row: span 1;
+    }
+
+    .steps { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .fleet-grid { grid-template-columns: 1fr; }
+    .showroom-controls { flex-direction: column; gap: 10px; padding: 16px; border-radius: 14px; align-items: stretch; }
+    .showroom-controls label { text-align: center; }
+    .select-wrap { width: 100%; }
+    .showroom-stage { padding: 24px; min-height: 680px; }
+    .showroom-car { inset: 24px; grid-template-columns: 1fr; gap: 20px; align-items: start; }
+    .showroom-image-wrap { height: 220px; }
+    .showroom-info h3 { font-size: 28px; }
+    .showroom-foot { flex-direction: column; align-items: stretch; }
+    .showroom-foot .btn { justify-content: center; }
+
+    .reviews-grid {
+      grid-template-columns: none;
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding: 4px 24px 12px;
+      margin-left: -24px;
+      margin-right: -24px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .reviews-grid::-webkit-scrollbar { display: none; }
+    .review-card {
+      flex: 0 0 85%;
+      scroll-snap-align: start;
+      max-width: 85%;
+    }
+    .review-card:last-child { scroll-snap-align: end; }
+    .reviews-mobile-cue { display: flex; }
+    .rating-bar { grid-template-columns: 1fr; gap: 16px; padding: 28px; text-align: center; }
+
+    .rental-head { grid-template-columns: 1fr; gap: 20px; }
+    .tabs { width: fit-content; margin: 0 auto; }
+
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+
+    .parallax-strip { height: 340px; }
+
+    /* Modal mobile */
+    .modal {
+      width: 100vw;
+      height: 100vh;
+      max-height: 100vh;
+      top: 0; left: 0;
+      transform: scale(0.92);
+      border-radius: 0;
+    }
+    .modal-overlay.open .modal {
+      transform: scale(1);
+    }
+    .modal-head { padding: 80px 24px 28px; }
+    .modal-left, .modal-right { padding: 28px 24px; }
+    .modal-close { top: 22px; right: 22px; }
+    .modal h2 { font-size: 32px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; }
+
+    .footer-cta-actions .btn { width: 100%; justify-content: center; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 44px; }
+    .hero-stats { flex-direction: column; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .pkg { grid-template-columns: auto 1fr; gap: 12px; }
+    .pkg-price-tag { grid-column: 2; text-align: left; }
+    .total-row.grand .total-amount { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==== NAV ==== -->
+<nav class="nav">
+  <a href="#" class="brand">
+    <div class="brand-mark">SS</div>
+    <div class="brand-text">
+      <span class="brand-name">SS LANGKAWI</span>
+      <span class="brand-sub">Ventures · Tours &amp; Rentals</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#how">How it works</a>
+    <a href="#tours">Tours</a>
+    <a href="#rental">Rental</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="https://wa.me/60123456789" class="nav-cta">Chat on WhatsApp</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu <span class="icon">☰</span></button>
+</nav>
+
+<!-- ==== MOBILE MENU ==== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" data-close>Home <em>01</em></a>
+  <a href="#about" data-close>About us <em>02</em></a>
+  <a href="#how" data-close>How it works <em>03</em></a>
+  <a href="#tours" data-close>Tours <em>04</em></a>
+  <a href="#rental" data-close>Rental <em>05</em></a>
+  <a href="#reviews" data-close>Reviews <em>06</em></a>
+  <a href="#faq" data-close>FAQ <em>07</em></a>
+  <a href="#contact" data-close>Contact <em>08</em></a>
+  <a href="https://wa.me/60123456789" class="mobile-cta">Chat on WhatsApp →</a>
+  <div class="mobile-meta">
+    SS Langkawi Ventures · Pantai Cenang, Langkawi<br>
+    <a href="tel:+60123456789">+60 12-345 6789</a> · <a href="mailto:hello@sslangkawiventures.com">hello@sslangkawiventures.com</a>
+  </div>
+</div>
+
+<!-- ==== HERO ==== -->
+<section class="hero" id="home">
+  <div class="ornament ornament-1"></div>
+
+  <!-- Floating gold particles -->
+  <div class="particles" aria-hidden="true">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+    <span class="particle p6"></span>
+    <span class="particle p7"></span>
+    <span class="particle p8"></span>
+  </div>
+
+  <div class="hero-left">
+    <div class="eyebrow reveal-up" style="--reveal-delay: 0ms">Family-run · Since 2015</div>
+    <h1 class="hero-headline">
+      <span class="word-mask"><span style="--wd:0">Langkawi,</span></span>
+      <span class="word-mask"><span style="--wd:1">the</span></span>
+      <span class="word-mask"><span style="--wd:2">way</span></span>
+      <span class="word-mask"><span class="accent" style="--wd:3">we</span></span>
+      <span class="word-mask"><span class="accent" style="--wd:4">live</span></span>
+      <span class="word-mask"><span style="--wd:5">it.</span></span>
+    </h1>
+    <p class="hero-desc reveal-up" style="--reveal-delay: 900ms">Tours, drivers, and self-drive rentals — handled by a small team who grew up on this island. We'll plan your day around what you actually want to see, with honest pricing, flexible hours, and zero pushy upsells.</p>
+    <div class="hero-actions reveal-up" style="--reveal-delay: 1050ms">
+      <a href="#tours" class="btn btn-primary magnetic">See tour packages <span class="btn-arrow">→</span></a>
+      <a href="#rental" class="btn btn-ghost magnetic">Browse rentals</a>
+    </div>
+    <div class="hero-stats reveal-up" style="--reveal-delay: 1200ms">
+      <div><div class="stat-num" data-count="5.0" data-decimal="1">0.0</div><div class="stat-label">Google rating</div></div>
+      <div><div class="stat-num" data-count="26" data-suffix="+">0+</div><div class="stat-label">Verified reviews</div></div>
+      <div><div class="stat-num" data-count="10" data-suffix="y">0y</div><div class="stat-label">On the island</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img hero-img-1"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80" alt="Langkawi resort"></div>
+    <div class="hero-img hero-img-2"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Langkawi beach"></div>
+    <div class="hero-img hero-img-3"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80" alt="Langkawi cove"></div>
+    <div class="hero-tag">
+      <div class="hero-tag-num">Since '15</div>
+      <div class="hero-tag-text">Family Run</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==== MARQUEE ==== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Private island tours</span><span>Sedan &amp; MPV with driver</span><span>Mangrove kayak</span>
+    <span>Self drive rental</span><span>Sunset cruise</span><span>JetSki adventures</span><span>ATV trails</span><span>Airport transfers</span>
+    <span>Private island tours</span><span>Sedan &amp; MPV with driver</span><span>Mangrove kayak</span>
+    <span>Self drive rental</span><span>Sunset cruise</span><span>JetSki adventures</span><span>ATV trails</span><span>Airport transfers</span>
+  </div>
+</div>
+
+<!-- ==== ABOUT / WHY US ==== -->
+<section class="section" id="about">
+  <div class="section-head scroll-reveal">
+    <div class="section-num">01 — Who we are</div>
+    <h2 class="section-title">Built by drivers and<br>guides — <em>not</em> an algorithm.</h2>
+  </div>
+  <div class="why-grid scroll-reveal">
+    <div class="why-image">
+      <video autoplay muted loop playsinline preload="metadata"
+             poster="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80"
+             aria-hidden="true">
+        <source src="https://videos.pexels.com/video-files/1093662/1093662-hd_1920_1080_30fps.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div>
+      <p class="why-intro">Started in 2015 as a one-car shop in Pantai Cenang. A decade on, we still answer every message ourselves and inspect every car we hand over.</p>
+      <div class="why-quote">"We grew up here. The places we take you are where we bring our own family."</div>
+      <p style="font-size:16px;color:var(--ink-soft);line-height:1.7;margin-bottom:16px;">No middlemen. No surprise add-ons. The price you see is the price you pay.</p>
+
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-point-num">01</div>
+          <h4>Flat, seasonal pricing</h4>
+          <p>Low and peak rates published openly. No haggling.</p>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">02</div>
+          <h4>Real local drivers</h4>
+          <p>EN, MS, Mandarin. Min 5 years on Langkawi roads.</p>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">03</div>
+          <h4>Flexible by default</h4>
+          <p>Swap stops, add hours, change route — just say so.</p>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">04</div>
+          <h4>Insured &amp; licensed</h4>
+          <p>Tourism Malaysia licensed. Fully insured fleet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==== HOW IT WORKS ==== -->
+<section class="section how" id="how">
+  <div class="section-head scroll-reveal">
+    <div class="section-num">02 — How it works</div>
+    <h2 class="section-title">From <em>this page</em> to your<br>first sunset, in four steps.</h2>
+  </div>
+  <div class="steps stagger-children">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h4>Pick your day</h4>
+      <p>Browse the tour packages or rental fleet below. Each card opens a full booking sheet — pax, time, total price, all upfront.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h4>Send the booking</h4>
+      <p>Hit "Book on WhatsApp" and your booking summary auto-fills the chat. We reply within 30 minutes during business hours.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h4>Confirm with deposit</h4>
+      <p>30% deposit via online transfer or TNG eWallet locks your slot. Balance is paid in cash or transfer on the day itself.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h4>We pick you up</h4>
+      <p>Hotel lobby, jetty, or airport — we come to you. Free pickup within Pantai Cenang and Kuah for tours of 4 hours and above.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==== PARALLAX VIDEO STRIP ==== -->
+<div class="parallax-strip">
+  <video class="parallax-video"
+         autoplay muted loop playsinline preload="metadata"
+         poster="https://images.unsplash.com/photo-1583244532610-2a234f57c12c?w=2000&q=80"
+         aria-hidden="true">
+    <source src="https://videos.pexels.com/video-files/1093662/1093662-hd_1920_1080_30fps.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4" type="video/mp4">
+  </video>
+  <div class="parallax-strip-content">
+    <div class="label">99 Islands · 478 Sq Km · One Trusted Local Team</div>
+    <h3>From mangroves to <span class="br">mountaintops</span>,<br>we know every turn.</h3>
+  </div>
+</div>
+
+<!-- ==== ACTIVITIES ==== -->
+<section class="activities" id="tours">
+  <div class="section-head scroll-reveal">
+    <div class="section-num">03 — Tours &amp; activities</div>
+    <h2 class="section-title">Six ways to spend<br>a perfect <em>Langkawi</em> day.</h2>
+  </div>
+
+  <div class="activities-grid stagger-children">
+    <div class="activity a-private" data-tour="private">
+      <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80" alt="Private tour">
+      <div class="activity-tag">Most Booked</div>
+      <div class="activity-price">RM 160<small> /4 hrs</small></div>
+      <div class="activity-content">
+        <h3>Private Island Tour</h3>
+        <div class="activity-sub">Sedan or MPV with English-speaking driver — your itinerary, your pace.</div>
+        <div class="activity-meta">
+          <span>● 4 or 8 hours</span>
+          <span>● Up to 7 pax</span>
+        </div>
+        <button class="activity-cta js-open-modal" data-tour="private">View details &amp; book</button>
+      </div>
+    </div>
+
+    <div class="activity a-mangrove" data-tour="mangrove">
+      <img src="https://images.unsplash.com/photo-1559125148-869baf508c95?w=1200&q=80" alt="Mangrove tour">
+      <div class="activity-price">RM 90<small> /pax</small></div>
+      <div class="activity-content">
+        <h3>Mangrove Kayak Discovery</h3>
+        <div class="activity-sub">Kilim Geoforest paddle past limestone caves and bat colonies.</div>
+        <div class="activity-meta">
+          <span>● 3 or 5 hours</span>
+          <span>● Min 2 pax</span>
+        </div>
+        <button class="activity-cta js-open-modal" data-tour="mangrove">View details &amp; book</button>
+      </div>
+    </div>
+
+    <div class="activity a-sunset" data-tour="sunset">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80" alt="Sunset cruise">
+      <div class="activity-price">RM 180<small> /pax</small></div>
+      <div class="activity-content">
+        <h3>Andaman Sunset Cruise</h3>
+        <div class="activity-sub">Catamaran golden-hour sail with light dinner &amp; open-bar option.</div>
+        <div class="activity-meta">
+          <span>● 2.5 hours</span>
+          <span>● From 1 pax</span>
+        </div>
+        <button class="activity-cta js-open-modal" data-tour="sunset">View details &amp; book</button>
+      </div>
+    </div>
+
+    <div class="activity a-banana" data-tour="threein1">
+      <img src="https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=900&q=80" alt="3 in 1 activities">
+      <div class="activity-price">RM 150<small> /pax</small></div>
+      <div class="activity-content">
+        <h3>3-in-1 Watersports</h3>
+        <div class="activity-sub">Parasailing + jet car + banana boat — Pantai Cenang beach.</div>
+        <div class="activity-meta">
+          <span>● 2 hours</span>
+          <span>● Min 2 pax</span>
+        </div>
+        <button class="activity-cta js-open-modal" data-tour="threein1">View details &amp; book</button>
+      </div>
+    </div>
+
+    <div class="activity a-jetski" data-tour="jetski">
+      <img src="https://images.unsplash.com/photo-1530908295418-a12e326966ba?w=900&q=80" alt="JetSki tour">
+      <div class="activity-price">RM 750<small> /jetski</small></div>
+      <div class="activity-content">
+        <h3>JetSki Island Hopping</h3>
+        <div class="activity-sub">Nine-stop ride past Pulau Beras Basah, Singa Besar, Dayang Bunting.</div>
+        <div class="activity-meta">
+          <span>● 3–4 hours</span>
+          <span>● 2 pax / jetski</span>
+        </div>
+        <button class="activity-cta js-open-modal" data-tour="jetski">View details &amp; book</button>
+      </div>
+    </div>
+
+    <div class="activity a-atv" data-tour="atv">
+      <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=900&q=80" alt="ATV ride">
+      <div class="activity-tag">Adrenaline</div>
+      <div class="activity-price">RM 150<small> /pax</small></div>
+      <div class="activity-content">
+        <h3>ATV Off-Road Trail</h3>
+        <div class="activity-sub">Paddy-field, jungle, and waterfall stops with photo guide.</div>
+        <div class="activity-meta">
+          <span>● 1–4 hours</span>
+          <span>● Age 12+</span>
+        </div>
+        <button class="activity-cta js-open-modal" data-tour="atv">View details &amp; book</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==== TRUST / WHAT'S INCLUDED ==== -->
+<section class="trust">
+  <div class="section-head scroll-reveal">
+    <div class="section-num">04 — Always included</div>
+    <h2 class="section-title">No fine print.<br>Here's what's <em>in</em> every tour.</h2>
+  </div>
+  <div class="trust-grid stagger-children">
+    <div class="trust-item">
+      <div class="icon">⌖</div>
+      <h4>Hotel pickup</h4>
+      <p>Free hotel lobby pickup and drop-off across Pantai Cenang, Tengah, and Kuah for tours of 4 hours+.</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">☂︎</div>
+      <h4>Vehicle insurance</h4>
+      <p>Comprehensive vehicle and passenger liability cover on every transport tour, included as standard.</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">⌬</div>
+      <h4>Bottled water</h4>
+      <p>Cold mineral water, hot/cold towels on tours of 4 hours+. Halal snack box available on request.</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">⌘</div>
+      <h4>English-speaking driver</h4>
+      <p>Every driver speaks English &amp; Malay. Conversational Mandarin and Hindi available with advance notice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==== REVIEWS ==== -->
+<section class="reviews" id="reviews">
+  <div class="reviews-head scroll-reveal">
+    <div class="section-num">05 — Verified Google reviews</div>
+    <h2>Don't take <em>our</em> word for it.</h2>
+    <p>Every review below is pulled live from our verified Google Business profile — no curation, no editing.</p>
+  </div>
+
+  <div class="rating-bar scroll-reveal">
+    <div class="rating-score">5.0</div>
+    <div class="rating-mid">
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-label"><strong>Excellent</strong> · based on 26 verified reviews</div>
+    </div>
+    <div class="google-mark">Google</div>
+  </div>
+
+  <div class="reviews-grid stagger-children" id="reviewsGrid">
+    <div class="review-card">
+      <div class="review-head">
+        <div class="avatar a1">TW</div>
+        <div><div class="review-name">Trish Washer</div><div class="review-meta">8 reviews · 17 photos · 3 months ago</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">What a fantastic day. If you're looking for a great day out with a knowledgeable, friendly, reliable and reasonably-priced private tour while in Langkawi — look no further than SS Langkawi Ventures. The itinerary was tailored entirely to what we wanted to see.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-head">
+        <div class="avatar a2">TM</div>
+        <div><div class="review-name">Tom Murphy</div><div class="review-meta">12 reviews · 8 photos · 4 months ago</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Brilliant sightseeing tour around the island with a calm, careful driver who clearly knew the back roads. Highly recommend to anyone visiting Langkawi who wants a smooth, well-paced day with someone they can actually talk to.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-head">
+        <div class="avatar a3">SA</div>
+        <div><div class="review-name">Sajid Ali</div><div class="review-meta">5 reviews · 11 photos · a year ago</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Genuinely helpful. They turned our short Langkawi trip into a memorable one — guided us to the best food spots and quiet viewpoints we'd never have found on Google Maps. Excellent local knowledge.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-head">
+        <div class="avatar a4">SN</div>
+        <div><div class="review-name">Salif Ndiaye</div><div class="review-meta">Local Guide · 42 reviews · 73 photos · 6 months ago</div></div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Delighted to have collaborated with SS Langkawi Ventures. Demonstrated professionalism, rigor, and punctuality throughout. The owner knows every good spot on the island and shares them generously.</p>
+    </div>
+  </div>
+
+  <!-- Mobile-only swipe hint + progress dots -->
+  <div class="reviews-mobile-cue" aria-hidden="true">
+    <div class="reviews-dots" id="reviewsDots">
+      <span class="r-dot active"></span>
+      <span class="r-dot"></span>
+      <span class="r-dot"></span>
+      <span class="r-dot"></span>
+    </div>
+    <div class="swipe-hint">← swipe to see more →</div>
+  </div>
+</section>
+
+<!-- ==== RENTAL ==== -->
+<section class="rental" id="rental">
+  <div class="rental-head scroll-reveal">
+    <div class="section-num">06 — Rental fleet</div>
+    <h2 class="section-title">Drive <em>yourself</em>,<br>or let us drive you.</h2>
+    <div class="tabs">
+      <button class="tab active">Self Drive</button>
+      <button class="tab">With Driver</button>
+    </div>
+  </div>
+
+  <div class="showroom scroll-reveal">
+    <!-- Dropdown control -->
+    <div class="showroom-controls">
+      <label for="carSelect">Choose a car</label>
+      <div class="select-wrap">
+        <select id="carSelect">
+          <option value="axia">Perodua Axia · From RM 80/day</option>
+          <option value="bezza">Perodua Bezza · From RM 110/day</option>
+          <option value="aruz">Perodua Aruz · From RM 180/day</option>
+        </select>
+        <span class="select-chev">▾</span>
+      </div>
+    </div>
+
+    <!-- Showroom stage -->
+    <div class="showroom-stage">
+
+      <!-- Axia -->
+      <div class="showroom-car active" data-car="axia">
+        <div class="showroom-image-wrap">
+          <span class="car-tag">Best Value</span>
+          <div class="showroom-image">
+            <img src="https://www.perodua.com.my/assets/perodua-axia/2023/exterior/Glittering-Silver.png" alt="Perodua Axia"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&q=80';">
+          </div>
+        </div>
+        <div class="showroom-info">
+          <div class="car-class">Compact · 4 pax · Auto · 1.0L</div>
+          <h3>Perodua Axia</h3>
+          <p class="showroom-blurb">Compact daily drive, low fuel use, easy parking. The fan-favourite for couples and small groups.</p>
+          <div class="car-specs">
+            <div><div class="car-spec-label">Low season</div><div class="car-spec-val">RM 80/day</div></div>
+            <div><div class="car-spec-label">Peak season</div><div class="car-spec-val">RM 100/day</div></div>
+            <div><div class="car-spec-label">Capacity</div><div class="car-spec-val">4 pax · 2 bags</div></div>
+            <div><div class="car-spec-label">Deposit</div><div class="car-spec-val">RM 300 refundable</div></div>
+          </div>
+          <div class="showroom-foot">
+            <div class="car-price"><strong>RM 80</strong><small>per day · low season</small></div>
+            <button class="btn btn-primary magnetic js-open-modal" data-tour="rental-axia">Book this car <span class="btn-arrow">→</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bezza -->
+      <div class="showroom-car" data-car="bezza">
+        <div class="showroom-image-wrap">
+          <span class="car-tag popular">Popular</span>
+          <div class="showroom-image">
+            <img src="https://www.perodua.com.my/assets/perodua-bezza/2023/exterior/Glittering-Silver.png" alt="Perodua Bezza"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80';">
+          </div>
+        </div>
+        <div class="showroom-info">
+          <div class="car-class">Sedan · 5 pax · Auto · 1.3L</div>
+          <h3>Perodua Bezza</h3>
+          <p class="showroom-blurb">Compact sedan with proper boot space — comfortable for 4 adults plus full luggage.</p>
+          <div class="car-specs">
+            <div><div class="car-spec-label">Low season</div><div class="car-spec-val">RM 110/day</div></div>
+            <div><div class="car-spec-label">Peak season</div><div class="car-spec-val">RM 140/day</div></div>
+            <div><div class="car-spec-label">Capacity</div><div class="car-spec-val">5 pax · 3 bags</div></div>
+            <div><div class="car-spec-label">Deposit</div><div class="car-spec-val">RM 300 refundable</div></div>
+          </div>
+          <div class="showroom-foot">
+            <div class="car-price"><strong>RM 110</strong><small>per day · low season</small></div>
+            <button class="btn btn-primary magnetic js-open-modal" data-tour="rental-bezza">Book this car <span class="btn-arrow">→</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aruz -->
+      <div class="showroom-car" data-car="aruz">
+        <div class="showroom-image-wrap">
+          <span class="car-tag">Family · 7 Pax</span>
+          <div class="showroom-image">
+            <img src="https://www.perodua.com.my/assets/perodua-aruz/exterior/Pearl-Delight-White.png" alt="Perodua Aruz SUV"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1200&q=80';">
+          </div>
+        </div>
+        <div class="showroom-info">
+          <div class="car-class">Compact SUV · 7 pax · Auto · 1.5L</div>
+          <h3>Perodua Aruz</h3>
+          <p class="showroom-blurb">Compact SUV with 7 seats — ideal for families, group trips, or anyone wanting more ground clearance.</p>
+          <div class="car-specs">
+            <div><div class="car-spec-label">Low season</div><div class="car-spec-val">RM 180/day</div></div>
+            <div><div class="car-spec-label">Peak season</div><div class="car-spec-val">RM 220/day</div></div>
+            <div><div class="car-spec-label">Capacity</div><div class="car-spec-val">7 pax · 5 bags</div></div>
+            <div><div class="car-spec-label">Deposit</div><div class="car-spec-val">RM 500 refundable</div></div>
+          </div>
+          <div class="showroom-foot">
+            <div class="car-price"><strong>RM 180</strong><small>per day · low season</small></div>
+            <button class="btn btn-primary magnetic js-open-modal" data-tour="rental-aruz">Book this car <span class="btn-arrow">→</span></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick indicator dots -->
+    <div class="showroom-dots">
+      <button class="dot active" data-car="axia" aria-label="Show Axia"></button>
+      <button class="dot" data-car="bezza" aria-label="Show Bezza"></button>
+      <button class="dot" data-car="aruz" aria-label="Show Aruz"></button>
+    </div>
+  </div>
+
+  <!-- Rental policy strip -->
+  <div class="rental-policy">
+    <div>
+      <h4>Rental terms</h4>
+      <small>Self-drive policy</small>
+    </div>
+    <ul class="policy-list">
+      <li>Driver age 21+, valid licence (1 year minimum)</li>
+      <li>Comprehensive insurance &amp; collision damage waiver included</li>
+      <li>RM 300 refundable security deposit on collection</li>
+      <li>Free delivery to Langkawi airport, jetty, or hotel</li>
+      <li>Fuel: pickup &amp; return with same level (full-to-full)</li>
+      <li>24/7 roadside assistance number provided</li>
+      <li>Late return: RM 10/hour, max RM 80/day</li>
+      <li>Cancellation: free up to 48 hours before pickup</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==== FAQ ==== -->
+<section class="faq" id="faq">
+  <div class="section-head scroll-reveal">
+    <div class="section-num">07 — FAQ</div>
+    <h2 class="section-title">Everything else<br>you might <em>ask</em>.</h2>
+  </div>
+
+  <div class="faq-grid stagger-children">
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>How do I confirm a booking?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Pick a tour or car from this page, fill in your date/time/pax in the booking sheet, and hit "Book on WhatsApp." Your booking summary auto-fills the chat. We reply within 30 minutes during business hours (8am–10pm Malaysia time). A 30% deposit secures the slot.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>What payment methods do you accept?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>For deposit: online bank transfer (Maybank, CIMB, Public Bank), Touch 'n Go eWallet, or Wise. For balance on the day: cash (MYR), bank transfer, or eWallet. We do not currently accept credit cards or USD/SGD cash.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>What is your cancellation policy?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Tours and rentals can be cancelled free of charge up to 48 hours before the start time — full deposit refund. Within 48 hours, we hold the deposit but allow rescheduling within 30 days at no cost. No-shows forfeit the deposit. We never cancel on you unless there's a weather hazard, in which case we reschedule or refund 100%.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>What happens if it rains?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Light rain: tours run as normal — Langkawi rain is usually short. Heavy rain or storm warning: we proactively reach out the night before to either reschedule, switch to indoor stops (Sky Bridge, Underwater World, museums), or refund. Mangrove kayak and JetSki are weather-dependent and cannot run in stormy conditions.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>Are children allowed on tours?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Yes, tours and transport are family-friendly. Free child seats (booster or full car seat) on request — please let us know the child's age when booking. ATV is age 12+. JetSki passengers must be 6+. Mangrove kayak and sunset cruise welcome all ages with provided life jackets.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>Do you offer halal food options on tours?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Yes. All restaurant stops we recommend on tours are halal-certified or Muslim-friendly by default. Vegetarian, vegan, and gluten-free options are easy to accommodate at most stops — just mention it when booking and we'll route accordingly.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>Where do you pick up from?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Free hotel lobby pickup across Pantai Cenang, Pantai Tengah, Kuah, and Padang Matsirat for tours of 4 hours and above. We also pick up from Langkawi International Airport (LGK) and Kuah Jetty. Pickup outside these zones: small RM 20–40 fuel surcharge depending on distance.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>How does rental fuel work?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Full-to-full. We deliver the car with a full tank — please return it full. If you return with less than full, we refuel at pump price + RM 20 service fee. The RM 300 refundable deposit covers any fuel deficit, damages, or traffic summonses found during inspection.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>Do you provide GPS or Waze setup?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>All cars come with a phone holder &amp; USB charger so you can run Waze or Google Maps on your own phone. We can pre-load a curated map of recommended food, beach, and viewpoint stops on request — sent as a Google Maps shared list before your pickup.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>What if I need to extend my rental?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Just WhatsApp us before the original return time — extensions are easy and charged at the same daily rate. Extra hours (under a full day): RM 10/hour, capped at the daily rate after 8 hours.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>Is the JetSki tour safe for non-swimmers?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Yes. Coast Guard-certified life jackets are mandatory for everyone, swimmers or not. Briefing is given before departure. The route stays within sheltered island channels — no open-sea crossings. A guide jet ski accompanies the group at all times.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <h4>Can I customise a tour beyond what's listed?</h4>
+        <button class="faq-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="faq-a">
+        <p>Absolutely — most of our regulars are repeat custom bookings. Mix transport with hidden waterfalls, late-night durian runs, photography spots at sunrise, or a private temple visit. WhatsApp us your interests and we'll quote a tailored price within an hour.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==== FOOTER ==== -->
+<footer class="footer" id="contact">
+  <div class="footer-cta">
+    <div class="label">Ready when you are</div>
+    <h2>Plan your <em>Langkawi</em> day<br>with someone who lives here.</h2>
+    <div class="footer-cta-actions">
+      <a href="https://wa.me/60123456789?text=Hi%20SS%20Langkawi%20Ventures%2C%20I%27m%20interested%20in%20a%20tour" class="btn btn-on-dark">Chat on WhatsApp <span class="btn-arrow">→</span></a>
+      <a href="tel:+60123456789" class="btn btn-on-dark-ghost">Call +60 12-345 6789</a>
+    </div>
+  </div>
+
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">SS<span class="accent"> · </span>LANGKAWI<span class="accent"> · </span>VENTURES</div>
+      <p>Family-run since 2015. Tours, transport, and self-drive rentals across Langkawi Island. Built on local expertise and honest pricing.</p>
+      <p style="font-size:12px;color:rgba(251,247,238,0.4);">Tourism Malaysia Operator Licence · KPK/LN 1234<br>Public Liability Insurance · Lonpac Insurance Berhad</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul class="footer-list">
+        <li><a href="#about">About us</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#tours">Tours &amp; activities</a></li>
+        <li><a href="#rental">Rental fleet</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Activities</h4>
+      <ul class="footer-list">
+        <li><a href="#tours">Private island tour</a></li>
+        <li><a href="#tours">Mangrove kayak</a></li>
+        <li><a href="#tours">Sunset cruise</a></li>
+        <li><a href="#tours">3-in-1 watersports</a></li>
+        <li><a href="#tours">JetSki island hop</a></li>
+        <li><a href="#tours">ATV trail</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <ul class="footer-list">
+        <li><a href="https://wa.me/60123456789">WhatsApp · +60 12-345 6789</a></li>
+        <li><a href="mailto:hello@sslangkawiventures.com">hello@sslangkawiventures.com</a></li>
+        <li><span>Pantai Cenang, 07000 Langkawi</span></li>
+        <li><span>Open daily 8am – 10pm</span></li>
+        <li><a href="#" target="_blank">Instagram @sslangkawi</a></li>
+        <li><a href="#" target="_blank">Google Reviews</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SS Langkawi Ventures Sdn Bhd · All rights reserved.</span>
+    <span>Crafted with care in Pantai Cenang, Malaysia</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/60123456789" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+</a>
+
+<!-- ==== MODAL ==== -->
+<div class="modal-overlay" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="ink-wipe"></div>
+
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <div class="modal-head-bg" id="modalHeadBg"></div>
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal-eyebrow" id="modalEyebrow">— Featured Tour</div>
+      <h2 id="modalTitle">Tour title</h2>
+      <p class="modal-tagline" id="modalTagline">Tour description</p>
+      <div class="modal-quick-stats" id="modalQuickStats"></div>
+    </div>
+
+    <div class="modal-body">
+      <!-- LEFT: details -->
+      <div class="modal-left">
+        <div class="modal-section-label">What's included</div>
+        <ul class="highlights" id="modalHighlights"></ul>
+
+        <div class="modal-section-label">Tour information</div>
+        <div class="info-grid" id="modalInfoGrid"></div>
+
+        <div class="modal-section-label">What to bring</div>
+        <p style="font-size:14px;color:var(--ink-soft);line-height:1.7;" id="modalBring"></p>
+      </div>
+
+      <!-- RIGHT: booking form -->
+      <div class="modal-right">
+        <div class="modal-section-label">Choose package</div>
+        <div class="pkg-list" id="modalPkgList"></div>
+
+        <div class="modal-section-label">Booking details</div>
+
+        <div class="field">
+          <label for="bookDate">Date</label>
+          <input type="date" id="bookDate">
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="bookTime">Pickup time</label>
+            <select id="bookTime">
+              <option value="06:00">6:00 AM</option>
+              <option value="07:00">7:00 AM</option>
+              <option value="08:00">8:00 AM</option>
+              <option value="09:00" selected>9:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="15:00">3:00 PM</option>
+              <option value="16:00">4:00 PM</option>
+              <option value="17:00">5:00 PM</option>
+              <option value="18:00">6:00 PM</option>
+              <option value="19:00">7:00 PM</option>
+              <option value="20:00">8:00 PM</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>No. of pax</label>
+            <div class="pax-counter">
+              <button class="pax-btn" id="paxMinus" aria-label="Decrease">−</button>
+              <input type="number" class="pax-input" id="paxInput" value="2" min="1" max="20" readonly>
+              <button class="pax-btn" id="paxPlus" aria-label="Increase">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOTAL SUMMARY -->
+        <div class="total-summary">
+          <div class="total-row">
+            <span id="summaryItem">Package</span>
+            <span id="summaryUnit">RM 0</span>
+          </div>
+          <div class="total-row" id="paxRow">
+            <span>× <span id="summaryPax">2</span> pax</span>
+            <span id="summarySubtotal">RM 0</span>
+          </div>
+          <div class="total-row divider grand">
+            <span>Total estimate</span>
+            <span class="total-amount" id="totalAmount">RM 0</span>
+          </div>
+          <div class="total-pricing-note" id="pricingNote"></div>
+        </div>
+
+        <div class="modal-cta-row">
+          <a class="btn btn-wa" id="bookWA" target="_blank">Book on WhatsApp <span class="btn-arrow">→</span></a>
+          <button class="btn btn-gold-deep" id="copySummary">Copy booking summary</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // =========================================
+  // TOUR DATA — drives the modal dynamically
+  // =========================================
+  const tours = {
+    'private': {
+      eyebrow: '03 / Featured Tour',
+      title: 'Private <em>Island</em> Tour',
+      tagline: 'Sedan or MPV with English-speaking driver — your itinerary, your pace, your favourite stops along the way.',
+      headerImg: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&q=80',
+      pricingType: 'per-vehicle',
+      stats: [
+        {label: 'Duration', value: '4 or 8 hours'},
+        {label: 'Group size', value: '1–7 pax'},
+        {label: 'Pickup', value: 'Hotel · Airport · Jetty'},
+        {label: 'Languages', value: 'EN · MS · 中文'}
+      ],
+      highlights: [
+        'English-speaking local driver who knows the back roads',
+        'Fully customisable route — change stops at any time',
+        'Free hotel pickup &amp; drop-off across Pantai Cenang, Tengah, Kuah',
+        'Bottled water, hot/cold towels, AC throughout',
+        'Photo stops at all major viewpoints',
+        'Driver waits at every attraction — no rushing'
+      ],
+      info: [
+        {label: 'Departure', value: 'Hotel pickup'},
+        {label: 'Cancellation', value: 'Free up to 48hr'},
+        {label: 'Min age', value: 'All ages'},
+        {label: 'Difficulty', value: 'Easy'}
+      ],
+      bring: 'Just yourself, sunscreen, and a camera. Bring cash for any optional entrance fees (Sky Bridge cable car, Underwater World, etc) — these are not included as we don\'t mark them up. Light jacket recommended for evening tours.',
+      packages: [
+        {name: 'Sedan · 4 hours', desc: 'Half-day private tour, driver included, flexible landmark stops. Up to 4 pax.', price: 160, maxPax: 4},
+        {name: 'Sedan · 8 hours', desc: 'Full-day itinerary with driver and unlimited stops. Up to 4 pax.', price: 250, maxPax: 4},
+        {name: 'MPV · 4 hours', desc: 'Half-day private tour for groups. MPV with driver, up to 7 pax.', price: 200, maxPax: 7},
+        {name: 'MPV · 8 hours', desc: 'Full-day MPV experience for families and larger parties.', price: 350, maxPax: 7}
+      ]
+    },
+    'mangrove': {
+      eyebrow: '03 / Adventure',
+      title: 'Mangrove <em>Kayak</em> Discovery',
+      tagline: 'Paddle through Kilim Geoforest Park — limestone caves, eagle feeding, bat colonies and quiet hidden lagoons.',
+      headerImg: 'https://images.unsplash.com/photo-1559125148-869baf508c95?w=1600&q=80',
+      pricingType: 'per-pax',
+      stats: [
+        {label: 'Duration', value: '3 or 5 hours'},
+        {label: 'Group size', value: 'Min 2 pax'},
+        {label: 'Difficulty', value: 'Easy–Moderate'},
+        {label: 'Languages', value: 'EN · MS'}
+      ],
+      highlights: [
+        'Single or double kayak with all gear &amp; life jackets',
+        'Certified guide, max 6 kayaks per group',
+        'Stops at Kelawar Cave (bats) and Buaya Cave',
+        'Eagle-feeding photo stop on the open river',
+        'Hotel pickup &amp; drop-off included',
+        'Mineral water, fresh fruit and a beach towel'
+      ],
+      info: [
+        {label: 'Departure', value: 'Kilim Jetty'},
+        {label: 'Cancellation', value: 'Free up to 48hr'},
+        {label: 'Min age', value: '5+ (with adult)'},
+        {label: 'Weather', value: 'Cancelled in storms'}
+      ],
+      bring: 'Swimwear under quick-dry clothes, sandals or aqua shoes, sunscreen, hat. Dry bag is provided for your phone &amp; valuables. Change of clothes for after — most guests get a little wet.',
+      packages: [
+        {name: 'Standard · 3 hours', desc: 'Kilim river loop, eagle feeding, bat cave entry. Light snacks.', price: 90},
+        {name: 'Premium · 5 hours w/ lunch', desc: 'Full Kilim loop + Hole-in-the-Wall floating restaurant lunch.', price: 150},
+        {name: 'Sunset Mangrove · 4 hours', desc: 'Late afternoon paddle into golden hour. Fewer crowds.', price: 120}
+      ]
+    },
+    'sunset': {
+      eyebrow: '03 / Cruise',
+      title: 'Andaman <em>Sunset</em> Cruise',
+      tagline: 'Sail out from Awana Porto Malai for a 2.5-hour catamaran cruise — golden hour, light dinner, and an open bar option.',
+      headerImg: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80',
+      pricingType: 'per-pax',
+      stats: [
+        {label: 'Duration', value: '2.5 hours'},
+        {label: 'Group size', value: 'From 1 pax'},
+        {label: 'Departure', value: 'Awana Porto Malai'},
+        {label: 'Pickup', value: 'Optional add-on'}
+      ],
+      highlights: [
+        'Catamaran with covered deck and open sundeck',
+        'Buffet dinner — local satay, curry, fresh fruit',
+        'Live acoustic music on premium sailings',
+        'Snorkel stop at Pulau Beras Basah included',
+        'Premium tier: open bar (beer, wine, soft drinks)',
+        'Photographer onboard — photos sent next day'
+      ],
+      info: [
+        {label: 'Departure time', value: '4:30 PM daily'},
+        {label: 'Return', value: '~7:00 PM'},
+        {label: 'Min age', value: 'All ages'},
+        {label: 'Cancellation', value: 'Free up to 48hr'}
+      ],
+      bring: 'Light jacket for the sunset breeze, swimwear under your clothes if you plan to snorkel, and a camera — sunsets here are worth a thousand iPhone shots.',
+      packages: [
+        {name: 'Public Cruise · 2.5 hr', desc: 'Shared cruise with light buffet and snorkel stop.', price: 180},
+        {name: 'Premium Cruise w/ dinner', desc: 'Full buffet + open bar (beer, wine, soft drinks).', price: 280},
+        {name: 'Hotel Pickup Add-on', desc: 'Round-trip transport from Pantai Cenang/Tengah hotels.', price: 30}
+      ]
+    },
+    'threein1': {
+      eyebrow: '03 / Watersports',
+      title: '<em>3-in-1</em> Watersports Combo',
+      tagline: 'Three rides bundled, beach-side at Pantai Cenang. Parasailing, jet car ride, banana boat — all in one ticket.',
+      headerImg: 'https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=1600&q=80',
+      pricingType: 'per-pax',
+      stats: [
+        {label: 'Duration', value: '~2 hours'},
+        {label: 'Group size', value: 'Min 2 pax'},
+        {label: 'Location', value: 'Pantai Cenang Beach'},
+        {label: 'Difficulty', value: 'Easy'}
+      ],
+      highlights: [
+        'Parasailing — solo or tandem flight, ~10 min air time',
+        'Jet car (water rocket boat) ride, 15 minutes',
+        'Banana boat with up to 6 riders, 15 minutes',
+        'Coast Guard-approved life jackets for all activities',
+        'On-site briefing and instructor support',
+        'GoPro photos add-on available (RM 50)'
+      ],
+      info: [
+        {label: 'Operating hours', value: '10 AM – 5 PM'},
+        {label: 'Cancellation', value: 'Free up to 48hr'},
+        {label: 'Min age', value: '8+ for parasail'},
+        {label: 'Weather', value: 'Cancelled in storms'}
+      ],
+      bring: 'Swimwear under quick-dry clothes, change of clothes, towel, and waterproof phone case if you want shots. Sunscreen mandatory — beach has zero shade.',
+      packages: [
+        {name: 'Standard combo', desc: 'All 3 activities, standard duration each.', price: 150},
+        {name: 'Combo + GoPro photos', desc: 'Add a GoPro photographer covering all 3 activities.', price: 200}
+      ]
+    },
+    'jetski': {
+      eyebrow: '03 / Adventure',
+      title: 'JetSki <em>Island Hopping</em>',
+      tagline: 'Self-drive jet ski past Pulau Beras Basah, Singa Besar, and Pulau Dayang Bunting — nine checkpoints in 3–4 hours.',
+      headerImg: 'https://images.unsplash.com/photo-1530908295418-a12e326966ba?w=1600&q=80',
+      pricingType: 'per-jetski',
+      stats: [
+        {label: 'Duration', value: '3–4 hours'},
+        {label: 'Group size', value: '2 pax / jet ski'},
+        {label: 'Departure', value: 'Pantai Tengah Beach'},
+        {label: 'Difficulty', value: 'Moderate'}
+      ],
+      highlights: [
+        'Self-drive jet ski (no licence needed, briefing given)',
+        'Lead and tail guide jet skis accompany the group',
+        'Stops at Beras Basah Beach, Singa Besar wildlife park, Pregnant Maiden Lake',
+        'Coast Guard-certified life jackets &amp; dry bag',
+        'Fuel and Marine Park entrance fees included',
+        'Action-cam mount on jet ski — bring your GoPro'
+      ],
+      info: [
+        {label: 'Departure time', value: '9 AM &amp; 1:30 PM'},
+        {label: 'Min driver age', value: '18+ with ID'},
+        {label: 'Pillion age', value: '6+'},
+        {label: 'Weather', value: 'Cancelled in rough seas'}
+      ],
+      bring: 'Swimwear, rash guard if you have one, sunscreen, hat, sunglasses with strap. Bring RM 50 cash per pax for optional Pregnant Maiden Lake entry. Phone in waterproof pouch — provided.',
+      packages: [
+        {name: 'Express · 1 hour loop', desc: 'Quick taste — 3 nearby islands, no lake stop.', price: 350},
+        {name: 'Standard · 3–4 hr · 9 stops', desc: 'Full Marine Park route with all major checkpoints.', price: 750},
+        {name: 'Sunset JetSki · 3 hr', desc: 'Late afternoon departure ending in golden hour.', price: 850}
+      ]
+    },
+    'atv': {
+      eyebrow: '03 / Adrenaline',
+      title: 'ATV <em>Off-Road</em> Trail',
+      tagline: 'Solo or tandem ATV through paddy fields, jungle tracks, and rubber plantations — finishing at a hidden waterfall stop.',
+      headerImg: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1600&q=80',
+      pricingType: 'per-pax',
+      stats: [
+        {label: 'Duration', value: '1 to 4 hours'},
+        {label: 'Group size', value: 'From 1 pax'},
+        {label: 'Min age', value: '12+'},
+        {label: 'Difficulty', value: 'Easy–Moderate'}
+      ],
+      highlights: [
+        'Modern 4-stroke ATVs, fully serviced',
+        'Helmet, gloves, and goggles provided',
+        '15-minute riding briefing &amp; practice loop',
+        'Lead guide and sweep guide for safety',
+        'Photo stop at hidden waterfall (Half Day option)',
+        'Free GoPro headcam rental (Half Day option)'
+      ],
+      info: [
+        {label: 'Operating hours', value: '8 AM – 5 PM'},
+        {label: 'Cancellation', value: 'Free up to 48hr'},
+        {label: 'Min height', value: '140 cm'},
+        {label: 'Difficulty', value: 'Easy'}
+      ],
+      bring: 'Closed-toe shoes (mandatory), long pants, t-shirt you don\'t mind getting dusty. We provide dust masks. Change of clothes recommended for after.',
+      packages: [
+        {name: '1 hour Trail', desc: 'Paddy field and rubber plantation loop.', price: 150},
+        {name: '2 hour Adventure', desc: 'Adds jungle track and viewpoint stop.', price: 250},
+        {name: 'Half Day · 4 hours', desc: 'Full circuit ending at hidden waterfall + free GoPro.', price: 350}
+      ]
+    },
+    // RENTALS as bookable items
+    'rental-axia': {
+      eyebrow: '06 / Rental · Compact',
+      title: 'Perodua <em>Axia</em>',
+      tagline: 'Compact daily drive, low fuel use, easy parking. The fan-favourite Langkawi rental for couples and small groups.',
+      headerImg: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1600&q=80',
+      pricingType: 'per-day',
+      stats: [
+        {label: 'Type', value: 'Compact hatchback'},
+        {label: 'Capacity', value: '4 pax · 2 bags'},
+        {label: 'Transmission', value: 'Auto'},
+        {label: 'Fuel', value: 'Petrol RON95'}
+      ],
+      highlights: [
+        'Free delivery to Langkawi airport, jetty, or hotel',
+        'Comprehensive insurance &amp; collision damage waiver',
+        'Phone holder &amp; USB charger fitted',
+        '24/7 roadside assistance number',
+        'Same-fuel-level return (full-to-full)',
+        'Free child seat on request'
+      ],
+      info: [
+        {label: 'Min driver age', value: '21+'},
+        {label: 'Licence', value: '1 yr min · IDP ok'},
+        {label: 'Deposit', value: 'RM 300 refundable'},
+        {label: 'Cancellation', value: 'Free 48hr'}
+      ],
+      bring: 'Driving licence (original or international permit), passport for ID copy, RM 300 cash or card hold for the refundable security deposit. We do the rest.',
+      packages: [
+        {name: 'Low Season · per day', desc: 'Mon–Thu and outside Malaysian school holidays.', price: 80},
+        {name: 'Peak Season · per day', desc: 'Weekends, school holidays, and public holidays.', price: 100}
+      ]
+    },
+    'rental-bezza': {
+      eyebrow: '06 / Rental · Sedan',
+      title: 'Perodua <em>Bezza</em>',
+      tagline: 'Compact sedan with proper boot space — comfortable for 4 adults plus full luggage.',
+      headerImg: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1600&q=80',
+      pricingType: 'per-day',
+      stats: [
+        {label: 'Type', value: 'Sedan'},
+        {label: 'Capacity', value: '5 pax · 3 bags'},
+        {label: 'Transmission', value: 'Auto'},
+        {label: 'Fuel', value: 'Petrol RON95'}
+      ],
+      highlights: [
+        'Free delivery to airport, jetty, or hotel',
+        'Comprehensive insurance &amp; CDW',
+        'Phone holder, USB charger, dashcam fitted',
+        'Cruise control on highway sections',
+        '24/7 roadside assistance',
+        'Free child seat on request'
+      ],
+      info: [
+        {label: 'Min driver age', value: '21+'},
+        {label: 'Licence', value: '1 yr min · IDP ok'},
+        {label: 'Deposit', value: 'RM 300 refundable'},
+        {label: 'Cancellation', value: 'Free 48hr'}
+      ],
+      bring: 'Driving licence (original or international permit), passport for ID copy, RM 300 cash or card hold for the refundable security deposit.',
+      packages: [
+        {name: 'Low Season · per day', desc: 'Mon–Thu and outside Malaysian school holidays.', price: 110},
+        {name: 'Peak Season · per day', desc: 'Weekends, school holidays, and public holidays.', price: 140}
+      ]
+    },
+    'rental-aruz': {
+      eyebrow: '06 / Rental · 7-Seater',
+      title: 'Perodua <em>Aruz</em>',
+      tagline: 'Compact SUV with 7 seats — ideal for families, group trips, or anyone wanting more ground clearance for inland routes.',
+      headerImg: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1600&q=80',
+      pricingType: 'per-day',
+      stats: [
+        {label: 'Type', value: 'Compact SUV'},
+        {label: 'Capacity', value: '7 pax · 5 bags'},
+        {label: 'Transmission', value: 'Auto'},
+        {label: 'Fuel', value: 'Petrol RON95 · 1.5L'}
+      ],
+      highlights: [
+        'Free delivery to airport, jetty, or hotel',
+        'Comprehensive insurance &amp; CDW',
+        'Roof rails for extra luggage / surfboards',
+        'Reverse camera + parking sensors',
+        '24/7 roadside assistance',
+        'Free child seat on request'
+      ],
+      info: [
+        {label: 'Min driver age', value: '23+'},
+        {label: 'Licence', value: '2 yr min · IDP ok'},
+        {label: 'Deposit', value: 'RM 500 refundable'},
+        {label: 'Cancellation', value: 'Free 48hr'}
+      ],
+      bring: 'Driving licence (original or international permit), passport for ID copy, RM 500 cash or card hold for the refundable security deposit.',
+      packages: [
+        {name: 'Low Season · per day', desc: 'Mon–Thu and outside Malaysian school holidays.', price: 180},
+        {name: 'Peak Season · per day', desc: 'Weekends, school holidays, and public holidays.', price: 220}
+      ]
+    }
+  };
+
+  // =========================================
+  // STATE
+  // =========================================
+  let state = {
+    tourId: 'private',
+    pkgIndex: 0,
+    pax: 2,
+    date: '',
+    time: '09:00'
+  };
+
+  // Set today as default min date and value
+  const today = new Date();
+  const todayStr = today.toISOString().split('T')[0];
+  document.getElementById('bookDate').min = todayStr;
+  document.getElementById('bookDate').value = todayStr;
+  state.date = todayStr;
+
+  // =========================================
+  // MODAL OPEN / CLOSE WITH INK ANIMATION
+  // =========================================
+  const modal = document.getElementById('modal');
+  const modalClose = document.getElementById('modalClose');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+
+  function openModal(e, tourId) {
+    state.tourId = tourId || e.currentTarget.dataset.tour || 'private';
+    state.pkgIndex = 0;
+    populateModal(state.tourId);
+
+    const x = (e.clientX !== undefined) ? e.clientX : window.innerWidth / 2;
+    const y = (e.clientY !== undefined) ? e.clientY : window.innerHeight / 2;
+    modal.style.setProperty('--x', x + 'px');
+    modal.style.setProperty('--y', y + 'px');
+
+    modal.classList.remove('closing');
+    modal.classList.add('opening');
+    document.body.classList.add('modal-open');
+
+    setTimeout(() => modal.classList.add('open'), 50);
+    setTimeout(() => modal.classList.remove('opening'), 900);
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.classList.add('closing');
+    setTimeout(() => {
+      modal.classList.remove('closing');
+      document.body.classList.remove('modal-open');
+    }, 700);
+  }
+
+  document.querySelectorAll('.js-open-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openModal(e, btn.dataset.tour);
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+
+  // =========================================
+  // POPULATE MODAL
+  // =========================================
+  function populateModal(tourId) {
+    const t = tours[tourId];
+    if (!t) return;
+
+    document.getElementById('modalEyebrow').innerHTML = t.eyebrow;
+    document.getElementById('modalTitle').innerHTML = t.title;
+    document.getElementById('modalTagline').innerHTML = t.tagline;
+    document.getElementById('modalHeadBg').style.backgroundImage = `url('${t.headerImg}')`;
+
+    // Quick stats
+    const qs = document.getElementById('modalQuickStats');
+    qs.innerHTML = t.stats.map(s => `<div><strong>${s.value}</strong>${s.label}</div>`).join('');
+
+    // Highlights
+    const hl = document.getElementById('modalHighlights');
+    hl.innerHTML = t.highlights.map((h, i) => `<li style="--i:${i}">${h}</li>`).join('');
+
+    // Info grid
+    const ig = document.getElementById('modalInfoGrid');
+    ig.innerHTML = t.info.map(i => `<div><div class="info-label">${i.label}</div><div class="info-val">${i.value}</div></div>`).join('');
+
+    // Bring text
+    document.getElementById('modalBring').textContent = t.bring;
+
+    // Packages
+    const pkgList = document.getElementById('modalPkgList');
+    pkgList.innerHTML = t.packages.map((p, i) => {
+      const unit = t.pricingType === 'per-pax' ? '/ pax'
+                : t.pricingType === 'per-vehicle' ? `/ ${p.maxPax || 4} pax max`
+                : t.pricingType === 'per-jetski' ? '/ jet ski (2 pax)'
+                : t.pricingType === 'per-day' ? '/ day'
+                : '';
+      return `
+        <div class="pkg ${i === 0 ? 'selected' : ''}" data-idx="${i}">
+          <div class="pkg-radio"></div>
+          <div class="pkg-info">
+            <div class="pkg-name">${p.name}</div>
+            <div class="pkg-desc">${p.desc}</div>
+          </div>
+          <div class="pkg-price-tag">RM ${p.price}<small>${unit}</small></div>
+        </div>
+      `;
+    }).join('');
+
+    // Wire package clicks
+    pkgList.querySelectorAll('.pkg').forEach(el => {
+      el.addEventListener('click', () => {
+        pkgList.querySelectorAll('.pkg').forEach(x => x.classList.remove('selected'));
+        el.classList.add('selected');
+        state.pkgIndex = parseInt(el.dataset.idx);
+        // For per-vehicle, clamp pax to max
+        const pkg = tours[state.tourId].packages[state.pkgIndex];
+        if (tours[state.tourId].pricingType === 'per-vehicle' && pkg.maxPax) {
+          if (state.pax > pkg.maxPax) {
+            state.pax = pkg.maxPax;
+            document.getElementById('paxInput').value = state.pax;
+          }
+        }
+        updateTotal();
+      });
+    });
+
+    // Reset pax based on pricing type
+    if (t.pricingType === 'per-jetski') {
+      state.pax = 2;
+    } else if (t.pricingType === 'per-day') {
+      state.pax = 1;
+    } else {
+      state.pax = 2;
+    }
+    document.getElementById('paxInput').value = state.pax;
+
+    updateTotal();
+  }
+
+  // =========================================
+  // PAX COUNTER
+  // =========================================
+  document.getElementById('paxMinus').addEventListener('click', () => {
+    if (state.pax > 1) {
+      state.pax--;
+      document.getElementById('paxInput').value = state.pax;
+      updateTotal();
+    }
+  });
+  document.getElementById('paxPlus').addEventListener('click', () => {
+    const t = tours[state.tourId];
+    const pkg = t.packages[state.pkgIndex];
+    let max = 20;
+    if (t.pricingType === 'per-vehicle' && pkg.maxPax) max = pkg.maxPax;
+    if (state.pax < max) {
+      state.pax++;
+      document.getElementById('paxInput').value = state.pax;
+      updateTotal();
+    }
+  });
+
+  // Date / time inputs
+  document.getElementById('bookDate').addEventListener('change', (e) => {
+    state.date = e.target.value;
+    updateTotal();
+  });
+  document.getElementById('bookTime').addEventListener('change', (e) => {
+    state.time = e.target.value;
+    updateTotal();
+  });
+
+  // =========================================
+  // CALCULATE TOTAL
+  // =========================================
+  function updateTotal() {
+    const t = tours[state.tourId];
+    const pkg = t.packages[state.pkgIndex];
+    let total = 0;
+    let unitLabel = '';
+    let subtotalShow = '';
+    let paxRowShow = true;
+    let pricingNote = '';
+
+    if (t.pricingType === 'per-pax') {
+      total = pkg.price * state.pax;
+      unitLabel = `RM ${pkg.price} per pax`;
+      subtotalShow = `RM ${total}`;
+      pricingNote = `${pkg.name} · RM ${pkg.price} × ${state.pax} pax. Total includes all listed inclusions. Quoted before optional add-ons (entrance fees, photographer).`;
+    } else if (t.pricingType === 'per-vehicle') {
+      total = pkg.price;
+      unitLabel = `RM ${pkg.price} per vehicle (max ${pkg.maxPax} pax)`;
+      subtotalShow = `RM ${total}`;
+      paxRowShow = false;
+      pricingNote = `${pkg.name} · flat rate per vehicle, you can fit up to ${pkg.maxPax} pax for the same price.`;
+    } else if (t.pricingType === 'per-jetski') {
+      const jetskis = Math.ceil(state.pax / 2);
+      total = pkg.price * jetskis;
+      unitLabel = `RM ${pkg.price} per jet ski`;
+      subtotalShow = `${jetskis} jet ski${jetskis > 1 ? 's' : ''} · RM ${total}`;
+      pricingNote = `${pkg.name} · 1 jet ski seats 2 pax. ${state.pax} pax = ${jetskis} jet ski${jetskis > 1 ? 's' : ''} × RM ${pkg.price}.`;
+    } else if (t.pricingType === 'per-day') {
+      total = pkg.price;
+      unitLabel = `RM ${pkg.price} per day`;
+      subtotalShow = `RM ${total}`;
+      paxRowShow = false;
+      pricingNote = `${pkg.name}. Multi-day rentals: same daily rate. Confirm pickup &amp; return dates on WhatsApp.`;
+    }
+
+    document.getElementById('summaryItem').textContent = pkg.name;
+    document.getElementById('summaryUnit').textContent = unitLabel;
+    document.getElementById('summaryPax').textContent = state.pax;
+    document.getElementById('summarySubtotal').textContent = subtotalShow;
+    document.getElementById('paxRow').style.display = paxRowShow ? 'flex' : 'none';
+    document.getElementById('totalAmount').textContent = `RM ${total}`;
+    document.getElementById('pricingNote').textContent = pricingNote;
+
+    // Update WhatsApp link with pre-filled message
+    updateWhatsAppLink(total, pkg);
+  }
+
+  function updateWhatsAppLink(total, pkg) {
+    const t = tours[state.tourId];
+    const cleanTitle = t.title.replace(/<[^>]*>/g, '');
+    const dateText = state.date ? new Date(state.date).toDateString() : 'TBD';
+    const timeText = formatTime(state.time);
+
+    const msg = `Hi SS Langkawi Ventures, I'd like to book:
+
+📌 ${cleanTitle}
+📦 Package: ${pkg.name}
+📅 Date: ${dateText}
+🕐 Time: ${timeText}
+👥 Pax: ${state.pax}
+💰 Estimate: RM ${total}
+
+Please confirm availability. Thanks!`;
+
+    const url = `https://wa.me/60123456789?text=${encodeURIComponent(msg)}`;
+    document.getElementById('bookWA').href = url;
+  }
+
+  function formatTime(t) {
+    const [h, m] = t.split(':').map(Number);
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    const h12 = h % 12 || 12;
+    return `${h12}:${m.toString().padStart(2, '0')} ${ampm}`;
+  }
+
+  // Copy summary to clipboard
+  document.getElementById('copySummary').addEventListener('click', (e) => {
+    const t = tours[state.tourId];
+    const pkg = t.packages[state.pkgIndex];
+    const dateText = state.date ? new Date(state.date).toDateString() : 'TBD';
+    const total = document.getElementById('totalAmount').textContent;
+    const text = `${t.title.replace(/<[^>]*>/g, '')}\nPackage: ${pkg.name}\nDate: ${dateText}\nTime: ${formatTime(state.time)}\nPax: ${state.pax}\nTotal: ${total}`;
+
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = e.currentTarget;
+      const orig = btn.innerHTML;
+      btn.innerHTML = 'Copied! ✓';
+      setTimeout(() => btn.innerHTML = orig, 1800);
+    });
+  });
+
+  // =========================================
+  // MOBILE MENU
+  // =========================================
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuBtn.querySelector('.icon').textContent = mobileMenu.classList.contains('open') ? '✕' : '☰';
+    });
+    mobileMenu.querySelectorAll('[data-close]').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuBtn.querySelector('.icon').textContent = '☰';
+      });
+    });
+  }
+
+  // =========================================
+  // RENTAL TABS
+  // =========================================
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+
+  // =========================================
+  // SHOWROOM — switch cars via dropdown or dots
+  // =========================================
+  const carSelect = document.getElementById('carSelect');
+  const showroomCars = document.querySelectorAll('.showroom-car');
+  const showroomDots = document.querySelectorAll('.showroom-dots .dot');
+
+  function showCar(carId) {
+    const current = document.querySelector('.showroom-car.active');
+    const next = document.querySelector(`.showroom-car[data-car="${carId}"]`);
+    if (!next || current === next) return;
+
+    if (current) {
+      current.classList.add('exiting');
+      current.classList.remove('active');
+      setTimeout(() => current.classList.remove('exiting'), 700);
+    }
+    setTimeout(() => {
+      next.classList.add('active');
+    }, 50);
+
+    showroomDots.forEach(d => d.classList.toggle('active', d.dataset.car === carId));
+    if (carSelect && carSelect.value !== carId) carSelect.value = carId;
+  }
+
+  if (carSelect) {
+    carSelect.addEventListener('change', (e) => showCar(e.target.value));
+  }
+  showroomDots.forEach(d => {
+    d.addEventListener('click', () => showCar(d.dataset.car));
+  });
+
+  // =========================================
+  // REVIEWS HORIZONTAL CAROUSEL — sync dots with scroll position
+  // =========================================
+  const reviewsGrid = document.getElementById('reviewsGrid');
+  const reviewDots = document.querySelectorAll('.r-dot');
+  if (reviewsGrid && reviewDots.length) {
+    const reviewCards = reviewsGrid.querySelectorAll('.review-card');
+    reviewsGrid.addEventListener('scroll', () => {
+      const scrollLeft = reviewsGrid.scrollLeft;
+      const cardWidth = reviewCards[0]?.offsetWidth + 16; // card + gap
+      const idx = Math.round(scrollLeft / cardWidth);
+      reviewDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, { passive: true });
+    // Click a dot to scroll to that card
+    reviewDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        const cardWidth = reviewCards[0]?.offsetWidth + 16;
+        reviewsGrid.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
+      });
+    });
+  }
+
+  // =========================================
+  // FAQ ACCORDION
+  // =========================================
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      item.classList.toggle('open');
+      const tog = item.querySelector('.faq-toggle');
+      tog.textContent = item.classList.contains('open') ? '×' : '+';
+    });
+  });
+
+  // =========================================
+  // PARALLAX HERO ISLAND BACKGROUND
+  // =========================================
+  const heroEl = document.querySelector('.hero');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 800 || !heroEl) return;
+    heroEl.style.setProperty('--hero-parallax', `${y * 0.15}px`);
+  }, { passive: true });
+
+  // =========================================
+  // SCROLL-TRIGGERED REVEAL — IntersectionObserver
+  // Sections fade-up as they enter viewport
+  // Section numbers' underlines draw in
+  // =========================================
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.scroll-reveal, .stagger-children').forEach(el => {
+    revealObserver.observe(el);
+  });
+
+  // =========================================
+  // STAT COUNTER ANIMATION
+  // Numbers count up from 0 to target when in view
+  // =========================================
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.count);
+    const decimal = parseInt(el.dataset.decimal) || 0;
+    const suffix = el.dataset.suffix || '';
+    const duration = 1600;
+    const startTime = performance.now();
+
+    function step(time) {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // easeOutCubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = target * eased;
+      el.textContent = (decimal > 0 ? value.toFixed(decimal) : Math.floor(value)) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = (decimal > 0 ? target.toFixed(decimal) : target) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  // =========================================
+  // MAGNETIC BUTTONS — buttons gently follow cursor
+  // =========================================
+  document.querySelectorAll('.magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.18}px, ${y * 0.28}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+
+  // =========================================
+  // ACTIVITY CARDS — 3D tilt + cursor spotlight
+  // =========================================
+  const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  if (!isCoarsePointer) {
+    document.querySelectorAll('.activity').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        const rotateY = (x - 0.5) * 8;
+        const rotateX = (0.5 - y) * 8;
+        card.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.015)`;
+        card.style.setProperty('--mx', `${x * 100}%`);
+        card.style.setProperty('--my', `${y * 100}%`);
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // Init total on load
+  populateModal('private');
+</script>
+</body>
+</html>
