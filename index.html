@@ -2152,8 +2152,15 @@
     .showroom-car { inset: 24px; grid-template-columns: 1fr; gap: 20px; align-items: start; }
     .showroom-image-wrap { height: 220px; }
     .showroom-info h3 { font-size: 28px; }
-    .showroom-foot { flex-direction: column; align-items: stretch; }
-    .showroom-foot .btn { justify-content: center; }
+    .showroom-foot { flex-direction: column; align-items: stretch; width: 100%; }
+    .showroom-foot .btn {
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      padding: 14px 18px;
+      letter-spacing: 0.14em;
+      box-sizing: border-box;
+    }
 
     .reviews-grid {
       grid-template-columns: none;
@@ -2215,6 +2222,8 @@
     .pkg { grid-template-columns: auto 1fr; gap: 12px; }
     .pkg-price-tag { grid-column: 2; text-align: left; }
     .total-row.grand .total-amount { font-size: 26px; }
+    .hide-narrow { display: none; }
+    .showroom-foot .btn { padding: 13px 14px; font-size: 12px; letter-spacing: 0.12em; }
   }
 </style>
 </head>
@@ -2606,8 +2615,8 @@
     <div class="section-num">06 — Rental fleet</div>
     <h2 class="section-title">Drive <em>yourself</em>,<br>or let us drive you.</h2>
     <div class="tabs">
-      <button class="tab active">Self Drive</button>
-      <button class="tab">With Driver</button>
+      <button class="tab active" data-size="small">Small · 4–6 pax</button>
+      <button class="tab" data-size="big">Big · 7+ pax</button>
     </div>
   </div>
 
@@ -2617,9 +2626,9 @@
       <label for="carSelect">Choose a car</label>
       <div class="select-wrap">
         <select id="carSelect">
-          <option value="axia">Perodua Axia · From RM 80/day</option>
-          <option value="bezza">Perodua Bezza · From RM 110/day</option>
-          <option value="aruz">Perodua Aruz · From RM 180/day</option>
+          <option value="axia" data-size="small">Perodua Axia · From RM 80/day</option>
+          <option value="bezza" data-size="small">Perodua Bezza · From RM 110/day</option>
+          <option value="aruz" data-size="big">Perodua Aruz · From RM 180/day</option>
         </select>
         <span class="select-chev">▾</span>
       </div>
@@ -2649,7 +2658,7 @@
           </div>
           <div class="showroom-foot">
             <div class="car-price"><strong>RM 80</strong><small>per day · low season</small></div>
-            <button class="btn btn-primary magnetic js-open-modal" data-tour="rental-axia">Book this car <span class="btn-arrow">→</span></button>
+            <button class="btn btn-primary magnetic js-open-modal" data-tour="rental-axia">Book<span class="hide-narrow"> this car</span> <span class="btn-arrow">→</span></button>
           </div>
         </div>
       </div>
@@ -2675,7 +2684,7 @@
           </div>
           <div class="showroom-foot">
             <div class="car-price"><strong>RM 110</strong><small>per day · low season</small></div>
-            <button class="btn btn-primary magnetic js-open-modal" data-tour="rental-bezza">Book this car <span class="btn-arrow">→</span></button>
+            <button class="btn btn-primary magnetic js-open-modal" data-tour="rental-bezza">Book<span class="hide-narrow"> this car</span> <span class="btn-arrow">→</span></button>
           </div>
         </div>
       </div>
@@ -2701,7 +2710,7 @@
           </div>
           <div class="showroom-foot">
             <div class="car-price"><strong>RM 180</strong><small>per day · low season</small></div>
-            <button class="btn btn-primary magnetic js-open-modal" data-tour="rental-aruz">Book this car <span class="btn-arrow">→</span></button>
+            <button class="btn btn-primary magnetic js-open-modal" data-tour="rental-aruz">Book<span class="hide-narrow"> this car</span> <span class="btn-arrow">→</span></button>
           </div>
         </div>
       </div>
@@ -2710,9 +2719,9 @@
 
     <!-- Quick indicator dots -->
     <div class="showroom-dots">
-      <button class="dot active" data-car="axia" aria-label="Show Axia"></button>
-      <button class="dot" data-car="bezza" aria-label="Show Bezza"></button>
-      <button class="dot" data-car="aruz" aria-label="Show Aruz"></button>
+      <button class="dot active" data-car="axia" data-size="small" aria-label="Show Axia"></button>
+      <button class="dot" data-car="bezza" data-size="small" aria-label="Show Bezza"></button>
+      <button class="dot" data-car="aruz" data-size="big" aria-label="Show Aruz"></button>
     </div>
   </div>
 
@@ -3613,16 +3622,6 @@ Please confirm availability. Thanks!`;
   }
 
   // =========================================
-  // RENTAL TABS
-  // =========================================
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-    });
-  });
-
-  // =========================================
   // SHOWROOM — switch cars via dropdown or dots
   // =========================================
   const carSelect = document.getElementById('carSelect');
@@ -3653,6 +3652,43 @@ Please confirm availability. Thanks!`;
   showroomDots.forEach(d => {
     d.addEventListener('click', () => showCar(d.dataset.car));
   });
+
+  // =========================================
+  // RENTAL TABS — filter by car size (Small 4–6 pax / Big 7+ pax)
+  // =========================================
+  function applyCategory(size) {
+    if (!carSelect) return;
+    // Filter dropdown options
+    Array.from(carSelect.options).forEach(opt => {
+      opt.hidden = opt.dataset.size !== size;
+    });
+    // Filter dots
+    showroomDots.forEach(dot => {
+      dot.style.display = dot.dataset.size === size ? '' : 'none';
+    });
+    // If the currently active car is not in this category, switch to first matching
+    const currentCar = document.querySelector('.showroom-car.active')?.dataset.car;
+    const currentOpt = carSelect.querySelector(`option[value="${currentCar}"]`);
+    if (!currentOpt || currentOpt.dataset.size !== size) {
+      const firstMatch = Array.from(carSelect.options).find(o => o.dataset.size === size);
+      if (firstMatch) {
+        carSelect.value = firstMatch.value;
+        showCar(firstMatch.value);
+      }
+    }
+  }
+
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const size = tab.dataset.size;
+      if (size) applyCategory(size);
+    });
+  });
+
+  // Initial filter — default tab is "Small Car · 4–6 pax"
+  applyCategory('small');
 
   // =========================================
   // REVIEWS HORIZONTAL CAROUSEL — sync dots with scroll position
