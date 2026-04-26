@@ -52,7 +52,8 @@
   /* NAV */
   .nav-shell{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 28px;background:#fff;border-bottom:1px solid transparent;transition:box-shadow .3s, border-color .3s, padding .3s;animation:fadeDown .8s .1s cubic-bezier(.2,.7,.2,1) backwards}
   .nav-shell.scrolled{box-shadow:0 6px 24px rgba(11,16,32,.06);border-color:var(--line);padding:10px 28px}
-  .logo{font-family:'Instrument Serif',serif;font-size:32px;letter-spacing:-.5px;font-style:italic;color:var(--ink);display:flex;align-items:center;gap:8px}
+  .logo{font-family:'Instrument Serif',serif;font-size:32px;letter-spacing:-.5px;font-style:italic;color:var(--ink);display:flex;align-items:center;gap:10px}
+  .logo .logo-mark{width:36px;height:36px;object-fit:contain;display:block}
   .logo::after{content:".";color:var(--accent)}
   .logo .badge-mini{background:var(--accent);color:#fff;font-family:'Manrope';font-style:normal;font-size:10px;font-weight:800;padding:3px 7px;border-radius:6px;letter-spacing:.05em}
   .nav-links{display:flex;gap:26px;list-style:none;font-size:14.5px;font-weight:500;color:var(--ink);margin-left:auto;margin-right:auto}
@@ -850,13 +851,13 @@
   </div>
   <div class="right">
     <a href="tel:+601126610913"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg> +60 11‑2661 0913</a>
-    <a href="mailto:hello@sslangkawi.my"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> hello@sslangkawi.my</a>
+    <a href="mailto:mietravelntour@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> mietravelntour@gmail.com</a>
   </div>
 </div>
 
 <!-- NAV -->
 <header class="nav-shell" id="navShell">
-  <a href="#" class="logo">SS Langkawi <span class="badge-mini">VENTURES</span></a>
+  <a href="#" class="logo"><img src="assets/logo.png" alt="SS Langkawi Ventures logo" class="logo-mark">SS Langkawi <span class="badge-mini">VENTURES</span></a>
   <ul class="nav-links">
     <li><a href="#" class="active" data-i18n="nav.home">Home</a></li>
     <li><a href="#services" data-i18n="nav.services">Services</a></li>
@@ -1469,9 +1470,9 @@
           <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg></div>
           <div><div class="lbl" data-i18n="contact.phone">Phone</div><div class="val">+60 11‑2661 0913</div></div>
         </a>
-        <a class="contact-item reveal delay-4" data-anim href="mailto:hello@sslangkawi.my">
+        <a class="contact-item reveal delay-4" data-anim href="mailto:mietravelntour@gmail.com">
           <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="lbl" data-i18n="contact.email">Email</div><div class="val">hello@sslangkawi.my</div></div>
+          <div><div class="lbl" data-i18n="contact.email">Email</div><div class="val">mietravelntour@gmail.com</div></div>
         </a>
         <div class="contact-item reveal delay-4" data-anim style="cursor:default">
           <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -1532,7 +1533,7 @@
       <h5 data-i18n="foot.contact">Contact</h5>
       <a href="tel:+601126610913">+60 11‑2661 0913</a>
       <a href="https://wa.me/601126610913">WhatsApp</a>
-      <a href="mailto:hello@sslangkawi.my">hello@sslangkawi.my</a>
+      <a href="mailto:mietravelntour@gmail.com">mietravelntour@gmail.com</a>
       <p style="margin-top:8px">Lot 12, Jalan Raja,<br>Pekan Rabu, 05300<br>Alor Setar, Kedah</p>
     </div>
     <div class="foot-col">
