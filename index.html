@@ -641,6 +641,28 @@
   .inc .lbl{font-weight:700;font-size:14.5px;color:var(--ink);line-height:1.3}
   .inc .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
 
+  /* PACKAGE POSTER BOARD */
+  .poster-packages{padding:0 28px 70px;max-width:1280px;margin:0 auto}
+  .poster-packages .head{text-align:center;margin-bottom:28px}
+  .poster-packages .head .eyebrow{color:var(--accent)}
+  .poster-packages .head h2{font-size:clamp(28px,2.8vw,42px);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+  .poster-packages .head .lead{max-width:720px;margin:10px auto 0;color:var(--muted);font-size:14.5px;line-height:1.6}
+  .poster-scroll-wrap{position:relative}
+  .poster-controls{display:flex;justify-content:flex-end;gap:8px;margin-bottom:10px}
+  .poster-nav{width:38px;height:38px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);font-size:18px;line-height:1;cursor:pointer;transition:all .2s}
+  .poster-nav:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .poster-grid{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:6px}
+  .poster-grid::-webkit-scrollbar{height:8px}
+  .poster-grid::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
+  .poster-grid::-webkit-scrollbar-track{background:#f1f5f9;border-radius:999px}
+  .poster-card{flex:0 0 calc((100% - 36px)/3);min-width:280px;scroll-snap-align:start;background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px}
+  .poster-media{aspect-ratio:709/1024;border-radius:14px;border:2px dashed #cbd5e1;background:linear-gradient(135deg,#f8fafc,#eef2ff);display:grid;place-items:center;padding:12px;text-align:center;overflow:hidden}
+  .poster-media img{width:100%;height:100%;object-fit:contain;border-radius:10px;background:#fff}
+  .poster-media span{font-weight:700;color:#475569;font-size:15px;line-height:1.45}
+  .poster-meta{font-size:13px;color:var(--muted)}
+  .poster-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border:none;border-radius:12px;background:var(--ink);color:#fff;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;transition:transform .2s, background .2s}
+  .poster-cta:hover{background:var(--accent);transform:translateY(-2px)}
+
   /* REQUIREMENTS */
   .reqs{padding:60px 28px;max-width:1280px;margin:0 auto}
   .reqs .head{text-align:center;margin-bottom:40px}
@@ -737,6 +759,7 @@
     .svc-head .desc{justify-self:start}
     .pricing-grid{grid-template-columns:1fr 1fr}
     .price-card.featured{grid-column:1/-1}
+    .poster-card{flex-basis:calc((100% - 18px)/2)}
     .reqs-grid{grid-template-columns:1fr 1fr}
     .inclusions{grid-template-columns:1fr 1fr}
     .contact-grid{grid-template-columns:1fr;padding:40px}
@@ -801,6 +824,9 @@
     .pricing{padding:60px 18px}
     .pricing-grid{grid-template-columns:1fr}
     .price-card.featured{grid-column:auto}
+    .poster-packages{padding:0 18px 50px}
+    .poster-controls{justify-content:center}
+    .poster-card{flex-basis:88%}
     .inclusions{grid-template-columns:1fr;padding:20px}
     .reqs-grid{grid-template-columns:1fr 1fr}
     .reqs{padding:50px 18px}
@@ -1113,7 +1139,7 @@
         <div class="pkg-grid">
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 100-150</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 350</span></div>
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 1,200</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 650</span></div>
         </div>
         <div class="extra-note" data-i18n-html="extra.note" data-pax="14" data-rate="100">Extra hour <strong>RM 100</strong> · Up to 14 pax</div>
         <button class="view-btn" onclick="openModal('luxuryVan')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
@@ -1128,8 +1154,6 @@
           <span data-i18n="vt.cat.vanFlagship">Premium VIP Van · 7 pax</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 500-1000</span></div>
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 700</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 1,200</span></div>
         </div>
         <div class="extra-note" data-i18n-html="extra.note" data-pax="7" data-rate="200">Extra hour <strong>RM 200</strong> · Up to 7 pax</div>
@@ -1142,14 +1166,12 @@
       <div class="body">
         <div class="row1"><span class="name">Hyundai Starex</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span>Group Van · 10 pax</span>
+          <span>Group Van · 11 pax</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 130-200</span></div>
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 450</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 650</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="10" data-rate="100">Extra hour <strong>RM 100</strong> · Up to 10 pax</div>
+        <div class="extra-note" data-i18n-html="extra.note" data-pax="11" data-rate="100">Extra hour <strong>RM 100</strong> · Up to 11 pax</div>
         <button class="view-btn" onclick="openModal('starex')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1157,7 +1179,7 @@
     <article class="card reveal delay-2" data-anim data-cat="van">
       <div class="photo-wrap"><div class="photo" style="background-image:url('assets/vellfire-std-fleet-display.png')"></div><span class="tag" data-i18n="tag.vip">VIP</span></div>
       <div class="body">
-        <div class="row1"><span class="name">Toyota Vellfire</span><span class="rating" style="font-weight:700;font-size:14px">4.9 <span style="color:var(--star)">★</span></span></div>
+        <div class="row1"><span class="name">Toyota Alphard</span><span class="rating" style="font-weight:700;font-size:14px">4.9 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
           <span>Premium VIP Van · 7 pax</span>
         </div>
@@ -1396,6 +1418,39 @@
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
       <div><div class="lbl" data-i18n="incl.4.lbl">No Hidden Fees</div><div class="sub" data-i18n="incl.4.sub">Transparent flat rate</div></div>
     </div>
+  </div>
+</section>
+
+<!-- PACKAGE POSTER BOARD -->
+<section class="poster-packages" id="posterPackages">
+  <div class="head">
+    <div class="eyebrow reveal" data-anim data-i18n="poster.eyebrow">Latest Promotions</div>
+    <h2 class="reveal delay-1" data-anim data-i18n="poster.title">Special Tour Packages in Langkawi</h2>
+    <p class="lead reveal delay-2" data-anim data-i18n="poster.lead">Browse our latest package promotions and tap WhatsApp to book or ask for details.</p>
+  </div>
+  <div class="poster-scroll-wrap">
+    <div class="poster-controls">
+      <button class="poster-nav" type="button" aria-label="Scroll posters left" onclick="document.getElementById('posterGrid').scrollBy({left:-320,behavior:'smooth'})">‹</button>
+      <button class="poster-nav" type="button" aria-label="Scroll posters right" onclick="document.getElementById('posterGrid').scrollBy({left:320,behavior:'smooth'})">›</button>
+    </div>
+  <div class="poster-grid" id="posterGrid">
+    <article class="poster-card reveal delay-2" data-anim>
+      <div class="poster-media"><img src="assets/poster-package-1.png" alt="Sunset Dinner Cruise package poster"></div>
+      <button class="poster-cta" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20saya%20nak%20tanya%20tentang%20Package%201'" data-i18n="poster.cta">Enquire via WhatsApp</button>
+    </article>
+    <article class="poster-card reveal delay-3" data-anim>
+      <div class="poster-media"><img src="assets/poster-package-2.png" alt="Mangrove Tour package poster"></div>
+      <button class="poster-cta" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20saya%20nak%20tanya%20tentang%20Package%202'" data-i18n="poster.cta">Enquire via WhatsApp</button>
+    </article>
+    <article class="poster-card reveal delay-4" data-anim>
+      <div class="poster-media"><img src="assets/poster-package-3.png" alt="Beach Water Sport combo package poster"></div>
+      <button class="poster-cta" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20saya%20nak%20tanya%20tentang%20Package%203'" data-i18n="poster.cta">Enquire via WhatsApp</button>
+    </article>
+    <article class="poster-card reveal delay-4" data-anim>
+      <div class="poster-media"><img src="assets/poster-package-4.png" alt="ATV Adventure package poster"></div>
+      <button class="poster-cta" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20saya%20nak%20tanya%20tentang%20Package%204'" data-i18n="poster.cta">Enquire via WhatsApp</button>
+    </article>
+  </div>
   </div>
 </section>
 
@@ -1716,6 +1771,16 @@
       'price.b.photo':'Photo stops at scenic locations',
       'price.choose.t1':'Choose Transfer','price.choose.t2':'Choose Half-Day','price.choose.t3':'Choose Full-Day',
       'price.extra':'Need more time? <strong style="color:var(--ink)">Extra hour from RM 50</strong> · Multi-day packages available on request',
+      // Poster board
+      'poster.eyebrow':'Latest Promotions',
+      'poster.title':'Special Tour Packages in Langkawi',
+      'poster.lead':'Browse our latest package promotions and tap WhatsApp to book or ask for details.',
+      'poster.slot1':'Place Poster Package 1 here',
+      'poster.slot2':'Place Poster Package 2 here',
+      'poster.slot3':'Place Poster Package 3 here',
+      'poster.slot4':'Place Poster Package 4 here',
+      'poster.size':'Recommended size: 1080 × 1350 (4:5)',
+      'poster.cta':'Enquire via WhatsApp',
       // Inclusions
       'incl.1.lbl':'Driver Included','incl.1.sub':'Licensed & experienced',
       'incl.2.lbl':'Fuel & Toll','incl.2.sub':'All-in, no top-ups',
@@ -1883,6 +1948,16 @@
       'price.b.photo':'Berhenti gambar di lokasi indah',
       'price.choose.t1':'Pilih Transfer','price.choose.t2':'Pilih Separuh Hari','price.choose.t3':'Pilih Sehari Penuh',
       'price.extra':'Perlu masa lebih? <strong style="color:var(--ink)">Jam tambahan dari RM 50</strong> · Pakej beberapa hari boleh diatur',
+      // Poster board
+      'poster.eyebrow':'Promosi Terkini',
+      'poster.title':'Pakej Tour Istimewa di Langkawi',
+      'poster.lead':'Lihat promosi pakej terkini kami dan tekan WhatsApp untuk tempahan atau pertanyaan lanjut.',
+      'poster.slot1':'Letak Poster Package 1 di sini',
+      'poster.slot2':'Letak Poster Package 2 di sini',
+      'poster.slot3':'Letak Poster Package 3 di sini',
+      'poster.slot4':'Letak Poster Package 4 di sini',
+      'poster.size':'Saiz disyorkan: 1080 × 1350 (4:5)',
+      'poster.cta':'Tanya di WhatsApp',
       // Inclusions
       'incl.1.lbl':'Pemandu Termasuk','incl.1.sub':'Berlesen & berpengalaman',
       'incl.2.lbl':'Minyak & Tol','incl.2.sub':'Semua-in, tiada tambahan',
@@ -2193,7 +2268,7 @@
       name:'Luxury Van', cat:'VIP LUXURY VAN · 7-14 SEATER', rating:4.9, reviews:53,
       location:'Langkawi', capacity:'Up to 14 pax', maxSeats:14,
       models:['Toyota Vellfire / Alphard'],
-      packages:{ transfer:100, transferMax:150, halfDay:350, fullDay:1200 },
+      packages:{ transfer:100, transferMax:150, halfDay:350, fullDay:650 },
       extraHrRate:100,
       desc:'Top-tier luxury for VIP guests, executives, or special occasions. Captain chairs, ambient lighting, premium audio, and a presidential ride experience. The ultimate in road comfort for honeymooners, VIPs, or business travellers.',
       descBm:'Kemewahan tertinggi untuk tetamu VIP, eksekutif, atau majlis istimewa. Captain chairs, lampu ambient, audio premium, dan pengalaman perjalanan presidential. Kemuncak keselesaan di jalan raya untuk pengantin baru, VIP, atau pelancong bisnes.',
@@ -2224,7 +2299,7 @@
       name:'Vellfire AGH40', cat:'PREMIUM VIP VAN · 7-SEATER', rating:5.0, reviews:18,
       location:'Langkawi', capacity:'Up to 7 pax', maxSeats:7,
       models:['Toyota Vellfire AGH40 (Latest Generation)'],
-      packages:{ transfer:500, transferMax:1000, halfDay:700, fullDay:1200 },
+      packages:{ fullDay:1200 },
       extraHrRate:200,
       desc:'The flagship Vellfire AGH40 — newest generation with cutting-edge interior, refined hybrid powertrain, and presidential-level comfort. The pinnacle of luxury road travel in Langkawi for VIPs, dignitaries, and special occasions.',
       descBm:'Vellfire AGH40 flagship — generasi terbaru dengan interior canggih, hybrid powertrain halus, dan keselesaan tahap presidential. Kemuncak perjalanan mewah di Langkawi untuk VIP, kenamaan, dan majlis istimewa.',
@@ -2252,15 +2327,15 @@
       }
     },
     starex: {
-      name:'Hyundai Starex', cat:'GROUP VAN · 10-SEATER', rating:4.8, reviews:77,
-      location:'Langkawi', capacity:'Up to 10 pax', maxSeats:10,
+      name:'Hyundai Starex', cat:'GROUP VAN · 11-SEATER', rating:4.8, reviews:77,
+      location:'Langkawi', capacity:'Up to 11 pax', maxSeats:11,
       models:['Hyundai Starex'],
-      packages:{ transfer:130, transferMax:200, halfDay:450, fullDay:650 },
+      packages:{ fullDay:650 },
       extraHrRate:100,
       desc:'Reliable group van with spacious cabin, comfortable seating, and strong air-conditioning. Great for family gatherings, airport runs, and island day tours with medium-sized groups.',
       descBm:'Van kumpulan yang boleh diharap dengan kabin luas, tempat duduk selesa, dan air-cond kuat. Sesuai untuk keluarga besar, airport transfer, dan tour pulau untuk kumpulan sederhana.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'10 passengers'},
+        {ic:'seats', lbl:'Capacity', val:'11 passengers'},
         {ic:'bag', lbl:'Luggage', val:'8 medium bags'},
         {ic:'auto', lbl:'Transmission', val:'Automatic'},
         {ic:'fuel', lbl:'Fuel', val:'Diesel'}
@@ -2283,9 +2358,9 @@
       }
     },
     vellfire: {
-      name:'Toyota Vellfire', cat:'PREMIUM VIP VAN · 7-SEATER', rating:4.9, reviews:39,
+      name:'Toyota Alphard', cat:'PREMIUM VIP VAN · 7-SEATER', rating:4.9, reviews:39,
       location:'Langkawi', capacity:'Up to 7 pax', maxSeats:7,
-      models:['Toyota Vellfire'],
+      models:['Toyota Alphard'],
       packages:{ fullDay:1000 },
       extraHrRate:150,
       desc:'Premium executive van with refined comfort, quiet ride, and luxurious interior. Perfect for VIP airport pickup, corporate guests, honeymoon trips, and private island tours.',
@@ -2302,14 +2377,14 @@
       includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral premium','Pickup &amp; drop-off percuma','Pengalaman perjalanan gaya VIP'],
       images:{
         exterior:[
-          'assets/vellfire-exterior-1.png',
-          'assets/vellfire-exterior-2.png',
-          'assets/vellfire-exterior-3.png'
+          'assets/alphard-exterior-1.png',
+          'assets/alphard-exterior-2.png',
+          'assets/alphard-exterior-3.png'
         ],
         interior:[
-          'assets/vellfire-interior-1.png',
-          'assets/vellfire-interior-2.png',
-          'assets/vellfire-interior-3.png'
+          'assets/alphard-interior-1.png',
+          'assets/alphard-interior-2.png',
+          'assets/alphard-interior-3.png'
         ]
       }
     },
