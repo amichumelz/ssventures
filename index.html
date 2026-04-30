@@ -1077,6 +1077,8 @@
     <button class="pill" data-cat="sedan" data-i18n="fleet.sedan">Sedan</button>
     <button class="pill" data-cat="mpv" data-i18n="fleet.mpv">MPV</button>
     <button class="pill" data-cat="van" data-i18n="fleet.van">Van</button>
+    <button class="pill" data-cat="luxury-car" data-i18n="fleet.luxuryCar">Luxury Car</button>
+    <button class="pill" data-cat="luxury-van" data-i18n="fleet.luxuryVan">Luxury Van</button>
   </div>
 
   <div class="grid" id="grid">
@@ -1132,7 +1134,7 @@
     </article>
 
 
-    <article class="card reveal delay-4" data-anim data-cat="van">
+    <article class="card reveal delay-4" data-anim data-cat="van" data-segment="luxury-van">
       <div class="photo-wrap"><div class="photo" style="background-image:url('assets/luxuryvan-fleet-display.png')"></div><span class="tag" data-i18n="tag.vip">VIP</span></div>
       <div class="body">
         <div class="row1"><span class="name">Luxury Van</span><span class="rating" style="font-weight:700;font-size:14px">4.9 <span style="color:var(--star)">★</span></span></div>
@@ -1149,7 +1151,7 @@
       </div>
     </article>
 
-    <article class="card reveal delay-4" data-anim data-cat="van">
+    <article class="card reveal delay-4" data-anim data-cat="van" data-segment="luxury-car">
       <div class="photo-wrap"><div class="photo" style="background-image:url('assets/vellfire-fleet-display.png')"></div><span class="tag" data-i18n="tag.flagship">FLAGSHIP</span></div>
       <div class="body">
         <div class="row1"><span class="name">Vellfire AGH40</span><span class="rating" style="font-weight:700;font-size:14px">5.0 <span style="color:var(--star)">★</span></span></div>
@@ -1164,7 +1166,7 @@
       </div>
     </article>
 
-    <article class="card reveal delay-1" data-anim data-cat="van">
+    <article class="card reveal delay-1" data-anim data-cat="van" data-segment="luxury-van">
       <div class="photo-wrap"><div class="photo" style="background-image:url('assets/starex-fleet-display.png')"></div><span class="tag" data-i18n="tag.family">FAMILY</span></div>
       <div class="body">
         <div class="row1"><span class="name">Hyundai Starex</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
@@ -1179,7 +1181,7 @@
       </div>
     </article>
 
-    <article class="card reveal delay-2" data-anim data-cat="van">
+    <article class="card reveal delay-2" data-anim data-cat="van" data-segment="luxury-car">
       <div class="photo-wrap"><div class="photo" style="background-image:url('assets/vellfire-std-fleet-display.png')"></div><span class="tag" data-i18n="tag.vip">VIP</span></div>
       <div class="body">
         <div class="row1"><span class="name">Toyota Alphard</span><span class="rating" style="font-weight:700;font-size:14px">4.9 <span style="color:var(--star)">★</span></span></div>
@@ -1194,7 +1196,7 @@
       </div>
     </article>
 
-    <article class="card reveal delay-3" data-anim data-cat="van">
+    <article class="card reveal delay-3" data-anim data-cat="van" data-segment="luxury-van">
       <div class="photo-wrap"><div class="photo" style="background-image:url('assets/van1518-exterior-1.png')"></div><span class="tag" data-i18n="tag.popular">POPULAR</span></div>
       <div class="body">
         <div class="row1"><span class="name">Van 15-18 Pax</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
@@ -1717,6 +1719,7 @@
       'fleet.title':'Choose Your Tour Vehicle',
       'fleet.lead':'Each vehicle comes with a professional driver. Pick the package that suits your itinerary — Airport Transfer, Half-Day Tour, or Full-Day Tour. <strong style="color:var(--ink)">Extra hour from RM 50.</strong>',
       'fleet.allType':'All Type','fleet.mpv':'MPV','fleet.suv':'SUV','fleet.van':'Van','fleet.sedan':'Sedan',
+      'fleet.luxuryCar':'Luxury Car','fleet.luxuryVan':'Luxury Van',
       'fleet.viewBook':'View & Book',
       // Packages
       'pkg.transfer':'Transfer','pkg.halfDay':'Half-Day','pkg.fullDay':'Full-Day',
@@ -1900,6 +1903,7 @@
       'fleet.title':'Pilih Kenderaan Tour Anda',
       'fleet.lead':'Setiap kenderaan termasuk pemandu profesional. Pilih pakej yang sesuai dengan itinerari anda — Airport Transfer, Tour Separuh Hari, atau Tour Sehari Penuh. <strong style="color:var(--ink)">Jam tambahan dari RM 50.</strong>',
       'fleet.allType':'Semua','fleet.mpv':'MPV','fleet.suv':'SUV','fleet.van':'Van','fleet.sedan':'Sedan',
+      'fleet.luxuryCar':'Kereta Mewah','fleet.luxuryVan':'Van Mewah',
       'fleet.viewBook':'Lihat & Tempah',
       // Packages
       'pkg.transfer':'Transfer','pkg.halfDay':'Separuh Hari','pkg.fullDay':'Sehari Penuh',
@@ -3086,7 +3090,11 @@
       p.classList.add('active');
       const cat = p.dataset.cat;
       grid.querySelectorAll('.card').forEach(card => {
-        const match = cat === 'all' || card.dataset.cat === cat;
+        let match;
+        if (cat === 'all') match = true;
+        else if (cat === 'luxury-van') match = card.dataset.segment === 'luxury-van';
+        else if (cat === 'luxury-car') match = card.dataset.segment === 'luxury-car';
+        else match = card.dataset.cat === cat;
         card.style.transition = 'opacity .3s, transform .3s';
         if (match) {
           card.style.display = '';
