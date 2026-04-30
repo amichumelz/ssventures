@@ -54,6 +54,9 @@
   .nav-shell.scrolled{box-shadow:0 6px 24px rgba(11,16,32,.06);border-color:var(--line);padding:10px 28px}
   .logo{font-family:'Instrument Serif',serif;font-size:32px;letter-spacing:-.5px;font-style:italic;color:var(--ink);display:flex;align-items:center;gap:10px}
   .logo .logo-mark{width:36px;height:36px;object-fit:contain;display:block}
+  .logo.logo-brand{font-style:normal;gap:0}
+  .logo.logo-brand::after{content:none}
+  .logo.logo-brand .logo-mark{width:auto;height:48px;max-width:min(220px,58vw);object-fit:contain}
   .logo::after{content:".";color:var(--accent)}
   .logo .badge-mini{background:var(--accent);color:#fff;font-family:'Manrope';font-style:normal;font-size:10px;font-weight:800;padding:3px 7px;border-radius:6px;letter-spacing:.05em}
   .nav-links{display:flex;gap:26px;list-style:none;font-size:14.5px;font-weight:500;color:var(--ink);margin-left:auto;margin-right:auto}
@@ -883,7 +886,7 @@
 
 <!-- NAV -->
 <header class="nav-shell" id="navShell">
-  <a href="#" class="logo"><img src="assets/logo.png" alt="SS Langkawi Ventures logo" class="logo-mark">SS Langkawi <span class="badge-mini">VENTURES</span></a>
+  <a href="#" class="logo logo-brand" aria-label="mie travel n tour"><img src="assets/logo.png" alt="mie travel n tour" class="logo-mark" width="220" height="48"></a>
   <ul class="nav-links">
     <li><a href="#" class="active" data-i18n="nav.home">Home</a></li>
     <li><a href="#services" data-i18n="nav.services">Services</a></li>
@@ -1151,12 +1154,12 @@
       <div class="body">
         <div class="row1"><span class="name">Vellfire AGH40</span><span class="rating" style="font-weight:700;font-size:14px">5.0 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span data-i18n="vt.cat.vanFlagship">Premium VIP Van · 7 pax</span>
+          <span data-i18n="vt.cat.vanFlagship">Luxury VIP</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 1,200</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h8">8 Hours</span><span class="pkg-price">RM 1,200</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="7" data-rate="200">Extra hour <strong>RM 200</strong> · Up to 7 pax</div>
+        <div class="extra-note" data-i18n-html="extra.noteRateOnly" data-rate="200">Extra hour <strong>RM 200</strong></div>
         <button class="view-btn" onclick="openModal('vellfireAgh40')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1166,12 +1169,12 @@
       <div class="body">
         <div class="row1"><span class="name">Hyundai Starex</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span>Group Van · 11 pax</span>
+          <span data-i18n="vt.cat.starex">Group · 11 pax</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 650</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h8">8 Hours</span><span class="pkg-price">RM 650</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="11" data-rate="100">Extra hour <strong>RM 100</strong> · Up to 11 pax</div>
+        <div class="extra-note" data-i18n-html="extra.notePax" data-pax="11" data-rate="100">Extra hour <strong>RM 100</strong> · 11 pax</div>
         <button class="view-btn" onclick="openModal('starex')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1181,12 +1184,12 @@
       <div class="body">
         <div class="row1"><span class="name">Toyota Alphard</span><span class="rating" style="font-weight:700;font-size:14px">4.9 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span>Premium VIP Van · 7 pax</span>
+          <span data-i18n="vt.cat.vanPremiumVip">Premium VIP</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 1,000</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h8">8 Hours</span><span class="pkg-price">RM 1,200</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="7" data-rate="150">Extra hour <strong>RM 150</strong> · Up to 7 pax</div>
+        <div class="extra-note" data-i18n-html="extra.noteRateOnly" data-rate="150">Extra hour <strong>RM 150</strong></div>
         <button class="view-btn" onclick="openModal('vellfire')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1196,7 +1199,7 @@
       <div class="body">
         <div class="row1"><span class="name">Van 15-18 Pax</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span>Group Van · 15-18 pax</span>
+          <span data-i18n="vt.cat.vanGroup">Group Van · Up to 18 pax</span>
         </div>
         <div class="pkg-grid">
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 250-350</span></div>
@@ -1241,7 +1244,7 @@
       <h2 id="mName">Premium MPV</h2>
       <div class="modal-meta">
         <span><strong id="mRating">4.9</strong> <span class="star">★</span> <span id="mReviews">(127 reviews)</span></span>
-        <span>👥 <span id="mCapacity">Up to 7 pax</span></span>
+        <span id="mCapacityWrap">👥 <span id="mCapacity">Up to 7 pax</span></span>
         <span>📍 <span id="mLoc">Langkawi, Kedah</span></span>
       </div>
       <p class="modal-desc" id="mDesc"></p>
@@ -1263,13 +1266,13 @@
           <label data-i18n="form.pickup">Pickup</label>
           <input type="text" id="pickupLoc" data-i18n-placeholder="form.pickupPh" placeholder="Hotel / Airport / Address" value="Langkawi">
         </div>
-        <div class="form-row">
+        <div class="form-row" id="paxFormRow">
           <label data-i18n="form.pax">Passengers</label>
           <div class="pax-row">
             <button class="pax-btn" type="button" id="paxMinus">−</button>
             <input type="number" id="pax" min="1" value="2" readonly>
             <button class="pax-btn" type="button" id="paxPlus">+</button>
-            <span style="font-size:12px;color:var(--muted);margin-left:6px"><span data-i18n="form.max">Max</span> <span id="paxMax">7</span></span>
+            <span id="paxMaxWrap" style="font-size:12px;color:var(--muted);margin-left:6px"><span data-i18n="form.max">Max</span> <span id="paxMax">7</span></span>
           </div>
         </div>
         <div class="form-row">
@@ -1698,9 +1701,12 @@
       'vt.cat.sedanCompact':'Compact Sedan · 4 pax',
       'vt.cat.sedanFamily':'Family Sedan · 5 pax',
       'vt.cat.mpvFamily':'Family MPV · 6 pax',
-      'vt.cat.vanGroup':'Group Van · Up to 14 pax',
+      'vt.cat.vanGroup':'Group Van · Up to 18 pax',
+      'vt.cat.groupVan':'Group Van',
+      'vt.cat.starex':'Group · 11 pax',
       'vt.cat.vanLuxury':'VIP Luxury Van · 7-14 pax',
-      'vt.cat.vanFlagship':'Premium VIP Van · 7 pax',
+      'vt.cat.vanPremiumVip':'Premium VIP',
+      'vt.cat.vanFlagship':'Luxury VIP',
       // Popular Places carousel
       'places.eyebrow':'Popular Destinations',
       'places.title':"Where we'll take you in Langkawi",
@@ -1714,12 +1720,15 @@
       'fleet.viewBook':'View & Book',
       // Packages
       'pkg.transfer':'Transfer','pkg.halfDay':'Half-Day','pkg.fullDay':'Full-Day',
-      'pkg.p2p':'Point to Point','pkg.h45':'1-4 Hours','pkg.h810':'5-8 Hours',
+      'pkg.p2p':'Point to Point','pkg.h45':'1-4 Hours','pkg.h810':'5-8 Hours','pkg.h8':'8 Hours',
       'pkg.transferFull':'Point-to-Point Transfer',
       'pkg.halfDayFull':'Half-Day Tour (1-4 hours)',
       'pkg.fullDayFull':'Full-Day Tour (5-8 hours)',
+      'pkg.fullDayFull8':'Full-Day Tour (8 hours)',
       // Extra note: "Extra hour RM 50 · Up to N pax"
       'extra.note':'Extra hour <strong>RM {rate}</strong> · Up to {pax} pax',
+      'extra.notePax':'Extra hour <strong>RM {rate}</strong> · {pax} pax',
+      'extra.noteRateOnly':'Extra hour <strong>RM {rate}</strong>',
       // Modal
       'modal.exterior':'Exterior','modal.interior':'Interior',
       'modal.choosePkg':'Choose Package','modal.bookTour':'Book This Tour',
@@ -1875,9 +1884,12 @@
       'vt.cat.sedanCompact':'Sedan Compact · 4 pax',
       'vt.cat.sedanFamily':'Sedan Keluarga · 5 pax',
       'vt.cat.mpvFamily':'MPV Keluarga · 6 pax',
-      'vt.cat.vanGroup':'Van Kumpulan · Sehingga 14 pax',
+      'vt.cat.vanGroup':'Van Kumpulan · Sehingga 18 pax',
+      'vt.cat.groupVan':'Van Kumpulan',
+      'vt.cat.starex':'Kumpulan · 11 pax',
       'vt.cat.vanLuxury':'Van Mewah VIP · 7-14 pax',
-      'vt.cat.vanFlagship':'Van VIP Premium · 7 pax',
+      'vt.cat.vanPremiumVip':'Premium VIP',
+      'vt.cat.vanFlagship':'Luxury VIP',
       // Popular Places carousel
       'places.eyebrow':'Destinasi Popular',
       'places.title':'Tempat-tempat kami akan bawa anda di Langkawi',
@@ -1891,12 +1903,15 @@
       'fleet.viewBook':'Lihat & Tempah',
       // Packages
       'pkg.transfer':'Transfer','pkg.halfDay':'Separuh Hari','pkg.fullDay':'Sehari Penuh',
-      'pkg.p2p':'Titik ke Titik','pkg.h45':'1-4 Jam','pkg.h810':'5-8 Jam',
+      'pkg.p2p':'Titik ke Titik','pkg.h45':'1-4 Jam','pkg.h810':'5-8 Jam','pkg.h8':'8 Jam',
       'pkg.transferFull':'Transfer Titik ke Titik',
       'pkg.halfDayFull':'Tour Separuh Hari (1-4 jam)',
       'pkg.fullDayFull':'Tour Sehari Penuh (5-8 jam)',
+      'pkg.fullDayFull8':'Tour Sehari Penuh (8 jam)',
       // Extra note
       'extra.note':'Jam tambahan <strong>RM {rate}</strong> · Sehingga {pax} pax',
+      'extra.notePax':'Jam tambahan <strong>RM {rate}</strong> · {pax} pax',
+      'extra.noteRateOnly':'Jam tambahan <strong>RM {rate}</strong>',
       // Modal
       'modal.exterior':'Luar','modal.interior':'Dalam',
       'modal.choosePkg':'Pilih Pakej','modal.bookTour':'Tempah Tour Ini',
@@ -2045,10 +2060,14 @@
       if (I18N[currentLang][key] !== undefined){
         let html = I18N[currentLang][key];
         // For extra.note, substitute pax count from data attribute
-        if (key === 'extra.note'){
+        if (key === 'extra.note' || key === 'extra.notePax'){
           const pax = el.getAttribute('data-pax') || '';
           const rate = el.getAttribute('data-rate') || '50';
           html = html.replace('{pax}', pax).replace('{rate}', rate);
+        }
+        if (key === 'extra.noteRateOnly'){
+          const rate = el.getAttribute('data-rate') || '50';
+          html = html.replace('{rate}', rate);
         }
         el.innerHTML = html;
       }
@@ -2079,7 +2098,7 @@
     const car = M.car;
     if (!car) return;
     // Update capacity & reviews
-    document.getElementById('mCapacity').textContent = t('meta.upto', {n: car.maxSeats});
+    document.getElementById('mCapacity').textContent = (car.capacity && String(car.capacity).trim()) ? car.capacity : t('meta.upto', {n: car.maxSeats});
     document.getElementById('mReviews').textContent = t('meta.reviews', {n: car.reviews});
     // Update extra-hour rate label
     const hrRate = car.extraHrRate || EXTRA_HOUR_RATE;
@@ -2096,7 +2115,7 @@
         : `RM ${price}`;
       return `<button class="pkg-opt ${active}" type="button" data-pkg="${k}">
         <span class="opt-label">${t('pkg.' + k)}</span>
-        <span class="opt-dur">${t('pkg.' + (k === 'transfer' ? 'p2p' : k === 'halfDay' ? 'h45' : 'h810'))}</span>
+        <span class="opt-dur">${t('pkg.' + (k === 'transfer' ? 'p2p' : k === 'halfDay' ? 'h45' : (M.carKey === 'vellfireAgh40' || M.carKey === 'starex' || M.carKey === 'vellfire' ? 'h8' : 'h810')))}</span>
         <span class="opt-price">${priceDisplay}</span>
       </button>`;
     }).join('');
@@ -2121,6 +2140,7 @@
     document.getElementById('mName').textContent = tVehicleName(car);
     // Re-recalc total to refresh package label
     recalcTotal();
+    setModalPaxVisibility();
   }
 
   // Translation helpers for spec labels (Capacity, Luggage, Transmission, Fuel)
@@ -2144,26 +2164,38 @@
   }
   function tSpecVal(val){
     if (currentLang !== 'bm') return val;
+    const exact = {
+      'VIP executive layout':'Susun atur eksekutif VIP',
+      'Up to 14 passengers (VIP)':'Sehingga 14 penumpang (VIP)',
+      'Spacious group cabin':'Kabin kumpulan luas',
+      '15-18 passengers':'15-18 penumpang'
+    };
+    if (exact[val]) return exact[val];
     let v = val;
     SPEC_VAL_BM_PARTS.forEach(([re, sub]) => v = v.replace(re, sub));
     return v;
   }
 
-  // Translate vehicle category tag (e.g. "COMPACT SEDAN · 4-SEATER")
+  // Translate vehicle category tag (e.g. "COMPACT SEDAN")
   function tCat(cat){
     if (currentLang !== 'bm') return cat;
     return cat
       .replace(/COMPACT SEDAN/, 'SEDAN COMPACT')
       .replace(/FAMILY SEDAN/, 'SEDAN KELUARGA')
       .replace(/FAMILY MPV/, 'MPV KELUARGA')
+      .replace(/GROUP · (\d+)-SEATER/, 'KUMPULAN · $1-TEMPAT DUDUK')
       .replace(/GROUP VAN/, 'VAN KUMPULAN')
+      .replace(/LARGE VAN/, 'VAN BESAR')
       .replace(/VIP LUXURY VAN/, 'VAN MEWAH VIP')
-      .replace(/(\d+)-SEATER/, '$1-TEMPAT DUDUK');
+      .replace(/(\d+)-SEATER/, '$1-TEMPAT DUDUK')
+      .replace(/PREMIUM VIP VAN/, 'VAN VIP PREMIUM')
+      .replace(/^PREMIUM VIP$/, 'VIP PREMIUM')
+      .replace(/^LUXURY VIP$/, 'VIP MEWAH');
   }
   // Translate vehicle name shown in modal h2 (most are proper nouns / brand names)
   function tVehicleName(car){
-    // Only "Luxury Van" needs BM translation; brand model names stay as-is
-    if (currentLang === 'bm' && car.name === 'Luxury Van') return 'Van Mewah';
+    if (currentLang !== 'bm') return car.name;
+    if (car.name === 'Luxury Van') return 'Van Mewah';
     return car.name;
   }
 
@@ -2273,7 +2305,7 @@
       desc:'Top-tier luxury for VIP guests, executives, or special occasions. Captain chairs, ambient lighting, premium audio, and a presidential ride experience. The ultimate in road comfort for honeymooners, VIPs, or business travellers.',
       descBm:'Kemewahan tertinggi untuk tetamu VIP, eksekutif, atau majlis istimewa. Captain chairs, lampu ambient, audio premium, dan pengalaman perjalanan presidential. Kemuncak keselesaan di jalan raya untuk pengantin baru, VIP, atau pelancong bisnes.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'7-14 passengers (VIP)'},
+        {ic:'seats', lbl:'Capacity', val:'Up to 14 passengers (VIP)'},
         {ic:'bag', lbl:'Luggage', val:'10+ large bags'},
         {ic:'auto', lbl:'Transmission', val:'Automatic / Hybrid'},
         {ic:'fuel', lbl:'Fuel', val:'Petrol / Hybrid'}
@@ -2296,15 +2328,15 @@
       }
     },
     vellfireAgh40: {
-      name:'Vellfire AGH40', cat:'PREMIUM VIP VAN · 7-SEATER', rating:5.0, reviews:18,
-      location:'Langkawi', capacity:'Up to 7 pax', maxSeats:7,
+      name:'Vellfire AGH40', cat:'LUXURY VIP', rating:5.0, reviews:18,
+      location:'Langkawi', capacity:'', maxSeats:7,
       models:['Toyota Vellfire AGH40 (Latest Generation)'],
       packages:{ fullDay:1200 },
       extraHrRate:200,
       desc:'The flagship Vellfire AGH40 — newest generation with cutting-edge interior, refined hybrid powertrain, and presidential-level comfort. The pinnacle of luxury road travel in Langkawi for VIPs, dignitaries, and special occasions.',
       descBm:'Vellfire AGH40 flagship — generasi terbaru dengan interior canggih, hybrid powertrain halus, dan keselesaan tahap presidential. Kemuncak perjalanan mewah di Langkawi untuk VIP, kenamaan, dan majlis istimewa.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'7 passengers (VIP)'},
+        {ic:'seats', lbl:'Capacity', val:'VIP executive layout'},
         {ic:'bag', lbl:'Luggage', val:'5 large bags'},
         {ic:'auto', lbl:'Transmission', val:'Automatic Hybrid'},
         {ic:'fuel', lbl:'Fuel', val:'Hybrid (Petrol + Electric)'}
@@ -2327,8 +2359,8 @@
       }
     },
     starex: {
-      name:'Hyundai Starex', cat:'GROUP VAN · 11-SEATER', rating:4.8, reviews:77,
-      location:'Langkawi', capacity:'Up to 11 pax', maxSeats:11,
+      name:'Hyundai Starex', cat:'GROUP · 11-SEATER', rating:4.8, reviews:77,
+      location:'Langkawi', capacity:'11 pax', maxSeats:11,
       models:['Hyundai Starex'],
       packages:{ fullDay:650 },
       extraHrRate:100,
@@ -2358,15 +2390,15 @@
       }
     },
     vellfire: {
-      name:'Toyota Alphard', cat:'PREMIUM VIP VAN · 7-SEATER', rating:4.9, reviews:39,
-      location:'Langkawi', capacity:'Up to 7 pax', maxSeats:7,
+      name:'Toyota Alphard', cat:'PREMIUM VIP', rating:4.9, reviews:39,
+      location:'Langkawi', capacity:'', maxSeats:7,
       models:['Toyota Alphard'],
-      packages:{ fullDay:1000 },
+      packages:{ fullDay:1200 },
       extraHrRate:150,
       desc:'Premium executive van with refined comfort, quiet ride, and luxurious interior. Perfect for VIP airport pickup, corporate guests, honeymoon trips, and private island tours.',
       descBm:'Van eksekutif premium dengan keselesaan halus, perjalanan senyap, dan interior mewah. Sesuai untuk airport pickup VIP, tetamu korporat, honeymoon, dan private island tour.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'7 passengers'},
+        {ic:'seats', lbl:'Capacity', val:'VIP executive layout'},
         {ic:'bag', lbl:'Luggage', val:'5 large bags'},
         {ic:'auto', lbl:'Transmission', val:'Automatic'},
         {ic:'fuel', lbl:'Fuel', val:'Petrol / Hybrid'}
@@ -2450,11 +2482,20 @@
   };
 
   // ====== STATE & MODAL ======
-  let M = { car:null, tab:'exterior', idx:0, pkg:'halfDay', extraHr:0, activities:[] };
+  let M = { car:null, carKey:null, tab:'exterior', idx:0, pkg:'halfDay', extraHr:0, activities:[] };
+
+  function setModalPaxVisibility(){
+    const hideSeatMeta = M.carKey === 'vellfireAgh40' || M.carKey === 'vellfire';
+    const hideForm = M.carKey === 'vellfireAgh40' || M.carKey === 'vellfire';
+    const cap = document.getElementById('mCapacityWrap');
+    const row = document.getElementById('paxFormRow');
+    if (cap) cap.style.display = hideSeatMeta ? 'none' : '';
+    if (row) row.style.display = hideForm ? 'none' : '';
+  }
 
   function openModal(carId){
     const car = FLEET[carId]; if (!car) return;
-    M.car = car; M.tab = 'exterior'; M.idx = 0;
+    M.car = car; M.carKey = carId; M.tab = 'exterior'; M.idx = 0;
     const pkgKeys = ['transfer', 'halfDay', 'fullDay'].filter(k => Number.isFinite(car.packages[k]));
     M.pkg = pkgKeys.includes('halfDay') ? 'halfDay' : (pkgKeys.includes('fullDay') ? 'fullDay' : pkgKeys[0]);
     M.extraHr = 0; M.activities = [];
@@ -2465,7 +2506,7 @@
     document.getElementById('mRating').textContent = car.rating;
     document.getElementById('mReviews').textContent = t('meta.reviews', {n: car.reviews});
     document.getElementById('mLoc').textContent = car.location;
-    document.getElementById('mCapacity').textContent = t('meta.upto', {n: car.maxSeats});
+    document.getElementById('mCapacity').textContent = (car.capacity && String(car.capacity).trim()) ? car.capacity : t('meta.upto', {n: car.maxSeats});
     document.getElementById('mDesc').innerHTML = tField(car, 'desc');
 
     // models (proper nouns - keep as-is)
@@ -2475,7 +2516,7 @@
     document.getElementById('pkgSelect').innerHTML = pkgKeys.map(k => {
       const price = car.packages[k];
       const active = k === M.pkg ? 'active' : '';
-      const durKey = k === 'transfer' ? 'p2p' : k === 'halfDay' ? 'h45' : 'h810';
+      const durKey = k === 'transfer' ? 'p2p' : k === 'halfDay' ? 'h45' : (carId === 'vellfireAgh40' || carId === 'starex' || carId === 'vellfire' ? 'h8' : 'h810');
       // For Transfer with range, show "RM 50-100"
       const priceDisplay = (k === 'transfer' && car.packages.transferMax)
         ? `RM ${price}-${car.packages.transferMax}`
@@ -2520,6 +2561,7 @@
 
     // initialise booking form
     initBookingForm(car);
+    setModalPaxVisibility();
 
     // render activity add-ons (drag-drop)
     renderActivities();
@@ -2757,7 +2799,8 @@
 
     const baseRate = car.packages[M.pkg];
     const isTransferRange = M.pkg === 'transfer' && car.packages.transferMax;
-    pkgLabel.textContent = t('pkg.' + M.pkg + 'Full');
+    const fullDay8hr = (M.carKey === 'vellfireAgh40' || M.carKey === 'starex' || M.carKey === 'vellfire') && M.pkg === 'fullDay';
+    pkgLabel.textContent = fullDay8hr ? t('pkg.fullDayFull8') : t('pkg.' + M.pkg + 'Full');
     rateText.textContent = isTransferRange
       ? `RM ${baseRate}-${car.packages.transferMax}`
       : 'RM ' + baseRate;
@@ -2832,7 +2875,8 @@
 
     const baseRate = car.packages[M.pkg];
     const isTransferRange = M.pkg === 'transfer' && car.packages.transferMax;
-    const pkgFull = t('pkg.' + M.pkg + 'Full');
+    const fullDay8hr = (M.carKey === 'vellfireAgh40' || M.carKey === 'starex' || M.carKey === 'vellfire') && M.pkg === 'fullDay';
+    const pkgFull = fullDay8hr ? t('pkg.fullDayFull8') : t('pkg.' + M.pkg + 'Full');
     const pkgLabel = t('pkg.' + M.pkg);
 
     const locale = currentLang === 'bm' ? 'ms-MY' : 'en-GB';
@@ -2871,7 +2915,7 @@
       `📅 ${t('wa.date')}: ${dateStr}\n` +
       `🕘 ${t('wa.time')}: ${pickupTime}\n` +
       `📍 ${t('wa.pickup')}: ${pickupLoc}\n` +
-      `👥 ${t('wa.passengers')}: ${paxVal}\n` +
+      (M.carKey === 'vellfireAgh40' || M.carKey === 'vellfire' ? '' : `👥 ${t('wa.passengers')}: ${paxVal}\n`) +
       (extraHr > 0 ? `⏱️ ${t('wa.extraHr')}: ${extraHr}\n` : '') +
       actLines +
       `\n💰 ${t('wa.total')}: ${total}\n_(${breakdown})_${transferNoteWa}\n` +
