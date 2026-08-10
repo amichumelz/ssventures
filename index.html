@@ -7,7 +7,7 @@
 <meta name="description" content="SS Langkawi Ventures — Premium travel &amp; tour service in Langkawi. Airport transfer, half-day &amp; full-day tours with experienced driver. Premium MPV, Luxury SUV &amp; Van available. Call +60 11-2661 0913." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#ffffff; --ink:#0b1020; --ink-2:#1a2138; --muted:#6b7280;
@@ -56,6 +56,7 @@
   .logo .logo-mark{width:36px;height:36px;object-fit:contain;display:block}
   .logo.logo-brand{font-style:normal;gap:0}
   .logo.logo-brand::after{content:none}
+  .logo-cursive{font-family:'Great Vibes',cursive;font-size:40px;line-height:1;color:var(--ink);white-space:nowrap;font-style:normal}
   .logo.logo-brand .logo-mark{width:auto;height:48px;max-width:min(220px,58vw);object-fit:contain}
   .logo::after{content:".";color:var(--accent)}
   .logo .badge-mini{background:var(--accent);color:#fff;font-family:'Manrope';font-style:normal;font-size:10px;font-weight:800;padding:3px 7px;border-radius:6px;letter-spacing:.05em}
@@ -95,6 +96,11 @@
   .hero{position:relative;margin:14px 28px 0;border-radius:var(--radius);overflow:hidden;height:clamp(520px,76vh,760px);background:#cbd5e1;isolation:isolate}
   .hero-photo{position:absolute;inset:0;background-image:url('assets/hero-first-section.png');background-size:cover;background-position:center 35%;transform:scale(1.05);animation:heroZoom 1.6s cubic-bezier(.2,.7,.2,1) forwards}
   .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(11,16,32,.18) 0%, rgba(11,16,32,0) 30%, rgba(11,16,32,0) 60%, rgba(255,255,255,.06) 100%)}
+  .hero-slide{animation:heroFade 18s infinite;opacity:0}
+  .hero-slide:nth-child(1){animation-delay:0s}
+  .hero-slide:nth-child(2){animation-delay:6s}
+  .hero-slide:nth-child(3){animation-delay:12s}
+  @keyframes heroFade{0%{opacity:0;transform:scale(1.06)}5%{opacity:1}28%{opacity:1}33%{opacity:0}100%{opacity:0;transform:scale(1)}}
   .hero-title{position:absolute;left:0;right:0;bottom:-1.5%;text-align:center;font-weight:800;font-size:clamp(72px,17vw,280px);color:rgba(255,255,255,.92);letter-spacing:-.05em;line-height:.85;pointer-events:none;text-shadow:0 12px 50px rgba(0,0,0,.10);animation:titleReveal 1.4s .35s cubic-bezier(.2,.7,.2,1) backwards;z-index:1;mix-blend-mode:screen}
   .hero-title.solid{mix-blend-mode:normal;color:rgba(255,255,255,.85);z-index:0}
   .hero-chip{position:absolute;top:24px;right:24px;color:#fff;font-size:13px;background:rgba(11,16,32,.55);backdrop-filter:blur(10px);padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);z-index:3;animation:fadeUp 1s .9s cubic-bezier(.2,.7,.2,1) backwards;display:flex;align-items:center;gap:10px;font-weight:500}
@@ -737,7 +743,7 @@
   .foot-col h5{color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
   .foot-col a, .foot-col p{display:block;color:#a3a8b8;font-size:14px;line-height:1.9;transition:color .2s}
   .foot-col a:hover{color:#fff}
-  .foot-brand .foot-logo{font-family:'Instrument Serif',serif;font-style:italic;color:#fff;font-size:34px;margin-bottom:10px}
+  .foot-brand .foot-logo{font-family:'Great Vibes',cursive;font-style:normal;color:#fff;font-size:40px;margin-bottom:10px}
   .foot-brand p{max-width:330px;font-size:14px;line-height:1.7}
   .foot-socials{display:flex;gap:10px;margin-top:18px}
   .foot-socials a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:grid;place-items:center;transition:background .25s}
@@ -886,7 +892,7 @@
 
 <!-- NAV -->
 <header class="nav-shell" id="navShell">
-  <a href="#" class="logo logo-brand" aria-label="mie travel n tour"><img src="assets/logo.png" alt="mie travel n tour" class="logo-mark" width="220" height="48"></a>
+  <a href="#" class="logo logo-brand" aria-label="SS Langkawi"><span class="logo-cursive">SS Langkawi</span></a>
   <ul class="nav-links">
     <li><a href="#" class="active" data-i18n="nav.home">Home</a></li>
     <li><a href="#services" data-i18n="nav.services">Services</a></li>
@@ -922,9 +928,11 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-photo"></div>
-  <div class="hero-title solid">Travel &amp; Tour</div>
-  <div class="hero-title">Travel &amp; Tour</div>
+  <div class="hero-photo hero-slide" style="background-image:url('assets/vellfire-fleet-display.png')"></div>
+  <div class="hero-photo hero-slide" style="background-image:url('assets/alphard-exterior-1.png')"></div>
+  <div class="hero-photo hero-slide" style="background-image:url('assets/luxuryvan-fleet-display.png')"></div>
+  <div class="hero-title solid">Travel &amp; Tour Langkawi</div>
+  <div class="hero-title">Travel &amp; Tour Langkawi</div>
   <div class="hero-chip"><span class="dot"></span> <span data-i18n="hero.chip">Driver included · Book your tour today</span></div>
 </section>
 
@@ -1073,12 +1081,12 @@
   <h2 class="reveal delay-1" data-anim data-i18n="fleet.title">Choose Your Tour Vehicle</h2>
   <p class="lead reveal delay-2" data-anim data-i18n-html="fleet.lead">Each vehicle comes with a professional driver. Pick the package that suits your itinerary — Airport Transfer, Half-Day Tour, or Full-Day Tour. <strong style="color:var(--ink)">Extra hour from RM 50.</strong></p>
   <div class="filters reveal delay-2" data-anim>
-    <button class="pill active" data-cat="all" data-i18n="fleet.allType">All Type</button>
-    <button class="pill" data-cat="sedan" data-i18n="fleet.sedan">Sedan</button>
-    <button class="pill" data-cat="mpv" data-i18n="fleet.mpv">MPV</button>
+    <button class="pill active" data-cat="sedan" data-i18n="fleet.sedan">Standard Sedan</button>
+    <button class="pill" data-cat="suv" data-i18n="fleet.suv">SUVs</button>
+    <button class="pill" data-cat="mpv" data-i18n="fleet.mpv">MPV Premium</button>
     <button class="pill" data-cat="van" data-i18n="fleet.van">Van</button>
-    <button class="pill" data-cat="luxury-car" data-i18n="fleet.luxuryCar">Luxury Car</button>
     <button class="pill" data-cat="luxury-van" data-i18n="fleet.luxuryVan">Luxury Van</button>
+    <button class="pill" data-cat="luxury-car" data-i18n="fleet.luxuryCar">Luxury</button>
   </div>
 
   <div class="grid" id="grid">
@@ -1090,11 +1098,11 @@
           <span data-i18n="vt.cat.sedanCompact">Compact Sedan · 4 pax</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 50-100</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 70-110</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 150</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 300</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="4" data-rate="50">Extra hour <strong>RM 50</strong> · Up to 4 pax</div>
+        <div class="extra-note" data-i18n-html="extra.note" data-pax="3" data-rate="30">Extra Time <strong>RM 30</strong> · Up to 3 pax</div>
         <button class="view-btn" onclick="openModal('almeraTurbo')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1107,11 +1115,11 @@
           <span data-i18n="vt.cat.sedanCompact">Compact Sedan · 4 pax</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 50-100</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 70-110</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 150</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 300</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="4" data-rate="50">Extra hour <strong>RM 50</strong> · Up to 4 pax</div>
+        <div class="extra-note" data-i18n-html="extra.note" data-pax="3" data-rate="30">Extra Time <strong>RM 30</strong> · Up to 3 pax</div>
         <button class="view-btn" onclick="openModal('vios')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1124,11 +1132,11 @@
           <span data-i18n="vt.cat.mpvFamily">Family MPV · 6 pax</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 70-140</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 100-120</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 200</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 400</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="6" data-rate="70">Extra hour <strong>RM 70</strong> · Up to 6 pax</div>
+        <div class="extra-note" data-i18n-html="extra.note" data-pax="5" data-rate="50">Extra Time <strong>RM 50</strong> · Up to 5 pax</div>
         <button class="view-btn" onclick="openModal('alzaNew')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1142,11 +1150,11 @@
           <span data-i18n="vt.cat.vanLuxury">VIP Luxury Van · 7-14 pax</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 100-150</span></div>
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 350</span></div>
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 650</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 150-250</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 450</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 700</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="14" data-rate="100">Extra hour <strong>RM 100</strong> · Up to 14 pax</div>
+        <div class="extra-note" data-i18n-html="extra.note" data-pax="10" data-rate="80">Extra Time <strong>RM 80</strong> · Up to 10 pax</div>
         <button class="view-btn" onclick="openModal('luxuryVan')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1159,9 +1167,11 @@
           <span data-i18n="vt.cat.vanFlagship">Luxury VIP</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h8">8 Hours</span><span class="pkg-price">RM 1,000</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 200-250</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">4 Hours</span><span class="pkg-price">RM 450</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h8">8 Hours</span><span class="pkg-price">RM 800</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.noteRateOnly" data-rate="150">Extra hour <strong>RM 150</strong></div>
+        <div class="extra-note" data-i18n-html="extra.notePax" data-pax="5" data-rate="100">Extra Time <strong>RM 100</strong> · 5 pax</div>
         <button class="view-btn" onclick="openModal('vellfireAgh40')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1174,9 +1184,11 @@
           <span data-i18n="vt.cat.starex">Group · 11 pax</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h8">8 Hours</span><span class="pkg-price">RM 650</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 150-250</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">4 Hours</span><span class="pkg-price">RM 450</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h8">8 Hours</span><span class="pkg-price">RM 700</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.notePax" data-pax="11" data-rate="100">Extra hour <strong>RM 100</strong> · 11 pax</div>
+        <div class="extra-note" data-i18n-html="extra.notePax" data-pax="8" data-rate="80">Extra Time <strong>RM 80</strong> · 8 pax</div>
         <button class="view-btn" onclick="openModal('starex')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1189,29 +1201,32 @@
           <span data-i18n="vt.cat.vanPremiumVip">Premium VIP</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h8">8 Hours</span><span class="pkg-price">RM 1,200</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 200-250</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">4 Hours</span><span class="pkg-price">RM 450</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h8">8 Hours</span><span class="pkg-price">RM 800</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.noteRateOnly" data-rate="200">Extra hour <strong>RM 200</strong></div>
+        <div class="extra-note" data-i18n-html="extra.notePax" data-pax="5" data-rate="100">Extra Time <strong>RM 100</strong> · 5 pax</div>
         <button class="view-btn" onclick="openModal('vellfire')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
 
     <article class="card reveal delay-3" data-anim data-cat="van" data-segment="luxury-van">
-      <div class="photo-wrap"><div class="photo" style="background-image:url('assets/van1518-exterior-1.png')"></div><span class="tag" data-i18n="tag.popular">POPULAR</span></div>
+      <div class="photo-wrap"><div class="photo" style="background-image:url('assets/van-hiace-exterior-1.jpg')"></div><span class="tag" data-i18n="tag.popular">POPULAR</span></div>
       <div class="body">
-        <div class="row1"><span class="name">Van 15-18 Pax</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
+        <div class="row1"><span class="name">Van</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span data-i18n="vt.cat.vanGroup">Group Van · Up to 18 pax</span>
+          <span data-i18n="vt.cat.vanGroup">Group Van · Up to 13 pax</span>
         </div>
         <div class="pkg-grid">
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 250-350</span></div>
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 500</span></div>
-          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 1,000</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 150-250</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 350</span></div>
+          <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 650</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="18" data-rate="120">Extra hour <strong>RM 120</strong> · Up to 18 pax</div>
-        <button class="view-btn" onclick="openModal('van1518')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
+        <div class="extra-note" data-i18n-html="extra.note" data-pax="13" data-rate="80">Extra Time <strong>RM 80</strong> · Up to 13 pax</div>
+        <button class="view-btn" onclick="openModal('vanHiace')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
+
   </div>
 </section>
 
@@ -1284,31 +1299,6 @@
             <input type="number" id="extraHr" min="0" value="0" readonly>
             <button class="pax-btn" type="button" id="hrPlus">+</button>
             <span style="font-size:12px;color:var(--muted);margin-left:6px" id="hrRateLabel">RM 50/hr</span>
-          </div>
-        </div>
-
-        <!-- ACTIVITIES (DRAG & DROP ADD-ONS) -->
-        <div class="activities-block">
-          <div class="ab-head">
-            <div class="ab-title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7 7 .5-5.5 4.7L18 22l-6-3.5L6 22l1.5-7.8L2 9.5 9 9z"/></svg>
-              <span data-i18n="act.title">Add Activities</span>
-            </div>
-            <span class="ab-hint">
-              <span class="desktop-only" data-i18n="act.hint.desktop">Drag or tap +</span>
-              <span class="mobile-only" data-i18n="act.hint.mobile">Tap + to add</span>
-            </span>
-          </div>
-          <div class="ab-subhint" data-i18n="act.subhint">Indicative prices shown — final price confirmed via WhatsApp</div>
-          <div class="act-pools">
-            <div class="act-pool" data-pool="available" id="actAvail">
-              <span class="act-pool-label" data-i18n="act.pool.avail">Available</span>
-              <div class="act-list" id="actAvailList"></div>
-            </div>
-            <div class="act-pool" data-pool="selected" id="actSel">
-              <span class="act-pool-label" data-i18n="act.pool.sel">Your Itinerary</span>
-              <div class="act-list" id="actSelList"></div>
-            </div>
           </div>
         </div>
 
@@ -1620,7 +1610,7 @@
 <footer>
   <div class="foot-grid">
     <div class="foot-col foot-brand">
-      <div class="foot-logo" style="font-size:30px;line-height:1.05">SS Langkawi<br>Ventures<span style="color:var(--accent)">.</span></div>
+      <div class="foot-logo" style="font-size:40px;line-height:1.05">SS Langkawi</div>
       <p data-i18n="foot.desc">Premium travel &amp; tour service in Langkawi. Airport transfers, half-day &amp; full-day tours with experienced drivers. Your journey, our priority.</p>
       <div class="foot-socials">
         <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9V14.9H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5H15c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v6.9A10 10 0 0 0 22 12z"/></svg></a>
@@ -1703,7 +1693,7 @@
       'vt.cat.sedanCompact':'Compact Sedan · 4 pax',
       'vt.cat.sedanFamily':'Family Sedan · 5 pax',
       'vt.cat.mpvFamily':'Family MPV · 6 pax',
-      'vt.cat.vanGroup':'Group Van · Up to 18 pax',
+      'vt.cat.vanGroup':'Group Van · Up to 13 pax',
       'vt.cat.groupVan':'Group Van',
       'vt.cat.starex':'Group · 11 pax',
       'vt.cat.vanLuxury':'VIP Luxury Van · 7-14 pax',
@@ -1718,20 +1708,20 @@
       'fleet.eyebrow':'Our Vehicles',
       'fleet.title':'Choose Your Tour Vehicle',
       'fleet.lead':'Each vehicle comes with a professional driver. Pick the package that suits your itinerary — Airport Transfer, Half-Day Tour, or Full-Day Tour. <strong style="color:var(--ink)">Extra hour from RM 50.</strong>',
-      'fleet.allType':'All Type','fleet.mpv':'MPV','fleet.suv':'SUV','fleet.van':'Van','fleet.sedan':'Sedan',
-      'fleet.luxuryCar':'Luxury Car','fleet.luxuryVan':'Luxury Van',
+      'fleet.allType':'All Type','fleet.mpv':'MPV Premium','fleet.suv':'SUVs','fleet.van':'Van','fleet.sedan':'Standard Sedan',
+      'fleet.luxuryCar':'Luxury','fleet.luxuryVan':'Luxury Van',
       'fleet.viewBook':'View & Book',
       // Packages
-      'pkg.transfer':'Transfer','pkg.halfDay':'Half-Day','pkg.fullDay':'Full-Day',
+      'pkg.transfer':'Airport/Hotel transfer','pkg.halfDay':'Half-Day','pkg.fullDay':'Full-Day',
       'pkg.p2p':'Point to Point','pkg.h45':'1-4 Hours','pkg.h810':'5-8 Hours','pkg.h8':'8 Hours',
       'pkg.transferFull':'Point-to-Point Transfer',
       'pkg.halfDayFull':'Half-Day Tour (1-4 hours)',
       'pkg.fullDayFull':'Full-Day Tour (5-8 hours)',
       'pkg.fullDayFull8':'Full-Day Tour (8 hours)',
       // Extra note: "Extra hour RM 50 · Up to N pax"
-      'extra.note':'Extra hour <strong>RM {rate}</strong> · Up to {pax} pax',
-      'extra.notePax':'Extra hour <strong>RM {rate}</strong> · {pax} pax',
-      'extra.noteRateOnly':'Extra hour <strong>RM {rate}</strong>',
+      'extra.note':'Extra Time <strong>RM {rate}</strong> · Up to {pax} pax',
+      'extra.notePax':'Extra Time <strong>RM {rate}</strong> · {pax} pax',
+      'extra.noteRateOnly':'Extra Time <strong>RM {rate}</strong>',
       // Modal
       'modal.exterior':'Exterior','modal.interior':'Interior',
       'modal.choosePkg':'Choose Package','modal.bookTour':'Book This Tour',
@@ -1887,7 +1877,7 @@
       'vt.cat.sedanCompact':'Sedan Compact · 4 pax',
       'vt.cat.sedanFamily':'Sedan Keluarga · 5 pax',
       'vt.cat.mpvFamily':'MPV Keluarga · 6 pax',
-      'vt.cat.vanGroup':'Van Kumpulan · Sehingga 18 pax',
+      'vt.cat.vanGroup':'Van Kumpulan · Sehingga 13 pax',
       'vt.cat.groupVan':'Van Kumpulan',
       'vt.cat.starex':'Kumpulan · 11 pax',
       'vt.cat.vanLuxury':'Van Mewah VIP · 7-14 pax',
@@ -1902,20 +1892,20 @@
       'fleet.eyebrow':'Kenderaan Kami',
       'fleet.title':'Pilih Kenderaan Tour Anda',
       'fleet.lead':'Setiap kenderaan termasuk pemandu profesional. Pilih pakej yang sesuai dengan itinerari anda — Airport Transfer, Tour Separuh Hari, atau Tour Sehari Penuh. <strong style="color:var(--ink)">Jam tambahan dari RM 50.</strong>',
-      'fleet.allType':'Semua','fleet.mpv':'MPV','fleet.suv':'SUV','fleet.van':'Van','fleet.sedan':'Sedan',
-      'fleet.luxuryCar':'Kereta Mewah','fleet.luxuryVan':'Van Mewah',
+      'fleet.allType':'Semua','fleet.mpv':'MPV Premium','fleet.suv':'SUV','fleet.van':'Van','fleet.sedan':'Standard Sedan',
+      'fleet.luxuryCar':'Mewah','fleet.luxuryVan':'Luxury Van',
       'fleet.viewBook':'Lihat & Tempah',
       // Packages
-      'pkg.transfer':'Transfer','pkg.halfDay':'Separuh Hari','pkg.fullDay':'Sehari Penuh',
+      'pkg.transfer':'Airport/Hotel transfer','pkg.halfDay':'Separuh Hari','pkg.fullDay':'Sehari Penuh',
       'pkg.p2p':'Titik ke Titik','pkg.h45':'1-4 Jam','pkg.h810':'5-8 Jam','pkg.h8':'8 Jam',
       'pkg.transferFull':'Transfer Titik ke Titik',
       'pkg.halfDayFull':'Tour Separuh Hari (1-4 jam)',
       'pkg.fullDayFull':'Tour Sehari Penuh (5-8 jam)',
       'pkg.fullDayFull8':'Tour Sehari Penuh (8 jam)',
       // Extra note
-      'extra.note':'Jam tambahan <strong>RM {rate}</strong> · Sehingga {pax} pax',
-      'extra.notePax':'Jam tambahan <strong>RM {rate}</strong> · {pax} pax',
-      'extra.noteRateOnly':'Jam tambahan <strong>RM {rate}</strong>',
+      'extra.note':'Extra Time <strong>RM {rate}</strong> · Sehingga {pax} pax',
+      'extra.notePax':'Extra Time <strong>RM {rate}</strong> · {pax} pax',
+      'extra.noteRateOnly':'Extra Time <strong>RM {rate}</strong>',
       // Modal
       'modal.exterior':'Luar','modal.interior':'Dalam',
       'modal.choosePkg':'Pilih Pakej','modal.bookTour':'Tempah Tour Ini',
@@ -2208,11 +2198,11 @@
   // Each vehicle has 3 packages: transfer, halfDay, fullDay (in RM)
   const FLEET = {
     almeraTurbo: {
-      name:'Almera Turbo', cat:'COMPACT SEDAN · 4-SEATER', rating:4.8, reviews:64,
-      location:'Langkawi', capacity:'Up to 4 pax', maxSeats:4,
+      name:'Almera Turbo', cat:'COMPACT SEDAN · 3-SEATER', rating:4.8, reviews:64,
+      location:'Langkawi', capacity:'Up to 3 pax', maxSeats:3,
       models:['Nissan Almera Turbo'],
-      packages:{ transfer:50, transferMax:100, halfDay:150, fullDay:300 },
-      extraHrRate:50,
+      packages:{ transfer:70, transferMax:110, halfDay:150, fullDay:300 },
+      extraHrRate:30,
       desc:'Modern turbocharged compact sedan — punchy performance, fuel-efficient, and stylish. Perfect for couples or solo travellers who want a smart, comfortable ride for airport transfer or a half-day around the island.',
       descBm:'Sedan compact moden dengan enjin turbo — pickup pantas, jimat minyak, dan stylish. Sesuai untuk pasangan atau solo traveller yang nakkan kenderaan smart dan selesa untuk airport transfer atau jalan-jalan separuh hari di pulau.',
       specs:[
@@ -2239,11 +2229,11 @@
       }
     },
     vios: {
-      name:'Toyota Vios', cat:'COMPACT SEDAN · 4-SEATER', rating:4.8, reviews:142,
-      location:'Langkawi', capacity:'Up to 4 pax', maxSeats:4,
+      name:'Toyota Vios', cat:'COMPACT SEDAN · 3-SEATER', rating:4.8, reviews:142,
+      location:'Langkawi', capacity:'Up to 3 pax', maxSeats:3,
       models:['Toyota Vios'],
-      packages:{ transfer:50, transferMax:100, halfDay:150, fullDay:300 },
-      extraHrRate:50,
+      packages:{ transfer:70, transferMax:110, halfDay:150, fullDay:300 },
+      extraHrRate:30,
       desc:'Malaysia\'s most popular sedan — dependable, spacious, and smooth. The Vios is the trusted workhorse for everyday travel, perfect for small families or business trips around Langkawi.',
       descBm:'Sedan paling popular di Malaysia — boleh diharap, luas, dan smooth. Vios adalah pilihan utama untuk perjalanan harian, sesuai untuk keluarga kecil atau perjalanan bisnes di sekitar Langkawi.',
       specs:[
@@ -2270,11 +2260,11 @@
       }
     },
     alzaNew: {
-      name:'Alza New', cat:'FAMILY MPV · 6-SEATER', rating:4.7, reviews:118,
-      location:'Langkawi', capacity:'Up to 6 pax', maxSeats:6,
+      name:'Alza New', cat:'FAMILY MPV · 5-SEATER', rating:4.7, reviews:118,
+      location:'Langkawi', capacity:'Up to 5 pax', maxSeats:5,
       models:['Perodua Alza (Latest Generation)'],
-      packages:{ transfer:70, transferMax:140, halfDay:200, fullDay:400 },
-      extraHrRate:70,
+      packages:{ transfer:100, transferMax:120, halfDay:200, fullDay:400 },
+      extraHrRate:50,
       desc:'The all-new Alza is Malaysia\'s favourite family MPV — modern, safe, and packed with features. Comfortably seats 7 with foldable seats for extra luggage. Perfect for family island tours or group day trips.',
       descBm:'Alza baru adalah MPV keluarga paling popular di Malaysia — moden, selamat, dan banyak ciri. Selesa untuk 7 orang dengan kerusi yang boleh dilipat untuk bagasi tambahan. Sesuai untuk tour pulau bersama keluarga atau day trip kumpulan.',
       specs:[
@@ -2301,15 +2291,15 @@
       }
     },
     luxuryVan: {
-      name:'Luxury Van', cat:'VIP LUXURY VAN · 7-14 SEATER', rating:4.9, reviews:53,
-      location:'Langkawi', capacity:'Up to 14 pax', maxSeats:14,
+      name:'Luxury Van', cat:'VIP LUXURY VAN · 10-SEATER', rating:4.9, reviews:53,
+      location:'Langkawi', capacity:'Up to 10 pax', maxSeats:10,
       models:['Toyota Vellfire / Alphard'],
-      packages:{ transfer:100, transferMax:150, halfDay:350, fullDay:650 },
-      extraHrRate:100,
+      packages:{ transfer:150, transferMax:250, halfDay:450, fullDay:700 },
+      extraHrRate:80,
       desc:'Top-tier luxury for VIP guests, executives, or special occasions. Captain chairs, ambient lighting, premium audio, and a presidential ride experience. The ultimate in road comfort for honeymooners, VIPs, or business travellers.',
       descBm:'Kemewahan tertinggi untuk tetamu VIP, eksekutif, atau majlis istimewa. Captain chairs, lampu ambient, audio premium, dan pengalaman perjalanan presidential. Kemuncak keselesaan di jalan raya untuk pengantin baru, VIP, atau pelancong bisnes.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'Up to 14 passengers (VIP)'},
+        {ic:'seats', lbl:'Capacity', val:'Up to 10 passengers (VIP)'},
         {ic:'bag', lbl:'Luggage', val:'10+ large bags'},
         {ic:'auto', lbl:'Transmission', val:'Automatic / Hybrid'},
         {ic:'fuel', lbl:'Fuel', val:'Petrol / Hybrid'}
@@ -2333,10 +2323,10 @@
     },
     vellfireAgh40: {
       name:'Vellfire AGH40', cat:'LUXURY VIP', rating:5.0, reviews:18,
-      location:'Langkawi', capacity:'', maxSeats:7,
+      location:'Langkawi', capacity:'Up to 5 pax', maxSeats:5,
       models:['Toyota Vellfire AGH40 (Latest Generation)'],
-      packages:{ fullDay:1000 },
-      extraHrRate:150,
+      packages:{ transfer:200, transferMax:250, halfDay:450, fullDay:800 },
+      extraHrRate:100,
       desc:'The flagship Vellfire AGH40 — newest generation with cutting-edge interior, refined hybrid powertrain, and presidential-level comfort. The pinnacle of luxury road travel in Langkawi for VIPs, dignitaries, and special occasions.',
       descBm:'Vellfire AGH40 flagship — generasi terbaru dengan interior canggih, hybrid powertrain halus, dan keselesaan tahap presidential. Kemuncak perjalanan mewah di Langkawi untuk VIP, kenamaan, dan majlis istimewa.',
       specs:[
@@ -2363,15 +2353,15 @@
       }
     },
     starex: {
-      name:'Hyundai Starex', cat:'GROUP · 11-SEATER', rating:4.8, reviews:77,
-      location:'Langkawi', capacity:'11 pax', maxSeats:11,
+      name:'Hyundai Starex', cat:'GROUP · 8-SEATER', rating:4.8, reviews:77,
+      location:'Langkawi', capacity:'8 pax', maxSeats:8,
       models:['Hyundai Starex'],
-      packages:{ fullDay:650 },
-      extraHrRate:100,
+      packages:{ transfer:150, transferMax:250, halfDay:450, fullDay:700 },
+      extraHrRate:80,
       desc:'Reliable group van with spacious cabin, comfortable seating, and strong air-conditioning. Great for family gatherings, airport runs, and island day tours with medium-sized groups.',
       descBm:'Van kumpulan yang boleh diharap dengan kabin luas, tempat duduk selesa, dan air-cond kuat. Sesuai untuk keluarga besar, airport transfer, dan tour pulau untuk kumpulan sederhana.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'11 passengers'},
+        {ic:'seats', lbl:'Capacity', val:'8 passengers'},
         {ic:'bag', lbl:'Luggage', val:'8 medium bags'},
         {ic:'auto', lbl:'Transmission', val:'Automatic'},
         {ic:'fuel', lbl:'Fuel', val:'Diesel'}
@@ -2395,10 +2385,10 @@
     },
     vellfire: {
       name:'Toyota Alphard', cat:'PREMIUM VIP', rating:4.9, reviews:39,
-      location:'Langkawi', capacity:'', maxSeats:7,
+      location:'Langkawi', capacity:'Up to 5 pax', maxSeats:5,
       models:['Toyota Alphard'],
-      packages:{ fullDay:1200 },
-      extraHrRate:200,
+      packages:{ transfer:200, transferMax:250, halfDay:450, fullDay:800 },
+      extraHrRate:100,
       desc:'Premium executive van with refined comfort, quiet ride, and luxurious interior. Perfect for VIP airport pickup, corporate guests, honeymoon trips, and private island tours.',
       descBm:'Van eksekutif premium dengan keselesaan halus, perjalanan senyap, dan interior mewah. Sesuai untuk airport pickup VIP, tetamu korporat, honeymoon, dan private island tour.',
       specs:[
@@ -2424,40 +2414,37 @@
         ]
       }
     },
-    van1518: {
-      name:'Van 15-18 Pax', cat:'GROUP VAN · 18-SEATER', rating:4.8, reviews:46,
-      location:'Langkawi', capacity:'Up to 18 pax', maxSeats:18,
-      models:['Tour Van 15-18 Seater'],
-      packages:{ transfer:250, transferMax:350, halfDay:500, fullDay:1000 },
-      extraHrRate:120,
-      desc:'Large-capacity tour van for big groups, school trips, team outings, and events. Comfortable for long island routes with generous luggage space and practical boarding access.',
-      descBm:'Van tour kapasiti besar untuk kumpulan ramai, rombongan sekolah, outing syarikat, dan event. Selesa untuk laluan jauh sekitar pulau dengan ruang bagasi besar dan akses naik turun yang praktikal.',
+    vanHiace: {
+      name:'Van', cat:'GROUP VAN · 13-SEATER', rating:4.8, reviews:41,
+      location:'Langkawi', capacity:'Up to 13 pax', maxSeats:13,
+      models:['Toyota Hiace'],
+      packages:{ transfer:150, transferMax:250, halfDay:350, fullDay:650 },
+      extraHrRate:80,
+      desc:'Spacious group van with comfortable seating and strong air-conditioning — ideal for family trips, airport transfers, and full-day island tours for medium to large groups. Plenty of luggage space and easy boarding.',
+      descBm:'Van kumpulan yang luas dengan tempat duduk selesa dan air-cond kuat — sesuai untuk perjalanan keluarga, airport transfer, dan tour pulau sehari penuh untuk kumpulan sederhana hingga besar. Ruang bagasi banyak dan mudah naik turun.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'15-18 passengers'},
-        {ic:'bag', lbl:'Luggage', val:'12+ medium bags'},
-        {ic:'auto', lbl:'Transmission', val:'Manual / Automatic'},
+        {ic:'seats', lbl:'Capacity', val:'13 passengers'},
+        {ic:'bag', lbl:'Luggage', val:'10 medium bags'},
+        {ic:'auto', lbl:'Transmission', val:'Automatic'},
         {ic:'fuel', lbl:'Fuel', val:'Diesel'}
       ],
-      features:['High Roof Cabin','Rear Air-Cond Vents','Comfort Bench Seating','Wide Sliding Door','PA/Mic Ready','Large Boot Space','Stability Control','Safety Belts All Seats'],
-      featuresBm:['Kabin Bumbung Tinggi','Vent Air-Cond Belakang','Kerusi Bench Selesa','Pintu Gelongsor Lebar','PA/Mic Sedia','Ruang Boot Besar','Kawalan Stabiliti','Tali Pinggang Semua Kerusi'],
-      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Free pickup &amp; drop-off','Best for large groups'],
-      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off percuma','Terbaik untuk kumpulan besar'],
+      features:['Dual Air Conditioning','Comfort Reclining Seats','Spacious Cabin','Wide Sliding Door','USB Charging','Large Cargo Space','Strong Cooling','Safety Belts All Seats'],
+      featuresBm:['Air Conditioning Dual','Kerusi Reclining Selesa','Kabin Luas','Pintu Gelongsor Lebar','Pengecas USB','Ruang Bagasi Besar','Sejukan Kuat','Tali Pinggang Semua Kerusi'],
+      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Free pickup &amp; drop-off','Ideal for group travel'],
+      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off percuma','Sesuai untuk perjalanan berkumpulan'],
       images:{
         exterior:[
-          'assets/van1518-exterior-1.png',
-          'assets/van1518-exterior-2.png',
-          'assets/van1518-exterior-3.png'
+          'assets/van-hiace-exterior-1.jpg',
+          'assets/van-hiace-interior-2.jpg',
+          'assets/van-hiace-interior-3.jpg'
         ],
         interior:[
-          'assets/van1518-interior-1.png',
-          'assets/van1518-interior-2.png',
-          'assets/van1518-interior-3.png'
+          'assets/van-hiace-interior-1.jpg',
+          'assets/van-hiace-interior-2.jpg',
+          'assets/van-hiace-interior-3.jpg'
         ]
       }
     }
-  };
-
-  // Package definitions
   const PACKAGES = {
     transfer: { key:'transfer', label:'Transfer', dur:'Point to Point', durFull:'Point-to-Point Transfer' },
     halfDay:  { key:'halfDay',  label:'Half-Day', dur:'4–5 Hours',     durFull:'Half-Day Tour (4–5 hours)' },
@@ -2996,18 +2983,14 @@
 
   // ====== POPULAR PLACES (LANGKAWI) ======
   const PLACES = [
-    { name:'Langkawi Sky Bridge', cat:'Iconic', img:'assets/place-langkawi-sky-bridge.png', meta:'Mat Cincang' },
-    { name:'Eagle Square (Dataran Lang)', cat:'Landmark', img:'assets/place-eagle-square.png', meta:'Kuah Town' },
-    { name:'Cable Car (Panorama Langkawi)', cat:'Top Attraction', img:'assets/place-cable-car.png', meta:'Oriental Village' },
-    { name:'Telaga Tujuh Waterfall', cat:'Nature', img:'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&q=85', meta:'Seven Wells' },
-    { name:'Pantai Cenang', cat:'Beach', img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=85', meta:'West Coast' },
-    { name:'Kilim Geoforest Park', cat:'Mangrove Tour', img:'assets/place-kilim-geoforest.png', meta:'East Coast' },
-    { name:'Tanjung Rhu Beach', cat:'Beach', img:'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=85', meta:'North Langkawi' },
-    { name:'Pulau Beras Basah', cat:'Island Hopping', img:'assets/place-pulau-beras-basah.png', meta:'Off Langkawi' },
-    { name:'Underwater World', cat:'Family', img:'assets/place-underwater-world.png', meta:'Pantai Cenang' },
-    { name:'Mahsuri Tomb', cat:'Heritage', img:'assets/place-mahsuri-tomb.png', meta:'Ulu Melaka' },
-    { name:'Langkawi Wildlife Park', cat:'Family', img:'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800&q=85', meta:'Kubang Badak' },
-    { name:'Pasar Malam Cenang', cat:'Night Market', img:'assets/place-pasar-malam-cenang.png', meta:'Pantai Cenang' }
+    { name:'Langkawi Island Tour', cat:'Top Attraction', img:'assets/place-langkawi-sky-bridge.png', meta:'Langkawi' },
+    { name:'Mangrove Tour & Beach', cat:'Mangrove Tour', img:'assets/place-kilim-geoforest.png', meta:'Kilim Geoforest' },
+    { name:'ATV Adventure Tour Village & Waterfall', cat:'Adventure', img:'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&q=85', meta:'Village & Waterfall' },
+    { name:'Sunset Dinner Cruise', cat:'Cruise', img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=85', meta:'West Coast' },
+    { name:'Islands Hopping', cat:'Island Hopping', img:'assets/place-pulau-beras-basah.png', meta:'Off Langkawi' },
+    { name:'SkyCab & SkyBridge', cat:'Top Attraction', img:'assets/place-cable-car.png', meta:'Oriental Village' },
+    { name:'Eagle Square', cat:'Landmark', img:'assets/place-eagle-square.png', meta:'Kuah Town' },
+    { name:'Maha Tower', cat:'Landmark', img:'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=85', meta:'Kuah Town' }
   ];
 
   function renderPlaces(){
@@ -3016,8 +2999,8 @@
     if (!track1 || !track2) return;
 
     // Split places into two rows for visual variety
-    const row1 = PLACES.slice(0, 6);
-    const row2 = PLACES.slice(6, 12);
+    const row1 = PLACES.slice(0, 4);
+    const row2 = PLACES.slice(4, 8);
 
     const buildCard = (p) => `
       <div class="place-card" role="img" aria-label="${p.name}">
@@ -3042,7 +3025,8 @@
     'Iconic':'Ikonik','Landmark':'Mercu Tanda','Top Attraction':'Tarikan Utama',
     'Nature':'Alam Semulajadi','Beach':'Pantai','Mangrove Tour':'Tour Bakau',
     'Island Hopping':'Island Hopping','Family':'Keluarga',
-    'Heritage':'Warisan','Night Market':'Pasar Malam'
+    'Heritage':'Warisan','Night Market':'Pasar Malam',
+    'Adventure':'Adventure','Cruise':'Pelayaran'
   };
   function tPlaceCat(cat){
     return currentLang === 'bm' ? (PLACE_CAT_BM[cat] || cat) : cat;
