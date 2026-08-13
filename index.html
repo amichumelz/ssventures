@@ -97,6 +97,7 @@
   .hero-slide:nth-child(3){animation-delay:12s}
   @keyframes heroFade{0%{opacity:0;transform:scale(1.06)}5%{opacity:1}28%{opacity:1}33%{opacity:0}100%{opacity:0;transform:scale(1)}}
   .hero-title{position:absolute;left:0;right:0;bottom:-1.5%;text-align:center;font-weight:800;font-size:clamp(30px,7.2vw,104px);color:rgba(255,255,255,.92);letter-spacing:-.04em;line-height:.95;pointer-events:none;text-shadow:0 12px 50px rgba(0,0,0,.10);animation:titleReveal 1.4s .35s cubic-bezier(.2,.7,.2,1) backwards;z-index:1;mix-blend-mode:screen;padding:0 16px}
+  .hero-title > span{display:block}
   .hero-title.solid{mix-blend-mode:normal;color:rgba(255,255,255,.85);z-index:0}
   .hero-chip{position:absolute;top:24px;right:24px;color:#fff;font-size:13px;background:rgba(11,16,32,.55);backdrop-filter:blur(10px);padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);z-index:3;animation:fadeUp 1s .9s cubic-bezier(.2,.7,.2,1) backwards;display:flex;align-items:center;gap:10px;font-weight:500}
   .hero-chip .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
@@ -926,7 +927,8 @@
     .form-row{grid-template-columns:80px 1fr}
   }
   @media (max-width:480px){
-    .hero-title{font-size:clamp(26px,8.5vw,56px)}
+    .hero-title{font-size:clamp(26px,8.5vw,56px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.08em}
+    .hero-title > span{display:block;white-space:nowrap}
     .topbar .left{display:none}
     .reqs-grid{grid-template-columns:1fr}
     .price-row .amt{font-size:28px}
@@ -1001,8 +1003,8 @@
   <img class="hero-photo hero-slide" src="assets/vellfire-fleet-display.png" alt="Luxury Langkawi transport" />
   <img class="hero-photo hero-slide" src="assets/alphard-exterior-1.png" alt="Langkawi Alphard transport" />
   <img class="hero-photo hero-slide" src="assets/luxuryvan-fleet-display.png" alt="Langkawi premium van" />
-  <div class="hero-title solid">LANGKAWI TRAVEL &amp; TOUR</div>
-  <div class="hero-title">LANGKAWI TRAVEL &amp; TOUR</div>
+  <div class="hero-title solid"><span>LANGKAWI</span><span>TRAVEL &amp; TOUR</span></div>
+  <div class="hero-title"><span>LANGKAWI</span><span>TRAVEL &amp; TOUR</span></div>
   <div class="hero-chip"><span class="dot"></span> <span data-i18n="hero.chip">Driver included · Book your tour today</span></div>
 </section>
 
