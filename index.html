@@ -64,6 +64,11 @@
   .nav-links a{position:relative;padding-bottom:6px;opacity:.78;transition:opacity .2s}
   .nav-links a:hover, .nav-links a.active{opacity:1}
   .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:currentColor;border-radius:2px}
+  .nav-actions{display:flex;align-items:center;gap:10px}
+  .header-socials{display:flex;align-items:center;gap:8px}
+  .header-socials a{width:38px;height:38px;border-radius:50%;background:var(--soft);border:1px solid var(--line);display:grid;place-items:center;transition:transform .25s, background .25s, border-color .25s;color:var(--ink)}
+  .header-socials a:hover{transform:translateY(-2px);background:#fff;border-color:rgba(37,99,255,.25);color:var(--accent)}
+  .header-socials svg{width:17px;height:17px}
   .cta-app{background:var(--ink);color:#fff;border-radius:999px;padding:12px 20px 12px 22px;display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:15px;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(11,16,32,.10);transition:transform .25s, box-shadow .25s, background .25s;white-space:nowrap}
 
   .cta-app:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(11,16,32,.18);background:var(--accent)}
@@ -837,6 +842,8 @@
     .topbar{font-size:12px;padding:8px 14px;flex-direction:column;gap:6px}
     .topbar .left, .topbar .right{gap:14px}
     .nav-links{display:none}
+    .nav-actions{gap:8px}
+    .header-socials{display:flex}
     .menu-btn{display:inline-flex}
     .mobile-menu{display:flex}
     .cta-app{display:none}
@@ -962,8 +969,18 @@
     <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
     <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
   </ul>
-  <button class="cta-app" type="button" onclick="window.location.href='https://wa.me/60183554458'"><span data-i18n="nav.cta">Book Now</span> <span class="arr">↗</span></button>
-  <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span></button>
+  <div class="nav-actions">
+    <div class="header-socials" aria-label="Social media links">
+      <a href="https://www.instagram.com/sslangkawi.ventures/" target="_blank" rel="noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@sslangkawi.ventures" target="_blank" rel="noreferrer" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 8.5a6 6 0 0 1-3.7-1.3v7.3a5.5 5.5 0 1 1-5.5-5.5h.7v2.7H10a3 3 0 1 0 3 3V2h2.5a3.7 3.7 0 0 0 4 4z"/></svg>
+      </a>
+    </div>
+    <button class="cta-app" type="button" onclick="window.location.href='https://wa.me/60183554458'"><span data-i18n="nav.cta">Book Now</span> <span class="arr">↗</span></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span></button>
+  </div>
 </header>
 
 <nav class="mobile-menu" id="mobileMenu">
@@ -984,8 +1001,8 @@
   <img class="hero-photo hero-slide" src="assets/vellfire-fleet-display.png" alt="Luxury Langkawi transport" />
   <img class="hero-photo hero-slide" src="assets/alphard-exterior-1.png" alt="Langkawi Alphard transport" />
   <img class="hero-photo hero-slide" src="assets/luxuryvan-fleet-display.png" alt="Langkawi premium van" />
-  <div class="hero-title solid">Transport, Travel &amp; Tour Langkawi</div>
-  <div class="hero-title">Transport, Travel &amp; Tour Langkawi</div>
+  <div class="hero-title solid">LANGKAWI TRAVEL &amp; TOUR</div>
+  <div class="hero-title">LANGKAWI TRAVEL &amp; TOUR</div>
   <div class="hero-chip"><span class="dot"></span> <span data-i18n="hero.chip">Driver included · Book your tour today</span></div>
 </section>
 
