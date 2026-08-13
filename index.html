@@ -66,16 +66,6 @@
   .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:currentColor;border-radius:2px}
   .cta-app{background:var(--ink);color:#fff;border-radius:999px;padding:12px 20px 12px 22px;display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:15px;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(11,16,32,.10);transition:transform .25s, box-shadow .25s, background .25s;white-space:nowrap}
 
-  /* LANGUAGE TOGGLE */
-  .lang-toggle{display:inline-flex;background:var(--soft);border-radius:999px;padding:3px;border:1.5px solid var(--line);font-family:inherit}
-  .lang-toggle button{
-    background:transparent;border:none;padding:7px 14px;border-radius:999px;
-    font-family:inherit;font-weight:700;font-size:12.5px;cursor:pointer;
-    color:var(--muted);letter-spacing:.04em;transition:all .25s cubic-bezier(.2,.7,.2,1);
-    line-height:1;
-  }
-  .lang-toggle button.active{background:var(--ink);color:#fff;box-shadow:0 4px 10px rgba(11,16,32,.18)}
-  .lang-toggle button:not(.active):hover{color:var(--ink)}
   .cta-app:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(11,16,32,.18);background:var(--accent)}
   .cta-app .arr{width:22px;height:22px;border-radius:50%;background:#fff;color:var(--ink);display:inline-grid;place-items:center;font-size:12px;transition:transform .3s}
   .cta-app:hover .arr{transform:rotate(45deg)}
@@ -93,15 +83,15 @@
   .mobile-menu a:hover{color:var(--accent-2)}
 
   /* HERO */
-  .hero{position:relative;margin:14px 28px 0;border-radius:var(--radius);overflow:hidden;height:clamp(520px,76vh,760px);background:#cbd5e1;isolation:isolate}
-  .hero-photo{position:absolute;inset:0;background-image:url('assets/hero-first-section.png');background-size:cover;background-position:center 35%;transform:scale(1.05);animation:heroZoom 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero{position:relative;margin:14px 28px 0;border-radius:var(--radius);overflow:hidden;height:clamp(380px,52vh,560px);background:#0e1430;isolation:isolate}
+  .hero-photo{position:absolute;inset:0;background-image:url('assets/hero-first-section.png');background-size:cover;background-position:center 45%;transform:scale(1.02);animation:heroZoom 1.6s cubic-bezier(.2,.7,.2,1) forwards}
   .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(11,16,32,.18) 0%, rgba(11,16,32,0) 30%, rgba(11,16,32,0) 60%, rgba(255,255,255,.06) 100%)}
   .hero-slide{animation:heroFade 18s infinite;opacity:0}
   .hero-slide:nth-child(1){animation-delay:0s}
   .hero-slide:nth-child(2){animation-delay:6s}
   .hero-slide:nth-child(3){animation-delay:12s}
   @keyframes heroFade{0%{opacity:0;transform:scale(1.06)}5%{opacity:1}28%{opacity:1}33%{opacity:0}100%{opacity:0;transform:scale(1)}}
-  .hero-title{position:absolute;left:0;right:0;bottom:-1.5%;text-align:center;font-weight:800;font-size:clamp(40px,9.5vw,150px);color:rgba(255,255,255,.92);letter-spacing:-.04em;line-height:.9;pointer-events:none;text-shadow:0 12px 50px rgba(0,0,0,.10);animation:titleReveal 1.4s .35s cubic-bezier(.2,.7,.2,1) backwards;z-index:1;mix-blend-mode:screen;padding:0 16px}
+  .hero-title{position:absolute;left:0;right:0;bottom:-1.5%;text-align:center;font-weight:800;font-size:clamp(30px,7.2vw,104px);color:rgba(255,255,255,.92);letter-spacing:-.04em;line-height:.95;pointer-events:none;text-shadow:0 12px 50px rgba(0,0,0,.10);animation:titleReveal 1.4s .35s cubic-bezier(.2,.7,.2,1) backwards;z-index:1;mix-blend-mode:screen;padding:0 16px}
   .hero-title.solid{mix-blend-mode:normal;color:rgba(255,255,255,.85);z-index:0}
   .hero-chip{position:absolute;top:24px;right:24px;color:#fff;font-size:13px;background:rgba(11,16,32,.55);backdrop-filter:blur(10px);padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);z-index:3;animation:fadeUp 1s .9s cubic-bezier(.2,.7,.2,1) backwards;display:flex;align-items:center;gap:10px;font-weight:500}
   .hero-chip .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
@@ -672,6 +662,72 @@
   .poster-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border:none;border-radius:12px;background:var(--ink);color:#fff;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;transition:transform .2s, background .2s}
   .poster-cta:hover{background:var(--accent);transform:translateY(-2px)}
 
+  /* TIER PACKAGE CARDS (Silver / Gold) */
+  .tier-card{flex:0 0 calc((100% - 36px)/3);min-width:290px;scroll-snap-align:start;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:0;display:flex;flex-direction:column;overflow:hidden;transition:transform .25s, box-shadow .25s, border-color .25s}
+  .tier-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,16,32,.10)}
+  .tier-head{padding:20px 22px 16px;color:#fff;position:relative}
+  .tier-silver .tier-head{background:linear-gradient(135deg,#94a3b8,#64748b);border-bottom:1px solid rgba(255,255,255,.15)}
+  .tier-gold .tier-head{background:linear-gradient(135deg,#e0b64d,#b8860b)}
+  .tier-card.tier-gold{border-color:#e6c766}
+  .tier-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.22);padding:5px 11px;border-radius:999px;margin-bottom:10px}
+  .tier-head h3{font-size:23px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
+  .tier-head .pkg-letter{font-size:14px;font-weight:600;opacity:.9;margin-top:2px}
+  .tier-body{padding:18px 22px 22px;display:flex;flex-direction:column;flex:1}
+  .tier-itin{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:9px}
+  .tier-itin li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink-2);line-height:1.4}
+  .tier-itin li .n{flex:0 0 20px;height:20px;border-radius:50%;background:var(--soft);color:var(--ink);font-size:11px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+  .tier-prices{border-top:1px dashed var(--line);padding-top:14px;margin-top:auto;display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+  .tier-price-row{display:flex;justify-content:space-between;align-items:center;font-size:14px}
+  .tier-price-row .pax{color:var(--muted);font-weight:600;display:flex;align-items:center;gap:7px}
+  .tier-price-row .pax svg{width:15px;height:15px;color:var(--green)}
+  .tier-price-row .rm{font-weight:800;color:var(--ink);font-size:15.5px}
+  .tier-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border:none;border-radius:12px;font-family:inherit;font-weight:700;font-size:13.5px;cursor:pointer;transition:transform .2s, background .2s;background:var(--ink);color:#fff}
+  .tier-cta:hover{transform:translateY(-2px)}
+  .tier-silver .tier-cta:hover{background:#475569}
+  .tier-gold .tier-cta{background:#b8860b}
+  .tier-gold .tier-cta:hover{background:#96700a}
+
+  /* GALLERY CAROUSEL (vertical + magnify) */
+  .gallery-sec{padding:70px 28px 90px;max-width:1280px;margin:0 auto}
+  .gallery-sec .head{text-align:center;margin-bottom:34px}
+  .gallery-sec .head .eyebrow{color:var(--accent)}
+  .gallery-sec .head h2{font-size:clamp(28px,2.8vw,44px);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+  .gallery-sec .head .lead{max-width:640px;margin:10px auto 0;color:var(--muted);font-size:14.5px;line-height:1.6}
+  .gallery-stage{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px}
+  .gallery-viewport{position:relative;width:min(560px,92vw);height:clamp(360px,64vh,620px);border-radius:24px;overflow:hidden;background:#0e1430;box-shadow:0 24px 60px rgba(11,16,32,.22)}
+  .gallery-slides{position:absolute;inset:0}
+  .gallery-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);transform:translateY(24px) scale(1.02);pointer-events:none}
+  .gallery-slide.active{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+  .gallery-slide .gimg{width:100%;height:100%;background-size:cover;background-position:center;cursor:zoom-in;transition:transform .35s ease}
+  .gallery-count{position:absolute;top:16px;right:16px;z-index:4;background:rgba(11,16,32,.6);backdrop-filter:blur(10px);color:#fff;font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12)}
+  .gallery-arrow{position:absolute;left:50%;transform:translateX(-50%);z-index:5;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.94);border:none;cursor:pointer;display:grid;place-items:center;color:var(--ink);box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .25s, background .25s}
+  .gallery-arrow:hover{background:#fff;transform:translateX(-50%) scale(1.1)}
+  .gallery-arrow.up{top:14px}
+  .gallery-arrow.down{bottom:14px}
+  .gallery-dots{position:absolute;right:14px;top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:8px}
+  .gallery-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:height .3s, background .3s}
+  .gallery-dots span.active{height:26px;border-radius:6px;background:#fff}
+  .gallery-thumbs{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 8px;max-width:min(560px,92vw);scrollbar-width:thin}
+  .gallery-thumbs::-webkit-scrollbar{height:6px}
+  .gallery-thumbs::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
+  .gallery-thumb{flex:0 0 84px;height:60px;border-radius:10px;background-size:cover;background-position:center;cursor:pointer;opacity:.55;border:2px solid transparent;transition:opacity .25s, border-color .25s}
+  .gallery-thumb:hover{opacity:.85}
+  .gallery-thumb.active{opacity:1;border-color:var(--accent)}
+  .gallery-hint{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:7px}
+  .gallery-hint svg{width:15px;height:15px}
+  /* Lightbox / magnification */
+  .lightbox{position:fixed;inset:0;z-index:120;background:rgba(6,9,20,.94);display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;cursor:zoom-out;padding:20px}
+  .lightbox.show{display:flex;opacity:1}
+  .lightbox-img{max-width:94vw;max-height:90vh;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.5);transition:transform .2s ease;cursor:zoom-in;transform-origin:center}
+  .lightbox-img.zoomed{cursor:move}
+  .lightbox-close{position:fixed;top:20px;right:20px;z-index:121;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:background .2s, transform .2s}
+  .lightbox-close:hover{background:rgba(255,255,255,.25);transform:rotate(90deg)}
+  .lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);z-index:121;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:24px;cursor:pointer;display:grid;place-items:center;transition:background .2s}
+  .lightbox-nav:hover{background:rgba(255,255,255,.28)}
+  .lightbox-nav.prev{left:20px}
+  .lightbox-nav.next{right:20px}
+  .lightbox-caption{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:121;color:#e2e8f0;font-size:13px;background:rgba(11,16,32,.6);padding:7px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.12)}
+
   /* REQUIREMENTS */
   .reqs{padding:60px 28px;max-width:1280px;margin:0 auto}
   .reqs .head{text-align:center;margin-bottom:40px}
@@ -769,6 +825,7 @@
     .pricing-grid{grid-template-columns:1fr 1fr}
     .price-card.featured{grid-column:1/-1}
     .poster-card{flex-basis:calc((100% - 18px)/2)}
+    .tier-card{flex-basis:calc((100% - 18px)/2)}
     .reqs-grid{grid-template-columns:1fr 1fr}
     .inclusions{grid-template-columns:1fr 1fr}
     .contact-grid{grid-template-columns:1fr;padding:40px}
@@ -784,8 +841,7 @@
     .mobile-menu{display:flex}
     .cta-app{display:none}
     .nav-shell{padding:12px 18px;gap:8px}
-    .nav-shell .lang-toggle button{padding:6px 10px;font-size:11.5px}
-    .hero{margin:14px 14px 0;height:clamp(420px,68vh,620px);border-radius:22px}
+    .hero{margin:14px 14px 0;height:clamp(300px,44vh,420px);border-radius:22px}
     .hero-chip{top:16px;right:16px;font-size:12px;padding:8px 12px}
     .services{margin:8px 14px 0;padding:54px 24px;border-radius:22px}
     .svc-grid{grid-template-columns:1fr;gap:14px}
@@ -836,6 +892,9 @@
     .poster-packages{padding:0 18px 50px}
     .poster-controls{justify-content:center}
     .poster-card{flex-basis:88%}
+    .tier-card{flex-basis:86%}
+    .gallery-sec{padding:50px 18px 60px}
+    .gallery-viewport{height:clamp(320px,58vh,480px)}
     .inclusions{grid-template-columns:1fr;padding:20px}
     .reqs-grid{grid-template-columns:1fr 1fr}
     .reqs{padding:50px 18px}
@@ -860,7 +919,7 @@
     .form-row{grid-template-columns:80px 1fr}
   }
   @media (max-width:480px){
-    .hero-title{font-size:clamp(34px,10vw,72px)}
+    .hero-title{font-size:clamp(26px,8.5vw,56px)}
     .topbar .left{display:none}
     .reqs-grid{grid-template-columns:1fr}
     .price-row .amt{font-size:28px}
@@ -885,8 +944,8 @@
     <a href="#location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Open 8:00 AM – 11:00 PM</a>
   </div>
   <div class="right">
-    <a href="tel:+601126610913"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg> +60 11‑2661 0913</a>
-    <a href="mailto:mietravelntour@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> mietravelntour@gmail.com</a>
+    <a href="tel:+60183554458"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg> +60 18-355 4458</a>
+    <a href="mailto:sslangkawi4@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> sslangkawi4@gmail.com</a>
   </div>
 </div>
 
@@ -900,13 +959,10 @@
     <li><a href="#how" data-i18n="nav.how">How it Works</a></li>
     <li><a href="#fleet" data-i18n="nav.vehicles">Vehicles</a></li>
     <li><a href="#pricing" data-i18n="nav.packages">Packages</a></li>
+    <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
     <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
   </ul>
-  <div class="lang-toggle" role="group" aria-label="Language">
-    <button type="button" class="active" data-lang="en" onclick="setLang('en')">EN</button>
-    <button type="button" data-lang="bm" onclick="setLang('bm')">BM</button>
-  </div>
-  <button class="cta-app" type="button" onclick="window.location.href='https://wa.me/601126610913'"><span data-i18n="nav.cta">Book Now</span> <span class="arr">↗</span></button>
+  <button class="cta-app" type="button" onclick="window.location.href='https://wa.me/60183554458'"><span data-i18n="nav.cta">Book Now</span> <span class="arr">↗</span></button>
   <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span></button>
 </header>
 
@@ -917,13 +973,10 @@
   <a href="#how" data-close data-i18n="nav.how">How it Works</a>
   <a href="#fleet" data-close data-i18n="nav.vehicles">Vehicles</a>
   <a href="#pricing" data-close data-i18n="nav.packages">Packages</a>
+  <a href="#gallery" data-close data-i18n="nav.gallery">Gallery</a>
   <a href="#faq" data-close data-i18n="nav.faq">FAQ</a>
   <a href="#location" data-close data-i18n="nav.contact">Contact</a>
-  <div class="lang-toggle" style="margin-top:6px" role="group" aria-label="Language">
-    <button type="button" class="active" data-lang="en" onclick="setLang('en')">EN</button>
-    <button type="button" data-lang="bm" onclick="setLang('bm')">BM</button>
-  </div>
-  <button class="cta-app" type="button" style="display:inline-flex;margin-top:10px" onclick="window.location.href='https://wa.me/601126610913'"><span data-i18n="nav.ctaWa">Book via WhatsApp</span> <span class="arr">↗</span></button>
+  <button class="cta-app" type="button" style="display:inline-flex;margin-top:10px" onclick="window.location.href='https://wa.me/60183554458'"><span data-i18n="nav.ctaWa">Book via WhatsApp</span> <span class="arr">↗</span></button>
 </nav>
 
 <!-- HERO -->
@@ -931,8 +984,8 @@
   <div class="hero-photo hero-slide" style="background-image:url('assets/vellfire-fleet-display.png')"></div>
   <div class="hero-photo hero-slide" style="background-image:url('assets/alphard-exterior-1.png')"></div>
   <div class="hero-photo hero-slide" style="background-image:url('assets/luxuryvan-fleet-display.png')"></div>
-  <div class="hero-title solid">Travel &amp; Tour Langkawi</div>
-  <div class="hero-title">Travel &amp; Tour Langkawi</div>
+  <div class="hero-title solid">Transport, Travel &amp; Tour Langkawi</div>
+  <div class="hero-title">Transport, Travel &amp; Tour Langkawi</div>
   <div class="hero-chip"><span class="dot"></span> <span data-i18n="hero.chip">Driver included · Book your tour today</span></div>
 </section>
 
@@ -983,7 +1036,7 @@
     <div class="svc-card reveal delay-5" data-anim data-tilt>
       <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1 19 19 0 0 1-8.3-3 19 19 0 0 1-6-6A19 19 0 0 1 3.6 4.1 1 1 0 0 1 4.6 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1l-1.7 1.7a16 16 0 0 0 6 6l1.7-1.7a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg></div>
       <h3 data-i18n="svc.card3.title">24/7 Hotline</h3>
-      <p data-i18n="svc.card3.desc">Last-minute booking? Flight delayed? Need to extend your tour? Just call or WhatsApp +60 11‑2661 0913. We're always ready to help.</p>
+      <p data-i18n="svc.card3.desc">Last-minute booking? Flight delayed? Need to extend your tour? Just call or WhatsApp +60 18-355 4458. We're always ready to help.</p>
     </div>
   </div>
 </section>
@@ -1079,9 +1132,10 @@
 <section class="collection" id="fleet">
   <div class="eyebrow reveal" data-anim data-i18n="fleet.eyebrow">Our Vehicles</div>
   <h2 class="reveal delay-1" data-anim data-i18n="fleet.title">Choose Your Tour Vehicle</h2>
-  <p class="lead reveal delay-2" data-anim data-i18n-html="fleet.lead">Each vehicle comes with a professional driver. Pick the package that suits your itinerary — Airport Transfer, Half-Day Tour, or Full-Day Tour. <strong style="color:var(--ink)">Extra hour from RM 50.</strong></p>
+  <p class="lead reveal delay-2" data-anim data-i18n-html="fleet.lead">Each vehicle comes with a professional driver. Pick the package that suits your itinerary — Airport Transfer, Half-Day Tour, or Full-Day Tour. <strong style="color:var(--ink)">Extra hour RM 30.</strong></p>
   <div class="filters reveal delay-2" data-anim>
-    <button class="pill active" data-cat="sedan" data-i18n="fleet.sedan">Standard Sedan</button>
+    <button class="pill active" data-cat="all" data-i18n="fleet.all">All Vehicles</button>
+    <button class="pill" data-cat="sedan" data-i18n="fleet.sedan">Standard Sedan</button>
     <button class="pill" data-cat="mpv" data-i18n="fleet.mpv">MPV Premium</button>
     <button class="pill" data-cat="van" data-i18n="fleet.van">Van</button>
     <button class="pill" data-cat="luxury-van" data-i18n="fleet.luxuryVan">Luxury Van</button>
@@ -1094,7 +1148,7 @@
       <div class="body">
         <div class="row1"><span class="name">Almera Turbo</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span data-i18n="vt.cat.sedanCompact">Compact Sedan · 4 pax</span>
+          <span data-i18n="vt.cat.sedanCompact">Compact Sedan · 3 pax</span>
         </div>
         <div class="pkg-grid">
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 70-110</span></div>
@@ -1111,7 +1165,7 @@
       <div class="body">
         <div class="row1"><span class="name">Toyota Vios</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span data-i18n="vt.cat.sedanCompact">Compact Sedan · 4 pax</span>
+          <span data-i18n="vt.cat.sedanCompact">Compact Sedan · 3 pax</span>
         </div>
         <div class="pkg-grid">
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 70-110</span></div>
@@ -1128,14 +1182,14 @@
       <div class="body">
         <div class="row1"><span class="name">Alza New</span><span class="rating" style="font-weight:700;font-size:14px">4.7 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span data-i18n="vt.cat.mpvFamily">Family MPV · 6 pax</span>
+          <span data-i18n="vt.cat.mpvFamily">Family MPV · 4 pax</span>
         </div>
         <div class="pkg-grid">
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 100-120</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.halfDay">Half-Day</span><span class="pkg-dur" data-i18n="pkg.h45">1-4 Hours</span><span class="pkg-price">RM 200</span></div>
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.fullDay">Full-Day</span><span class="pkg-dur" data-i18n="pkg.h810">5-8 Hours</span><span class="pkg-price">RM 400</span></div>
         </div>
-        <div class="extra-note" data-i18n-html="extra.note" data-pax="5" data-rate="50">Extra Time <strong>RM 50</strong> · Up to 5 pax</div>
+        <div class="extra-note" data-i18n-html="extra.note" data-pax="4" data-rate="50">Extra Time <strong>RM 50</strong> · Up to 4 pax</div>
         <button class="view-btn" onclick="openModal('alzaNew')"><span data-i18n="fleet.viewBook">View &amp; Book</span> <span class="arr">→</span></button>
       </div>
     </article>
@@ -1146,7 +1200,7 @@
       <div class="body">
         <div class="row1"><span class="name">Luxury Van</span><span class="rating" style="font-weight:700;font-size:14px">4.9 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span data-i18n="vt.cat.vanLuxury">VIP Luxury Van · 7-14 pax</span>
+          <span data-i18n="vt.cat.vanLuxury">VIP Luxury Van · 10 pax</span>
         </div>
         <div class="pkg-grid">
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 150-250</span></div>
@@ -1180,7 +1234,7 @@
       <div class="body">
         <div class="row1"><span class="name">Hyundai Starex</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
         <div class="models">
-          <span data-i18n="vt.cat.starex">Group · 11 pax</span>
+          <span data-i18n="vt.cat.starex">Group · 8 pax</span>
         </div>
         <div class="pkg-grid">
           <div class="pkg"><span class="pkg-label" data-i18n="pkg.transfer">Airport/Hotel transfer</span><span class="pkg-dur" data-i18n="pkg.p2p">Point to Point</span><span class="pkg-price">RM 150-250</span></div>
@@ -1268,8 +1322,20 @@
       <h4 class="modal-h4" data-i18n="modal.choosePkg">Choose Package</h4>
       <div class="pkg-select" id="pkgSelect"></div>
 
-      <h4 class="modal-h4" data-i18n="modal.bookTour">Book This Tour</h4>
+      <h4 class="modal-h4" data-i18n="modal.bookTour">Book This Travel and Transfer</h4>
       <div class="booking-card">
+        <div class="form-row">
+          <label data-i18n="form.name">Name</label>
+          <input type="text" id="custName" data-i18n-placeholder="form.namePh" placeholder="Your full name">
+        </div>
+        <div class="form-row">
+          <label data-i18n="form.email">Email Address</label>
+          <input type="email" id="custEmail" data-i18n-placeholder="form.emailPh" placeholder="you@email.com">
+        </div>
+        <div class="form-row">
+          <label data-i18n="form.phone">Phone</label>
+          <input type="tel" id="custPhone" data-i18n-placeholder="form.phonePh" placeholder="e.g. 012-345 6789">
+        </div>
         <div class="form-row">
           <label data-i18n="form.date">Date</label>
           <input type="date" id="pickupDt">
@@ -1281,6 +1347,10 @@
         <div class="form-row">
           <label data-i18n="form.pickup">Pickup</label>
           <input type="text" id="pickupLoc" data-i18n-placeholder="form.pickupPh" placeholder="Hotel / Airport / Address" value="Langkawi">
+        </div>
+        <div class="form-row">
+          <label data-i18n="form.luggage">Luggage</label>
+          <input type="text" id="custLuggage" data-i18n-placeholder="form.luggagePh" placeholder="e.g. 2 large + 1 cabin">
         </div>
         <div class="form-row" id="paxFormRow">
           <label data-i18n="form.pax">Passengers</label>
@@ -1334,7 +1404,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.4 17.5L3.5 21l3.7-1a8 8 0 0 0 10.4-13.7zm-5.6 12c-1.3 0-2.6-.4-3.7-1.1l-.3-.2-2.1.6.6-2.1-.2-.3a6.5 6.5 0 1 1 5.7 3.1zm3.5-4.8c-.2-.1-1.1-.6-1.3-.6-.2-.1-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.5-.2-1-.4-1.4-.8-.4-.4-.7-.8-1-1.3-.1-.2 0-.3.1-.4l.3-.3.1-.3v-.3c0-.1-.4-.9-.5-1.3-.1-.3-.3-.3-.4-.3h-.4c-.1 0-.4 0-.5.2-.2.2-.7.7-.7 1.7s.8 2 .9 2.1c.1.1 1.5 2.4 3.7 3.4l1.2.4c.5.2 1 .1 1.4.1.4-.1 1.1-.5 1.3-.9.2-.4.2-.8.1-.9 0-.1-.2-.2-.4-.3z"/></svg>
           <span data-i18n="modal.bookWa">Book via WhatsApp</span>
         </button>
-        <button class="btn-call-modal" onclick="window.location.href='tel:+601126610913'" aria-label="Call">
+        <button class="btn-call-modal" onclick="window.location.href='tel:+60183554458'" aria-label="Call">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg>
         </button>
       </div>
@@ -1360,7 +1430,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="price.b.water">Bottled water on board</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="price.b.stops">Up to 2 stops along the route</span></li>
       </ul>
-      <button class="pick" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20I%20want%20to%20book%20a%20Transfer%20package'" data-i18n="price.choose.t1">Choose Transfer</button>
+      <button class="pick" onclick="window.location.href='https://wa.me/60183554458?text=Hi,%20I%20want%20to%20book%20a%20Transfer%20package'" data-i18n="price.choose.t1">Choose Transfer</button>
     </div>
     <div class="price-card featured reveal delay-3" data-anim>
       <h3 data-i18n="price.t2.title">Half-Day Tour</h3>
@@ -1374,7 +1444,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="price.b.wait">Driver waits at every stop</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="price.b.ideal">Ideal for Langkawi island tour</span></li>
       </ul>
-      <button class="pick" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20I%20want%20to%20book%20a%20Half-Day%20Tour'" data-i18n="price.choose.t2">Choose Half-Day</button>
+      <button class="pick" onclick="window.location.href='https://wa.me/60183554458?text=Hi,%20I%20want%20to%20book%20a%20Half-Day%20Tour'" data-i18n="price.choose.t2">Choose Half-Day</button>
     </div>
     <div class="price-card reveal delay-4" data-anim>
       <h3 data-i18n="price.t3.title">Full-Day Tour</h3>
@@ -1384,15 +1454,15 @@
       <ul>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="price.b.everyH">Everything in Half-Day</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="price.b.lunch">Lunch stop at recommended local spots</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="price.b.cross">Cross-state day trip (Penang, Perlis)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="price.b.cross">Full-island Langkawi day trip</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="price.b.photo">Photo stops at scenic locations</span></li>
       </ul>
-      <button class="pick" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20I%20want%20to%20book%20a%20Full-Day%20Tour'" data-i18n="price.choose.t3">Choose Full-Day</button>
+      <button class="pick" onclick="window.location.href='https://wa.me/60183554458?text=Hi,%20I%20want%20to%20book%20a%20Full-Day%20Tour'" data-i18n="price.choose.t3">Choose Full-Day</button>
     </div>
   </div>
 
   <div style="text-align:center;margin-top:18px;color:var(--muted);font-size:14px" class="reveal" data-anim>
-    <span data-i18n-html="price.extra">Need more time? <strong style="color:var(--ink)">Extra hour from RM 50</strong> · Multi-day packages available on request</span>
+    <span data-i18n-html="price.extra">Need more time? <strong style="color:var(--ink)">Extra hour RM 30</strong> · Multi-day packages available on request</span>
   </div>
 
   <div class="inclusions reveal" data-anim>
@@ -1428,17 +1498,139 @@
       <button class="poster-nav" type="button" aria-label="Scroll posters right" onclick="document.getElementById('posterGrid').scrollBy({left:320,behavior:'smooth'})">›</button>
     </div>
   <div class="poster-grid" id="posterGrid">
-    <article class="poster-card reveal delay-2" data-anim>
-      <div class="poster-media"><img src="assets/poster-package-2.png" alt="Mangrove Tour package poster"></div>
-      <button class="poster-cta" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20saya%20nak%20tanya%20tentang%20Package%202'" data-i18n="poster.cta">Enquire via WhatsApp</button>
+    <!-- SILVER A -->
+    <article class="tier-card tier-silver reveal delay-2" data-anim>
+      <div class="tier-head">
+        <span class="tier-badge">🦅 <span data-i18n="tier.silver">Silver</span></span>
+        <h3 data-i18n="tier.silver">Silver</h3>
+        <div class="pkg-letter"><span data-i18n="tier.package">Package</span> A</div>
+      </div>
+      <div class="tier-body">
+        <ul class="tier-itin">
+          <li><span class="n">1</span><span data-i18n="tier.transferAH">Airport &amp; Hotel Transfer</span></li>
+          <li><span class="n">2</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">3</span><span data-i18n="tier.transferAH">Airport &amp; Hotel Transfer</span></li>
+        </ul>
+        <div class="tier-prices">
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>1–2 pax</span><span class="rm">RM 500</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>3–4 pax</span><span class="rm">RM 600</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>5–10 pax</span><span class="rm">RM 900</span></div>
+        </div>
+        <button class="tier-cta" onclick="bookTier('Silver','A')" data-i18n="poster.cta">Enquire via WhatsApp</button>
+      </div>
     </article>
-    <article class="poster-card reveal delay-4" data-anim>
-      <div class="poster-media"><img src="assets/poster-package-3.png" alt="Beach Water Sport combo package poster"></div>
-      <button class="poster-cta" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20saya%20nak%20tanya%20tentang%20Package%203'" data-i18n="poster.cta">Enquire via WhatsApp</button>
+
+    <!-- SILVER B -->
+    <article class="tier-card tier-silver reveal delay-3" data-anim>
+      <div class="tier-head">
+        <span class="tier-badge">🦅 <span data-i18n="tier.silver">Silver</span></span>
+        <h3 data-i18n="tier.silver">Silver</h3>
+        <div class="pkg-letter"><span data-i18n="tier.package">Package</span> B</div>
+      </div>
+      <div class="tier-body">
+        <ul class="tier-itin">
+          <li><span class="n">1</span><span data-i18n="tier.half4">Half Day Tour (4 hours)</span></li>
+          <li><span class="n">2</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">3</span><span data-i18n="tier.transferAH">Airport &amp; Hotel Transfer</span></li>
+        </ul>
+        <div class="tier-prices">
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>1–2 pax</span><span class="rm">RM 550</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>3–4 pax</span><span class="rm">RM 700</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>5–10 pax</span><span class="rm">RM 1150</span></div>
+        </div>
+        <button class="tier-cta" onclick="bookTier('Silver','B')" data-i18n="poster.cta">Enquire via WhatsApp</button>
+      </div>
     </article>
-    <article class="poster-card reveal delay-4" data-anim>
-      <div class="poster-media"><img src="assets/poster-package-4.png" alt="ATV Adventure package poster"></div>
-      <button class="poster-cta" onclick="window.location.href='https://wa.me/601126610913?text=Hi,%20saya%20nak%20tanya%20tentang%20Package%204'" data-i18n="poster.cta">Enquire via WhatsApp</button>
+
+    <!-- SILVER C -->
+    <article class="tier-card tier-silver reveal delay-4" data-anim>
+      <div class="tier-head">
+        <span class="tier-badge">🦅 <span data-i18n="tier.silver">Silver</span></span>
+        <h3 data-i18n="tier.silver">Silver</h3>
+        <div class="pkg-letter"><span data-i18n="tier.package">Package</span> C</div>
+      </div>
+      <div class="tier-body">
+        <ul class="tier-itin">
+          <li><span class="n">1</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">2</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">3</span><span data-i18n="tier.transferAH">Airport &amp; Hotel Transfer</span></li>
+        </ul>
+        <div class="tier-prices">
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>1–2 pax</span><span class="rm">RM 700</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>3–4 pax</span><span class="rm">RM 900</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>5–10 pax</span><span class="rm">RM 1500</span></div>
+        </div>
+        <button class="tier-cta" onclick="bookTier('Silver','C')" data-i18n="poster.cta">Enquire via WhatsApp</button>
+      </div>
+    </article>
+
+    <!-- GOLD A -->
+    <article class="tier-card tier-gold reveal delay-2" data-anim>
+      <div class="tier-head">
+        <span class="tier-badge">🦅 <span data-i18n="tier.gold">Gold</span></span>
+        <h3 data-i18n="tier.gold">Gold</h3>
+        <div class="pkg-letter"><span data-i18n="tier.package">Package</span> A</div>
+      </div>
+      <div class="tier-body">
+        <ul class="tier-itin">
+          <li><span class="n">1</span><span data-i18n="tier.transferAH">Airport &amp; Hotel Transfer</span></li>
+          <li><span class="n">2</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">3</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">4</span><span data-i18n="tier.transferAH">Airport &amp; Hotel Transfer</span></li>
+        </ul>
+        <div class="tier-prices">
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>1–2 pax</span><span class="rm">RM 800</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>3–4 pax</span><span class="rm">RM 1000</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>5–10 pax</span><span class="rm">RM 1600</span></div>
+        </div>
+        <button class="tier-cta" onclick="bookTier('Gold','A')" data-i18n="poster.cta">Enquire via WhatsApp</button>
+      </div>
+    </article>
+
+    <!-- GOLD B -->
+    <article class="tier-card tier-gold reveal delay-3" data-anim>
+      <div class="tier-head">
+        <span class="tier-badge">🦅 <span data-i18n="tier.gold">Gold</span></span>
+        <h3 data-i18n="tier.gold">Gold</h3>
+        <div class="pkg-letter"><span data-i18n="tier.package">Package</span> B</div>
+      </div>
+      <div class="tier-body">
+        <ul class="tier-itin">
+          <li><span class="n">1</span><span data-i18n="tier.half4">Half Day Tour (4 hours)</span></li>
+          <li><span class="n">2</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">3</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">4</span><span data-i18n="tier.transferAH">Airport &amp; Hotel Transfer</span></li>
+        </ul>
+        <div class="tier-prices">
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>1–2 pax</span><span class="rm">RM 850</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>3–4 pax</span><span class="rm">RM 1100</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>5–10 pax</span><span class="rm">RM 1850</span></div>
+        </div>
+        <button class="tier-cta" onclick="bookTier('Gold','B')" data-i18n="poster.cta">Enquire via WhatsApp</button>
+      </div>
+    </article>
+
+    <!-- GOLD C -->
+    <article class="tier-card tier-gold reveal delay-4" data-anim>
+      <div class="tier-head">
+        <span class="tier-badge">🦅 <span data-i18n="tier.gold">Gold</span></span>
+        <h3 data-i18n="tier.gold">Gold</h3>
+        <div class="pkg-letter"><span data-i18n="tier.package">Package</span> C</div>
+      </div>
+      <div class="tier-body">
+        <ul class="tier-itin">
+          <li><span class="n">1</span><span data-i18n="tier.half4">Half Day Tour (4 hours)</span></li>
+          <li><span class="n">2</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">3</span><span data-i18n="tier.full8">Full Day Tour (8 hours)</span></li>
+          <li><span class="n">4</span><span data-i18n="tier.half4">Half Day Tour (4 hours)</span></li>
+        </ul>
+        <div class="tier-prices">
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>1–2 pax</span><span class="rm">RM 900</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>3–4 pax</span><span class="rm">RM 1200</span></div>
+          <div class="tier-price-row"><span class="pax"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>5–10 pax</span><span class="rm">RM 2100</span></div>
+        </div>
+        <button class="tier-cta" onclick="bookTier('Gold','C')" data-i18n="poster.cta">Enquire via WhatsApp</button>
+      </div>
     </article>
   </div>
   </div>
@@ -1483,7 +1675,7 @@
 
   <div class="faq-item reveal delay-2" data-anim>
     <button class="faq-q"><span data-i18n="faq.q1">How do I book a tour?</span><span class="icon">+</span></button>
-    <div class="faq-a" data-i18n-html="faq.a1">The fastest way is via WhatsApp at +60 11‑2661 0913. Just tell us your date, package (Transfer / Half-Day / Full-Day), pickup location, and number of passengers. We'll confirm within 5 minutes during operating hours (8 AM – 11 PM). You can also tap "Book Now" at the top of this page.</div>
+    <div class="faq-a" data-i18n-html="faq.a1">The fastest way is via WhatsApp at +60 18-355 4458. Just tell us your date, package (Transfer / Half-Day / Full-Day), pickup location, and number of passengers. We'll confirm within 5 minutes during operating hours (8 AM – 11 PM). You can also tap "Book Now" at the top of this page.</div>
   </div>
 
   <div class="faq-item reveal delay-2" data-anim>
@@ -1556,17 +1748,17 @@
       <p class="lead reveal delay-2" data-anim data-i18n="contact.lead">Contact SS Langkawi Ventures now to book your tour, ask about itineraries, or arrange last-minute pickup. We're open 7 days a week — including public holidays.</p>
 
       <div class="contact-list">
-        <a class="contact-item wa reveal delay-3" data-anim href="https://wa.me/601126610913" target="_blank">
+        <a class="contact-item wa reveal delay-3" data-anim href="https://wa.me/60183554458" target="_blank">
           <div class="ic"><span class="wave">👋</span></div>
-          <div><div class="lbl" data-i18n="contact.wa">WhatsApp (fastest)</div><div class="val">+60 11‑2661 0913</div></div>
+          <div><div class="lbl" data-i18n="contact.wa">WhatsApp (fastest)</div><div class="val">+60 18-355 4458</div></div>
         </a>
-        <a class="contact-item reveal delay-3" data-anim href="tel:+601126610913">
+        <a class="contact-item reveal delay-3" data-anim href="tel:+60183554458">
           <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg></div>
-          <div><div class="lbl" data-i18n="contact.phone">Phone</div><div class="val">+60 11‑2661 0913</div></div>
+          <div><div class="lbl" data-i18n="contact.phone">Phone</div><div class="val">+60 18-355 4458</div></div>
         </a>
-        <a class="contact-item reveal delay-4" data-anim href="mailto:mietravelntour@gmail.com">
+        <a class="contact-item reveal delay-4" data-anim href="mailto:sslangkawi4@gmail.com">
           <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="lbl" data-i18n="contact.email">Email</div><div class="val">mietravelntour@gmail.com</div></div>
+          <div><div class="lbl" data-i18n="contact.email">Email</div><div class="val">sslangkawi4@gmail.com</div></div>
         </a>
         <div class="contact-item reveal delay-4" data-anim style="cursor:default">
           <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -1575,11 +1767,11 @@
       </div>
 
       <div class="contact-cta">
-        <button class="btn-wa" onclick="window.location.href='https://wa.me/601126610913'">
+        <button class="btn-wa" onclick="window.location.href='https://wa.me/60183554458'">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.4 17.5L3.5 21l3.7-1a8 8 0 0 0 10.4-13.7zm-5.6 12c-1.3 0-2.6-.4-3.7-1.1l-.3-.2-2.1.6.6-2.1-.2-.3a6.5 6.5 0 1 1 5.7 3.1zm3.5-4.8c-.2-.1-1.1-.6-1.3-.6-.2-.1-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.5-.2-1-.4-1.4-.8-.4-.4-.7-.8-1-1.3-.1-.2 0-.3.1-.4l.3-.3.1-.3v-.3c0-.1-.4-.9-.5-1.3-.1-.3-.3-.3-.4-.3h-.4c-.1 0-.4 0-.5.2-.2.2-.7.7-.7 1.7s.8 2 .9 2.1c.1.1 1.5 2.4 3.7 3.4l1.2.4c.5.2 1 .1 1.4.1.4-.1 1.1-.5 1.3-.9.2-.4.2-.8.1-.9 0-.1-.2-.2-.4-.3z"/></svg>
           <span data-i18n="contact.btn.wa">WhatsApp Now</span>
         </button>
-        <button class="btn-primary" onclick="window.location.href='tel:+601126610913'">
+        <button class="btn-primary" onclick="window.location.href='tel:+60183554458'">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.1a1 1 0 0 1 1 .8 12 12 0 0 0 .6 2.4 1 1 0 0 1-.2 1L7 8.7a16 16 0 0 0 6 6l1.5-1.5a1 1 0 0 1 1-.2 12 12 0 0 0 2.4.6 1 1 0 0 1 .8 1z"/></svg>
           <span data-i18n="contact.btn.call">Call Direct</span>
         </button>
@@ -1602,6 +1794,42 @@
   </div>
 </section>
 
+<!-- GALLERY CAROUSEL (vertical + magnification) -->
+<section class="gallery-sec" id="gallery" aria-label="Photo gallery">
+  <div class="head">
+    <div class="eyebrow reveal" data-anim data-i18n="gallery.eyebrow">Gallery</div>
+    <h2 class="reveal delay-1" data-anim data-i18n="gallery.title">Moments in Langkawi</h2>
+    <p class="lead reveal delay-2" data-anim data-i18n="gallery.lead">Swipe up and down through our trips, and tap any photo to zoom in.</p>
+  </div>
+  <div class="gallery-stage reveal delay-2" data-anim>
+    <div class="gallery-viewport" id="galleryViewport">
+      <div class="gallery-count"><span id="galIdx">1</span> / <span id="galTotal">1</span></div>
+      <button class="gallery-arrow up" type="button" aria-label="Previous photo" onclick="galStep(-1)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+      <div class="gallery-slides" id="gallerySlides"></div>
+      <div class="gallery-dots" id="galleryDots"></div>
+      <button class="gallery-arrow down" type="button" aria-label="Next photo" onclick="galStep(1)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+    <div class="gallery-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
+      <span data-i18n="gallery.hint">Tap a photo to magnify</span>
+    </div>
+    <div class="gallery-thumbs" id="galleryThumbs"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" type="button" aria-label="Close" onclick="closeLightbox(event)">✕</button>
+  <button class="lightbox-nav prev" type="button" aria-label="Previous" onclick="lbStep(event,-1)">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Gallery photo enlarged">
+  <button class="lightbox-nav next" type="button" aria-label="Next" onclick="lbStep(event,1)">›</button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <footer>
   <div class="foot-grid">
     <div class="foot-col foot-brand">
@@ -1610,7 +1838,7 @@
       <div class="foot-socials">
         <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9V14.9H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5H15c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v6.9A10 10 0 0 0 22 12z"/></svg></a>
         <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
-        <a href="https://wa.me/601126610913" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.4 17.5L3.5 21l3.7-1a8 8 0 0 0 10.4-13.7zM12 19a6.5 6.5 0 1 1 5.7-9.7l-.5.4-.5-.4A6.5 6.5 0 1 1 12 19z"/></svg></a>
+        <a href="https://wa.me/60183554458" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.4 17.5L3.5 21l3.7-1a8 8 0 0 0 10.4-13.7zM12 19a6.5 6.5 0 1 1 5.7-9.7l-.5.4-.5-.4A6.5 6.5 0 1 1 12 19z"/></svg></a>
         <a href="#" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 8.5a6 6 0 0 1-3.7-1.3v7.3a5.5 5.5 0 1 1-5.5-5.5h.7v2.7H10a3 3 0 1 0 3 3V2h2.5a3.7 3.7 0 0 0 4 4z"/></svg></a>
       </div>
     </div>
@@ -1625,9 +1853,9 @@
     </div>
     <div class="foot-col">
       <h5 data-i18n="foot.contact">Contact</h5>
-      <a href="tel:+601126610913">+60 11‑2661 0913</a>
-      <a href="https://wa.me/601126610913">WhatsApp</a>
-      <a href="mailto:mietravelntour@gmail.com">mietravelntour@gmail.com</a>
+      <a href="tel:+60183554458">+60 18-355 4458</a>
+      <a href="https://wa.me/60183554458">WhatsApp</a>
+      <a href="mailto:sslangkawi4@gmail.com">sslangkawi4@gmail.com</a>
       <p style="margin-top:8px">No. 80B, Kampung Huma,<br>Mukim Ayer Hangat,<br>07000 Langkawi, Kedah</p>
     </div>
     <div class="foot-col">
@@ -1641,7 +1869,7 @@
   </div>
 </footer>
 
-<a href="https://wa.me/601126610913" class="wa-fab" aria-label="WhatsApp SS Langkawi Ventures">
+<a href="https://wa.me/60183554458" class="wa-fab" aria-label="WhatsApp SS Langkawi Ventures">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8 8 0 0 0 4.4 17.5L3.5 21l3.7-1a8 8 0 0 0 10.4-13.7zm-5.6 12c-1.3 0-2.6-.4-3.7-1.1l-.3-.2-2.1.6.6-2.1-.2-.3a6.5 6.5 0 1 1 5.7 3.1zm3.5-4.8c-.2-.1-1.1-.6-1.3-.6-.2-.1-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.5-.2-1-.4-1.4-.8-.4-.4-.7-.8-1-1.3-.1-.2 0-.3.1-.4l.3-.3.1-.3v-.3c0-.1-.4-.9-.5-1.3-.1-.3-.3-.3-.4-.3h-.4c-.1 0-.4 0-.5.2-.2.2-.7.7-.7 1.7s.8 2 .9 2.1c.1.1 1.5 2.4 3.7 3.4l1.2.4c.5.2 1 .1 1.4.1.4-.1 1.1-.5 1.3-.9.2-.4.2-.8.1-.9 0-.1-.2-.2-.4-.3z"/></svg>
 </a>
 
@@ -1651,7 +1879,7 @@
     en: {
       // Nav
       'nav.home':'Home', 'nav.services':'Services', 'nav.how':'How it Works',
-      'nav.vehicles':'Vehicles', 'nav.packages':'Packages', 'nav.faq':'FAQ',
+      'nav.vehicles':'Vehicles', 'nav.packages':'Packages', 'nav.gallery':'Gallery', 'nav.faq':'FAQ',
       'nav.contact':'Contact', 'nav.cta':'Book Now', 'nav.ctaWa':'Book via WhatsApp',
       'nav.places':'Places',
       // Hero
@@ -1665,7 +1893,7 @@
       'svc.card2.title':'All-Inclusive Pricing',
       'svc.card2.desc':'Driver, fuel, toll, and parking — all included in the package price. Pay easily via DuitNow, FPX, credit/debit card, or cash. No surprises, no hidden charges.',
       'svc.card3.title':'24/7 Hotline',
-      'svc.card3.desc':"Last-minute booking? Flight delayed? Need to extend your tour? Just call or WhatsApp +60 11‑2661 0913. We're always ready to help.",
+      'svc.card3.desc':"Last-minute booking? Flight delayed? Need to extend your tour? Just call or WhatsApp +60 18-355 4458. We're always ready to help.",
       // How
       'how.eyebrow':'How it works',
       'how.title':'4 simple steps<br>to book your tour',
@@ -1685,13 +1913,13 @@
       'tag.executive':'EXECUTIVE','tag.family':'FAMILY','tag.vip':'VIP',
       'tag.turbo':'TURBO','tag.popular':'POPULAR','tag.flagship':'FLAGSHIP',
       // Vehicle category subtitles (used in card under name)
-      'vt.cat.sedanCompact':'Compact Sedan · 4 pax',
+      'vt.cat.sedanCompact':'Compact Sedan · 3 pax',
       'vt.cat.sedanFamily':'Family Sedan · 5 pax',
-      'vt.cat.mpvFamily':'Family MPV · 6 pax',
+      'vt.cat.mpvFamily':'Family MPV · 4 pax',
       'vt.cat.vanGroup':'Group Van · Up to 13 pax',
       'vt.cat.groupVan':'Group Van',
-      'vt.cat.starex':'Group · 11 pax',
-      'vt.cat.vanLuxury':'VIP Luxury Van · 7-14 pax',
+      'vt.cat.starex':'Group · 8 pax',
+      'vt.cat.vanLuxury':'VIP Luxury Van · 10 pax',
       'vt.cat.vanPremiumVip':'Premium VIP',
       'vt.cat.vanFlagship':'Luxury VIP',
       // Popular Places carousel
@@ -1702,8 +1930,8 @@
       // Fleet section
       'fleet.eyebrow':'Our Vehicles',
       'fleet.title':'Choose Your Tour Vehicle',
-      'fleet.lead':'Each vehicle comes with a professional driver. Pick the package that suits your itinerary — Airport Transfer, Half-Day Tour, or Full-Day Tour. <strong style="color:var(--ink)">Extra hour from RM 50.</strong>',
-      'fleet.allType':'All Type','fleet.mpv':'MPV Premium','fleet.suv':'SUVs','fleet.van':'Van','fleet.sedan':'Standard Sedan',
+      'fleet.lead':'Each vehicle comes with a professional driver. Pick the package that suits your itinerary — Airport Transfer, Half-Day Tour, or Full-Day Tour. <strong style="color:var(--ink)">Extra hour RM 30.</strong>',
+      'fleet.all':'All Vehicles','fleet.allType':'All Type','fleet.mpv':'MPV Premium','fleet.suv':'SUVs','fleet.van':'Van','fleet.sedan':'Standard Sedan',
       'fleet.luxuryCar':'Luxury','fleet.luxuryVan':'Luxury Van',
       'fleet.viewBook':'View & Book',
       // Packages
@@ -1719,11 +1947,13 @@
       'extra.noteRateOnly':'Extra Time <strong>RM {rate}</strong>',
       // Modal
       'modal.exterior':'Exterior','modal.interior':'Interior',
-      'modal.choosePkg':'Choose Package','modal.bookTour':'Book This Tour',
+      'modal.choosePkg':'Choose Package','modal.bookTour':'Book This Travel and Transfer',
       'modal.models':'Vehicle Models','modal.specs':'Specifications',
       'modal.features':'Features','modal.included':"What's Included",
       'modal.bookWa':'Book via WhatsApp',
       // Form labels
+      'form.name':'Name','form.email':'Email Address','form.phone':'Phone','form.luggage':'Luggage',
+      'form.namePh':'Your full name','form.emailPh':'you@email.com','form.phonePh':'e.g. 012-345 6789','form.luggagePh':'e.g. 2 large + 1 cabin',
       'form.date':'Date','form.time':'Time','form.pickup':'Pickup',
       'form.pax':'Passengers','form.extraHr':'Extra Hours',
       'form.pickupPh':'Hotel / Airport / Address',
@@ -1764,20 +1994,27 @@
       'price.b.ideal':'Ideal for Langkawi island tour',
       'price.b.everyH':'Everything in Half-Day',
       'price.b.lunch':'Lunch stop at recommended local spots',
-      'price.b.cross':'Cross-state day trip (Penang, Perlis)',
+      'price.b.cross':'Full-island Langkawi day trip',
       'price.b.photo':'Photo stops at scenic locations',
       'price.choose.t1':'Choose Transfer','price.choose.t2':'Choose Half-Day','price.choose.t3':'Choose Full-Day',
-      'price.extra':'Need more time? <strong style="color:var(--ink)">Extra hour from RM 50</strong> · Multi-day packages available on request',
+      'price.extra':'Need more time? <strong style="color:var(--ink)">Extra hour RM 30</strong> · Multi-day packages available on request',
       // Poster board
       'poster.eyebrow':'Latest Promotions',
       'poster.title':'Special Tour Packages in Langkawi',
-      'poster.lead':'Browse our latest package promotions and tap WhatsApp to book or ask for details.',
+      'poster.lead':'Choose a Silver or Gold package below and tap WhatsApp to book or ask for details.',
       'poster.slot1':'Place Poster Package 1 here',
       'poster.slot2':'Place Poster Package 2 here',
       'poster.slot3':'Place Poster Package 3 here',
       'poster.slot4':'Place Poster Package 4 here',
       'poster.size':'Recommended size: 1080 × 1350 (4:5)',
       'poster.cta':'Enquire via WhatsApp',
+      'tier.silver':'Silver','tier.gold':'Gold','tier.package':'Package',
+      'tier.transferAH':'Airport & Hotel Transfer',
+      'tier.full8':'Full Day Tour (8 hours)',
+      'tier.half4':'Half Day Tour (4 hours)',
+      'gallery.eyebrow':'Gallery','gallery.title':'Moments in Langkawi',
+      'gallery.lead':'Swipe up and down through our trips, and tap any photo to zoom in.',
+      'gallery.hint':'Tap a photo to magnify',
       // Inclusions
       'incl.1.lbl':'Driver Included','incl.1.sub':'Licensed & experienced',
       'incl.2.lbl':'Fuel & Toll','incl.2.sub':'All-in, no top-ups',
@@ -1792,7 +2029,7 @@
       // FAQ
       'faq.eyebrow':'FAQ','faq.title':'Frequently asked questions',
       'faq.q1':'How do I book a tour?',
-      'faq.a1':'The fastest way is via WhatsApp at +60 11‑2661 0913. Just tell us your date, package (Transfer / Half-Day / Full-Day), pickup location, and number of passengers. We\'ll confirm within 5 minutes during operating hours (8 AM – 11 PM). You can also tap "Book Now" at the top of this page.',
+      'faq.a1':'The fastest way is via WhatsApp at +60 18-355 4458. Just tell us your date, package (Transfer / Half-Day / Full-Day), pickup location, and number of passengers. We\'ll confirm within 5 minutes during operating hours (8 AM – 11 PM). You can also tap "Book Now" at the top of this page.',
       'faq.q2':"What's included in the package price?",
       'faq.a2':'Everything you need for a worry-free trip: professional driver, fuel, toll charges, parking fees, and bottled water on board. There are no hidden surcharges — the price you see is the price you pay. Entrance tickets to attractions and meals are not included.',
       'faq.q3':"What's the difference between Transfer, Half-Day & Full-Day?",
@@ -1827,15 +2064,16 @@
       'foot.hotline':'● 24/7 Booking Hotline',
       'foot.copy':'© 2026 SS Langkawi Ventures Sdn Bhd. All rights reserved. · Reg. No: 1234567-A · SSM Verified',
       // WhatsApp message template
-      'wa.greet':'Hi SS Langkawi Ventures! I\'d like to book a tour.',
+      'wa.greet':'Hi SS Langkawi Ventures! I\'d like to book a travel & transfer.',
       'wa.vehicle':'Vehicle','wa.package':'Package','wa.date':'Date',
       'wa.time':'Time','wa.pickup':'Pickup','wa.passengers':'Passengers',
+      'wa.name':'Name','wa.email':'Email','wa.phone':'Phone','wa.luggage':'Luggage',
       'wa.extraHr':'Extra hours','wa.total':'Total','wa.confirm':'Please confirm availability. Thank you!',
     },
     bm: {
       // Nav
       'nav.home':'Utama', 'nav.services':'Perkhidmatan', 'nav.how':'Cara Kerja',
-      'nav.vehicles':'Kenderaan', 'nav.packages':'Pakej', 'nav.faq':'Soalan Lazim',
+      'nav.vehicles':'Kenderaan', 'nav.packages':'Pakej', 'nav.gallery':'Galeri', 'nav.faq':'Soalan Lazim',
       'nav.contact':'Hubungi', 'nav.cta':'Tempah', 'nav.ctaWa':'Tempah Via WhatsApp',
       'nav.places':'Tempat',
       // Hero
@@ -1849,7 +2087,7 @@
       'svc.card2.title':'Harga All-Inclusive',
       'svc.card2.desc':'Pemandu, minyak, tol, dan parking — semua termasuk dalam harga pakej. Bayar mudah melalui DuitNow, FPX, kad kredit/debit, atau tunai. Tiada caj tersembunyi.',
       'svc.card3.title':'Hotline 24/7',
-      'svc.card3.desc':'Tempahan saat akhir? Penerbangan tertangguh? Nak extend tour? Telefon atau WhatsApp +60 11‑2661 0913. Kami sedia membantu.',
+      'svc.card3.desc':'Tempahan saat akhir? Penerbangan tertangguh? Nak extend tour? Telefon atau WhatsApp +60 18-355 4458. Kami sedia membantu.',
       // How
       'how.eyebrow':'Cara Kerja',
       'how.title':'4 langkah mudah<br>untuk tempah tour anda',
@@ -1869,13 +2107,13 @@
       'tag.executive':'EKSEKUTIF','tag.family':'KELUARGA','tag.vip':'VIP',
       'tag.turbo':'TURBO','tag.popular':'POPULAR','tag.flagship':'FLAGSHIP',
       // Vehicle category subtitles
-      'vt.cat.sedanCompact':'Sedan Compact · 4 pax',
+      'vt.cat.sedanCompact':'Sedan Compact · 3 pax',
       'vt.cat.sedanFamily':'Sedan Keluarga · 5 pax',
-      'vt.cat.mpvFamily':'MPV Keluarga · 6 pax',
+      'vt.cat.mpvFamily':'MPV Keluarga · 4 pax',
       'vt.cat.vanGroup':'Van Kumpulan · Sehingga 13 pax',
       'vt.cat.groupVan':'Van Kumpulan',
-      'vt.cat.starex':'Kumpulan · 11 pax',
-      'vt.cat.vanLuxury':'Van Mewah VIP · 7-14 pax',
+      'vt.cat.starex':'Kumpulan · 8 pax',
+      'vt.cat.vanLuxury':'Van Mewah VIP · 10 pax',
       'vt.cat.vanPremiumVip':'Premium VIP',
       'vt.cat.vanFlagship':'Luxury VIP',
       // Popular Places carousel
@@ -1886,8 +2124,8 @@
       // Fleet section
       'fleet.eyebrow':'Kenderaan Kami',
       'fleet.title':'Pilih Kenderaan Tour Anda',
-      'fleet.lead':'Setiap kenderaan termasuk pemandu profesional. Pilih pakej yang sesuai dengan itinerari anda — Airport Transfer, Tour Separuh Hari, atau Tour Sehari Penuh. <strong style="color:var(--ink)">Jam tambahan dari RM 50.</strong>',
-      'fleet.allType':'Semua','fleet.mpv':'MPV Premium','fleet.suv':'SUV','fleet.van':'Van','fleet.sedan':'Standard Sedan',
+      'fleet.lead':'Setiap kenderaan termasuk pemandu profesional. Pilih pakej yang sesuai dengan itinerari anda — Airport Transfer, Tour Separuh Hari, atau Tour Sehari Penuh. <strong style="color:var(--ink)">Jam tambahan RM 30.</strong>',
+      'fleet.all':'Semua Kenderaan','fleet.allType':'Semua','fleet.mpv':'MPV Premium','fleet.suv':'SUV','fleet.van':'Van','fleet.sedan':'Standard Sedan',
       'fleet.luxuryCar':'Mewah','fleet.luxuryVan':'Luxury Van',
       'fleet.viewBook':'Lihat & Tempah',
       // Packages
@@ -1903,11 +2141,13 @@
       'extra.noteRateOnly':'Extra Time <strong>RM {rate}</strong>',
       // Modal
       'modal.exterior':'Luar','modal.interior':'Dalam',
-      'modal.choosePkg':'Pilih Pakej','modal.bookTour':'Tempah Tour Ini',
+      'modal.choosePkg':'Pilih Pakej','modal.bookTour':'Tempah Travel & Transfer Ini',
       'modal.models':'Model Kenderaan','modal.specs':'Spesifikasi',
       'modal.features':'Ciri-ciri','modal.included':'Apa Yang Termasuk',
       'modal.bookWa':'Tempah Via WhatsApp',
       // Form labels
+      'form.name':'Nama','form.email':'Alamat Emel','form.phone':'Telefon','form.luggage':'Bagasi',
+      'form.namePh':'Nama penuh anda','form.emailPh':'anda@emel.com','form.phonePh':'cth. 012-345 6789','form.luggagePh':'cth. 2 besar + 1 cabin',
       'form.date':'Tarikh','form.time':'Masa','form.pickup':'Pickup',
       'form.pax':'Penumpang','form.extraHr':'Jam Tambahan',
       'form.pickupPh':'Hotel / Lapangan Terbang / Alamat',
@@ -1948,20 +2188,27 @@
       'price.b.ideal':'Sesuai untuk tour pulau Langkawi',
       'price.b.everyH':'Semua dalam Separuh Hari',
       'price.b.lunch':'Berhenti makan tengah hari di tempat tempatan',
-      'price.b.cross':'Day trip merentas negeri (Penang, Perlis)',
+      'price.b.cross':'Day trip seluruh pulau Langkawi',
       'price.b.photo':'Berhenti gambar di lokasi indah',
       'price.choose.t1':'Pilih Transfer','price.choose.t2':'Pilih Separuh Hari','price.choose.t3':'Pilih Sehari Penuh',
-      'price.extra':'Perlu masa lebih? <strong style="color:var(--ink)">Jam tambahan dari RM 50</strong> · Pakej beberapa hari boleh diatur',
+      'price.extra':'Perlu masa lebih? <strong style="color:var(--ink)">Jam tambahan RM 30</strong> · Pakej beberapa hari boleh diatur',
       // Poster board
       'poster.eyebrow':'Promosi Terkini',
       'poster.title':'Pakej Tour Istimewa di Langkawi',
-      'poster.lead':'Lihat promosi pakej terkini kami dan tekan WhatsApp untuk tempahan atau pertanyaan lanjut.',
+      'poster.lead':'Pilih pakej Silver atau Gold di bawah dan tekan WhatsApp untuk tempahan atau pertanyaan.',
       'poster.slot1':'Letak Poster Package 1 di sini',
       'poster.slot2':'Letak Poster Package 2 di sini',
       'poster.slot3':'Letak Poster Package 3 di sini',
       'poster.slot4':'Letak Poster Package 4 di sini',
       'poster.size':'Saiz disyorkan: 1080 × 1350 (4:5)',
       'poster.cta':'Tanya di WhatsApp',
+      'tier.silver':'Silver','tier.gold':'Gold','tier.package':'Pakej',
+      'tier.transferAH':'Transfer Airport & Hotel',
+      'tier.full8':'Full Day Tour (8 jam)',
+      'tier.half4':'Half Day Tour (4 jam)',
+      'gallery.eyebrow':'Galeri','gallery.title':'Detik-detik di Langkawi',
+      'gallery.lead':'Skrol atas dan bawah untuk lihat trip kami, dan tekan mana-mana gambar untuk zoom.',
+      'gallery.hint':'Tekan gambar untuk besarkan',
       // Inclusions
       'incl.1.lbl':'Pemandu Termasuk','incl.1.sub':'Berlesen & berpengalaman',
       'incl.2.lbl':'Minyak & Tol','incl.2.sub':'Semua-in, tiada tambahan',
@@ -1976,7 +2223,7 @@
       // FAQ
       'faq.eyebrow':'Soalan Lazim','faq.title':'Soalan yang sering ditanya',
       'faq.q1':'Bagaimana cara tempah tour?',
-      'faq.a1':'Cara paling cepat melalui WhatsApp di +60 11‑2661 0913. Beritahu kami tarikh, pakej (Transfer / Separuh Hari / Sehari Penuh), lokasi pickup, dan bilangan penumpang. Pengesahan dalam 5 minit semasa waktu operasi (8 pagi – 11 malam). Anda juga boleh tekan "Tempah" di atas halaman ini.',
+      'faq.a1':'Cara paling cepat melalui WhatsApp di +60 18-355 4458. Beritahu kami tarikh, pakej (Transfer / Separuh Hari / Sehari Penuh), lokasi pickup, dan bilangan penumpang. Pengesahan dalam 5 minit semasa waktu operasi (8 pagi – 11 malam). Anda juga boleh tekan "Tempah" di atas halaman ini.',
       'faq.q2':'Apa yang termasuk dalam harga pakej?',
       'faq.a2':'Semua yang anda perlukan untuk perjalanan tanpa risau: pemandu profesional, minyak, tol, parking, dan air mineral. Tiada caj tersembunyi — harga yang dilihat adalah harga sebenar. Tiket masuk tarikan dan makanan tidak termasuk.',
       'faq.q3':'Apa beza antara Transfer, Separuh Hari & Sehari Penuh?',
@@ -2011,9 +2258,10 @@
       'foot.hotline':'● Hotline Tempahan 24/7',
       'foot.copy':'© 2026 SS Langkawi Ventures Sdn Bhd. Hak cipta terpelihara. · No. Daftar: 1234567-A · Disahkan SSM',
       // WhatsApp message
-      'wa.greet':'Hi SS Langkawi Ventures! Saya nak tempah tour.',
+      'wa.greet':'Hi SS Langkawi Ventures! Saya nak tempah travel & transfer.',
       'wa.vehicle':'Kenderaan','wa.package':'Pakej','wa.date':'Tarikh',
       'wa.time':'Masa','wa.pickup':'Pickup','wa.passengers':'Penumpang',
+      'wa.name':'Nama','wa.email':'Emel','wa.phone':'Telefon','wa.luggage':'Bagasi',
       'wa.extraHr':'Jam tambahan','wa.total':'Jumlah','wa.confirm':'Sila sahkan ketersediaan. Terima kasih!',
     }
   };
@@ -2034,8 +2282,9 @@
   }
 
   function setLang(lang){
-    if (!I18N[lang]) return;
-    currentLang = lang;
+    // Site is English-only — always render English regardless of requested language.
+    lang = 'en';
+    currentLang = 'en';
     // Update all data-i18n elements (text content)
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
@@ -2201,15 +2450,15 @@
       desc:'Modern turbocharged compact sedan — punchy performance, fuel-efficient, and stylish. Perfect for couples or solo travellers who want a smart, comfortable ride for airport transfer or a half-day around the island.',
       descBm:'Sedan compact moden dengan enjin turbo — pickup pantas, jimat minyak, dan stylish. Sesuai untuk pasangan atau solo traveller yang nakkan kenderaan smart dan selesa untuk airport transfer atau jalan-jalan separuh hari di pulau.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'4 passengers'},
+        {ic:'seats', lbl:'Capacity', val:'3 passengers'},
         {ic:'bag', lbl:'Luggage', val:'2 large bags'},
         {ic:'auto', lbl:'Transmission', val:'Automatic'},
         {ic:'fuel', lbl:'Fuel', val:'Petrol RON95'}
       ],
       features:['1.0L Turbo Engine','Auto Climate','Apple CarPlay','Reverse Camera','Cruise Control','Push Start','LED DRL','Tinted Windows'],
       featuresBm:['Enjin Turbo 1.0L','Iklim Auto','Apple CarPlay','Kamera Belakang','Cruise Control','Push Start','LED DRL','Tinted'],
-      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Free pickup &amp; drop-off','Smooth, quiet ride'],
-      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off percuma','Perjalanan smooth dan senyap'],
+      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Pickup &amp; drop-off','Smooth, quiet ride'],
+      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off','Perjalanan smooth dan senyap'],
       images:{
         exterior:[
           'assets/almera-exterior-1.png',
@@ -2232,15 +2481,15 @@
       desc:'Malaysia\'s most popular sedan — dependable, spacious, and smooth. The Vios is the trusted workhorse for everyday travel, perfect for small families or business trips around Langkawi.',
       descBm:'Sedan paling popular di Malaysia — boleh diharap, luas, dan smooth. Vios adalah pilihan utama untuk perjalanan harian, sesuai untuk keluarga kecil atau perjalanan bisnes di sekitar Langkawi.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'4 passengers'},
+        {ic:'seats', lbl:'Capacity', val:'3 passengers'},
         {ic:'bag', lbl:'Luggage', val:'3 large bags'},
         {ic:'auto', lbl:'Transmission', val:'Automatic CVT'},
         {ic:'fuel', lbl:'Fuel', val:'Petrol RON95'}
       ],
       features:['Bluetooth Audio','USB Charging','Reverse Camera','Push Start','Auto Aircond','Power Windows','ABS','Dual Airbags'],
       featuresBm:['Audio Bluetooth','Pengecas USB','Kamera Belakang','Push Start','Aircond Auto','Power Window','ABS','Dual Airbag'],
-      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Free pickup &amp; drop-off','Reliable, fuel-efficient ride'],
-      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off percuma','Perjalanan yang boleh diharap dan jimat minyak'],
+      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Pickup &amp; drop-off','Reliable, fuel-efficient ride'],
+      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off','Perjalanan yang boleh diharap dan jimat minyak'],
       images:{
         exterior:[
           'assets/vios-exterior-1.png',
@@ -2255,23 +2504,23 @@
       }
     },
     alzaNew: {
-      name:'Alza New', cat:'FAMILY MPV · 5-SEATER', rating:4.7, reviews:118,
-      location:'Langkawi', capacity:'Up to 5 pax', maxSeats:5,
+      name:'Alza New', cat:'FAMILY MPV · 4-SEATER', rating:4.7, reviews:118,
+      location:'Langkawi', capacity:'Up to 4 pax', maxSeats:4,
       models:['Perodua Alza (Latest Generation)'],
       packages:{ transfer:100, transferMax:120, halfDay:200, fullDay:400 },
       extraHrRate:50,
-      desc:'The all-new Alza is Malaysia\'s favourite family MPV — modern, safe, and packed with features. Comfortably seats 7 with foldable seats for extra luggage. Perfect for family island tours or group day trips.',
-      descBm:'Alza baru adalah MPV keluarga paling popular di Malaysia — moden, selamat, dan banyak ciri. Selesa untuk 7 orang dengan kerusi yang boleh dilipat untuk bagasi tambahan. Sesuai untuk tour pulau bersama keluarga atau day trip kumpulan.',
+      desc:'The all-new Alza is Malaysia\'s favourite family MPV — modern, safe, and packed with features. Comfortably seats 4 with foldable seats for extra luggage. Perfect for family island tours or group day trips.',
+      descBm:'Alza baru adalah MPV keluarga paling popular di Malaysia — moden, selamat, dan banyak ciri. Selesa untuk 4 orang dengan kerusi yang boleh dilipat untuk bagasi tambahan. Sesuai untuk tour pulau bersama keluarga atau day trip kumpulan.',
       specs:[
-        {ic:'seats', lbl:'Capacity', val:'6 passengers'},
+        {ic:'seats', lbl:'Capacity', val:'4 passengers'},
         {ic:'bag', lbl:'Luggage', val:'4 medium bags'},
         {ic:'auto', lbl:'Transmission', val:'Automatic D-CVT'},
         {ic:'fuel', lbl:'Fuel', val:'Petrol RON95'}
       ],
       features:['ASA 3.0 Safety','Apple CarPlay','Auto Climate','Reverse Camera','6 Airbags','Hill-Start Assist','Foldable 3rd Row','LED Headlamps'],
       featuresBm:['Keselamatan ASA 3.0','Apple CarPlay','Iklim Auto','Kamera Belakang','6 Airbag','Hill-Start Assist','Baris 3 Lipat','Lampu LED'],
-      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Free pickup &amp; drop-off','Spacious for families'],
-      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off percuma','Luas untuk keluarga'],
+      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Pickup &amp; drop-off','Spacious for families'],
+      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off','Luas untuk keluarga'],
       images:{
         exterior:[
           'assets/alza-exterior-1.png',
@@ -2301,8 +2550,8 @@
       ],
       features:['Captain Chairs','Massage Function','Power Sliding Doors','Ambient Lighting','Premium Audio','Twin Sunroof','Foot Rests','VIP Curtains','Mini Fridge'],
       featuresBm:['Captain Chairs','Fungsi Urutan','Pintu Sliding Elektrik','Lampu Ambient','Audio Premium','Twin Sunroof','Letak Kaki','Tirai VIP','Peti Sejuk Mini'],
-      includes:['Senior professional driver','Fuel, toll &amp; parking','Premium bottled water','Free pickup &amp; drop-off','VIP welcome experience'],
-      includesBm:['Pemandu profesional senior','Minyak, tol &amp; parking','Air mineral premium','Pickup &amp; drop-off percuma','Pengalaman selamat datang VIP'],
+      includes:['Senior professional driver','Fuel, toll &amp; parking','Premium bottled water','Pickup &amp; drop-off','VIP welcome experience'],
+      includesBm:['Pemandu profesional senior','Minyak, tol &amp; parking','Air mineral premium','Pickup &amp; drop-off','Pengalaman selamat datang VIP'],
       images:{
         exterior:[
           'assets/luxuryvan-exterior-1.png',
@@ -2332,8 +2581,8 @@
       ],
       features:['Executive Lounge Seats','Massage & Heating','Power Sliding Doors','Ambient Mood Lighting','Premium 17-Speaker Audio','Twin Sunroof','Power Footrests','Privacy Curtains','Refrigerator','Wireless Charging','Rear Entertainment'],
       featuresBm:['Kerusi Executive Lounge','Urutan & Pemanas','Pintu Sliding Elektrik','Lampu Ambient Mood','Audio Premium 17-Speaker','Twin Sunroof','Power Footrest','Tirai Privasi','Peti Sejuk','Pengecas Wayarles','Hiburan Belakang'],
-      includes:['Senior chauffeur (English-speaking)','Fuel, toll &amp; parking','Premium beverages &amp; snacks','Free pickup &amp; drop-off','VIP welcome experience','Bouquet on request'],
-      includesBm:['Pemandu senior (English-speaking)','Minyak, tol &amp; parking','Minuman premium &amp; snek','Pickup &amp; drop-off percuma','Pengalaman selamat datang VIP','Sejambak bunga atas permintaan'],
+      includes:['Senior chauffeur (English-speaking)','Fuel, toll &amp; parking','Premium beverages &amp; snacks','Pickup &amp; drop-off','VIP welcome experience','Bouquet on request'],
+      includesBm:['Pemandu senior (English-speaking)','Minyak, tol &amp; parking','Minuman premium &amp; snek','Pickup &amp; drop-off','Pengalaman selamat datang VIP','Sejambak bunga atas permintaan'],
       images:{
         exterior:[
           'assets/vellfire-std-exterior-1.png',
@@ -2363,8 +2612,8 @@
       ],
       features:['Dual Air Conditioning','Comfort Reclining Seats','Spacious Cabin','Sliding Door','USB Charging','Rear Camera','Strong Cooling','Large Cargo Space'],
       featuresBm:['Air Conditioning Dual','Kerusi Reclining Selesa','Kabin Luas','Pintu Gelongsor','Pengecas USB','Kamera Belakang','Sejukan Kuat','Ruang Bagasi Besar'],
-      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Free pickup &amp; drop-off','Ideal for group travel'],
-      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off percuma','Sesuai untuk perjalanan berkumpulan'],
+      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Pickup &amp; drop-off','Ideal for group travel'],
+      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off','Sesuai untuk perjalanan berkumpulan'],
       images:{
         exterior:[
           'assets/starex-exterior-1.png',
@@ -2394,8 +2643,8 @@
       ],
       features:['Captain Seats','Power Sliding Doors','Ambient Lighting','Premium Audio','Rear Climate Control','Privacy Glass','Smooth Suspension','USB Fast Charging'],
       featuresBm:['Kerusi Captain','Pintu Sliding Elektrik','Lampu Ambient','Audio Premium','Kawalan Iklim Belakang','Cermin Privasi','Suspensi Selesa','Pengecas USB Pantas'],
-      includes:['Professional chauffeur','Fuel, toll &amp; parking','Premium bottled water','Free pickup &amp; drop-off','VIP-style ride experience'],
-      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral premium','Pickup &amp; drop-off percuma','Pengalaman perjalanan gaya VIP'],
+      includes:['Professional chauffeur','Fuel, toll &amp; parking','Premium bottled water','Pickup &amp; drop-off','VIP-style ride experience'],
+      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral premium','Pickup &amp; drop-off','Pengalaman perjalanan gaya VIP'],
       images:{
         exterior:[
           'assets/alphard-exterior-1.png',
@@ -2425,8 +2674,8 @@
       ],
       features:['Dual Air Conditioning','Comfort Reclining Seats','Spacious Cabin','Wide Sliding Door','USB Charging','Large Cargo Space','Strong Cooling','Safety Belts All Seats'],
       featuresBm:['Air Conditioning Dual','Kerusi Reclining Selesa','Kabin Luas','Pintu Gelongsor Lebar','Pengecas USB','Ruang Bagasi Besar','Sejukan Kuat','Tali Pinggang Semua Kerusi'],
-      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Free pickup &amp; drop-off','Ideal for group travel'],
-      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off percuma','Sesuai untuk perjalanan berkumpulan'],
+      includes:['Professional driver','Fuel, toll &amp; parking','Bottled water','Pickup &amp; drop-off','Ideal for group travel'],
+      includesBm:['Pemandu profesional','Minyak, tol &amp; parking','Air mineral','Pickup &amp; drop-off','Sesuai untuk perjalanan berkumpulan'],
       images:{
         exterior:[
           'assets/van-hiace-exterior-1.jpg',
@@ -2706,6 +2955,10 @@
     pickupTime.value = '09:00';
     extraHr.value = 0;
     M.extraHr = 0;
+    ['custName','custEmail','custPhone','custLuggage'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
 
     const maxSeats = car.maxSeats || 8;
     pax.max = maxSeats;
@@ -2853,6 +3106,10 @@
   function sendBookingToWA(){
     const car = M.car;
     if (!car) return;
+    const custName = (document.getElementById('custName').value || '').trim();
+    const custEmail = (document.getElementById('custEmail').value || '').trim();
+    const custPhone = (document.getElementById('custPhone').value || '').trim();
+    const custLuggage = (document.getElementById('custLuggage').value || '').trim();
     const pickupVal = document.getElementById('pickupDt').value;
     const pickupTime = document.getElementById('pickupTime').value;
     const pickupLoc = document.getElementById('pickupLoc').value || 'TBC';
@@ -2898,24 +3155,180 @@
 
     const msg =
       `${t('wa.greet')}\n\n` +
-      `🚐 *${tVehicleName(car)}*\n` +
+      (custName ? `🙋 ${t('wa.name')}: ${custName}\n` : '') +
+      (custEmail ? `✉️ ${t('wa.email')}: ${custEmail}\n` : '') +
+      (custPhone ? `📞 ${t('wa.phone')}: ${custPhone}\n` : '') +
+      `\n🚐 *${tVehicleName(car)}*\n` +
       `📦 ${t('wa.package')}: ${pkgFull}\n` +
       `📅 ${t('wa.date')}: ${dateStr}\n` +
       `🕘 ${t('wa.time')}: ${pickupTime}\n` +
       `📍 ${t('wa.pickup')}: ${pickupLoc}\n` +
       (M.carKey === 'vellfireAgh40' || M.carKey === 'vellfire' ? '' : `👥 ${t('wa.passengers')}: ${paxVal}\n`) +
+      (custLuggage ? `🧳 ${t('wa.luggage')}: ${custLuggage}\n` : '') +
       (extraHr > 0 ? `⏱️ ${t('wa.extraHr')}: ${extraHr}\n` : '') +
       actLines +
       `\n💰 ${t('wa.total')}: ${total}\n_(${breakdown})_${transferNoteWa}\n` +
       t('wa.confirm');
 
-    window.open(`https://wa.me/601126610913?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/60183554458?text=${encodeURIComponent(msg)}`, '_blank');
   }
 
   function closeModal(){
     document.getElementById('modalBackdrop').classList.remove('show');
     document.body.style.overflow = '';
   }
+
+  // ====== TIER PACKAGE (Silver/Gold) WHATSAPP ======
+  const TIER_DATA = {
+    Silver: {
+      A: { itin:['Airport & Hotel Transfer','Full Day Tour (8 hours)','Airport & Hotel Transfer'], prices:{'1-2 pax':500,'3-4 pax':600,'5-10 pax':900} },
+      B: { itin:['Half Day Tour (4 hours)','Full Day Tour (8 hours)','Airport & Hotel Transfer'], prices:{'1-2 pax':550,'3-4 pax':700,'5-10 pax':1150} },
+      C: { itin:['Full Day Tour (8 hours)','Full Day Tour (8 hours)','Airport & Hotel Transfer'], prices:{'1-2 pax':700,'3-4 pax':900,'5-10 pax':1500} }
+    },
+    Gold: {
+      A: { itin:['Airport & Hotel Transfer','Full Day Tour (8 hours)','Full Day Tour (8 hours)','Airport & Hotel Transfer'], prices:{'1-2 pax':800,'3-4 pax':1000,'5-10 pax':1600} },
+      B: { itin:['Half Day Tour (4 hours)','Full Day Tour (8 hours)','Full Day Tour (8 hours)','Airport & Hotel Transfer'], prices:{'1-2 pax':850,'3-4 pax':1100,'5-10 pax':1850} },
+      C: { itin:['Half Day Tour (4 hours)','Full Day Tour (8 hours)','Full Day Tour (8 hours)','Half Day Tour (4 hours)'], prices:{'1-2 pax':900,'3-4 pax':1200,'5-10 pax':2100} }
+    }
+  };
+  function bookTier(tier, letter){
+    const d = TIER_DATA[tier] && TIER_DATA[tier][letter];
+    if (!d) return;
+    const bm = currentLang === 'bm';
+    const greet = bm ? `Hi SS Langkawi Ventures! Saya berminat dengan Tour Package ${tier} — Package ${letter}.`
+                     : `Hi SS Langkawi Ventures! I'm interested in the ${tier} Tour Package — Package ${letter}.`;
+    const itinTitle = bm ? 'Itinerari' : 'Itinerary';
+    const priceTitle = bm ? 'Harga' : 'Pricing';
+    let msg = `🦅 ${greet}\n\n*${tier} · Package ${letter}*\n\n${itinTitle}:\n`;
+    d.itin.forEach((s,i) => { msg += `${i+1}. ${s}\n`; });
+    msg += `\n${priceTitle}:\n`;
+    Object.entries(d.prices).forEach(([k,v]) => { msg += `✅ ${k} — RM ${v}\n`; });
+    msg += `\n${bm ? 'Sila sahkan ketersediaan. Terima kasih!' : 'Please confirm availability. Thank you!'}`;
+    window.open(`https://wa.me/60183554458?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  // ====== GALLERY CAROUSEL (vertical) + LIGHTBOX MAGNIFY ======
+  const GALLERY = [
+    { src:'assets/place-langkawi-sky-bridge.png', cap:'Langkawi Sky Bridge' },
+    { src:'assets/place-cable-car.png', cap:'Panorama Langkawi Cable Car' },
+    { src:'assets/place-eagle-square.png', cap:'Eagle Square (Dataran Lang)' },
+    { src:'assets/place-kilim-geoforest.png', cap:'Kilim Geoforest Park' },
+    { src:'assets/place-pulau-beras-basah.png', cap:'Pulau Beras Basah' },
+    { src:'assets/luxuryvan-interior-1.png', cap:'VIP Luxury Van Interior' },
+    { src:'assets/alphard-exterior-1.png', cap:'Toyota Alphard' },
+    { src:'assets/hero-first-section.png', cap:'Exploring Langkawi' }
+  ];
+  let galIdx = 0;
+  function renderGallery(){
+    const slides = document.getElementById('gallerySlides');
+    const dots = document.getElementById('galleryDots');
+    const thumbs = document.getElementById('galleryThumbs');
+    if (!slides) return;
+    slides.innerHTML = GALLERY.map((g,i) =>
+      `<div class="gallery-slide ${i===0?'active':''}" data-i="${i}"><div class="gimg" style="background-image:url('${g.src}')" onclick="openLightbox(${i})"></div></div>`
+    ).join('');
+    dots.innerHTML = GALLERY.map((_,i) => `<span data-i="${i}" class="${i===0?'active':''}"></span>`).join('');
+    thumbs.innerHTML = GALLERY.map((g,i) =>
+      `<div class="gallery-thumb ${i===0?'active':''}" data-i="${i}" style="background-image:url('${g.src}')"></div>`
+    ).join('');
+    document.getElementById('galTotal').textContent = GALLERY.length;
+    dots.querySelectorAll('span').forEach(d => d.addEventListener('click', () => galGo(+d.dataset.i)));
+    thumbs.querySelectorAll('.gallery-thumb').forEach(t => t.addEventListener('click', () => galGo(+t.dataset.i)));
+    galGo(0);
+  }
+  function galGo(i){
+    galIdx = (i + GALLERY.length) % GALLERY.length;
+    document.querySelectorAll('#gallerySlides .gallery-slide').forEach((s,k) => s.classList.toggle('active', k===galIdx));
+    document.querySelectorAll('#galleryDots span').forEach((d,k) => d.classList.toggle('active', k===galIdx));
+    document.querySelectorAll('#galleryThumbs .gallery-thumb').forEach((t,k) => t.classList.toggle('active', k===galIdx));
+    const idxEl = document.getElementById('galIdx');
+    if (idxEl) idxEl.textContent = galIdx + 1;
+    const active = document.querySelector('#galleryThumbs .gallery-thumb.active');
+    if (active) active.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
+  }
+  function galStep(dir){ galGo(galIdx + dir); }
+
+  // Wheel + touch (vertical) navigation on the viewport
+  (function bindGalleryGestures(){
+    const vp = document.getElementById('galleryViewport');
+    if (!vp) return;
+    let wheelLock = false;
+    vp.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) < 12) return;
+      e.preventDefault();
+      if (wheelLock) return;
+      wheelLock = true;
+      galStep(e.deltaY > 0 ? 1 : -1);
+      setTimeout(() => { wheelLock = false; }, 500);
+    }, { passive:false });
+    let touchStartY = null;
+    vp.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; }, { passive:true });
+    vp.addEventListener('touchend', (e) => {
+      if (touchStartY === null) return;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dy) > 40) galStep(dy < 0 ? 1 : -1);
+      touchStartY = null;
+    }, { passive:true });
+  })();
+
+  // Lightbox with magnification (click to zoom, move to pan)
+  let lbIdx = 0, lbZoom = false;
+  function openLightbox(i){
+    lbIdx = i;
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    img.src = GALLERY[i].src;
+    img.classList.remove('zoomed');
+    img.style.transform = 'scale(1)';
+    lbZoom = false;
+    cap.textContent = GALLERY[i].cap;
+    lb.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e){
+    if (e) e.stopPropagation();
+    document.getElementById('lightbox').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  function lbStep(e, dir){
+    if (e) e.stopPropagation();
+    lbIdx = (lbIdx + dir + GALLERY.length) % GALLERY.length;
+    galGo(lbIdx);
+    const img = document.getElementById('lightboxImg');
+    img.src = GALLERY[lbIdx].src;
+    img.classList.remove('zoomed');
+    img.style.transform = 'scale(1)';
+    lbZoom = false;
+    document.getElementById('lightboxCaption').textContent = GALLERY[lbIdx].cap;
+  }
+  (function bindLightbox(){
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    if (!lb || !img) return;
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lbZoom = !lbZoom;
+      img.classList.toggle('zoomed', lbZoom);
+      img.style.transform = lbZoom ? 'scale(2)' : 'scale(1)';
+      img.style.transformOrigin = 'center';
+    });
+    img.addEventListener('mousemove', (e) => {
+      if (!lbZoom) return;
+      const r = img.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width) * 100;
+      const y = ((e.clientY - r.top) / r.height) * 100;
+      img.style.transformOrigin = `${x}% ${y}%`;
+    });
+    lb.addEventListener('click', () => closeLightbox());
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('show')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') lbStep(null, 1);
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') lbStep(null, -1);
+    });
+  })();
+  renderGallery();
 
     function renderSlides(){
     const imgs = M.car.images[M.tab];
