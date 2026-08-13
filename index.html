@@ -84,7 +84,7 @@
 
   /* HERO */
   .hero{position:relative;margin:14px 28px 0;border-radius:var(--radius);overflow:hidden;height:clamp(380px,52vh,560px);background:#0e1430;isolation:isolate}
-  .hero-photo{position:absolute;inset:0;background-image:url('assets/hero-first-section.png');background-size:cover;background-position:center 45%;transform:scale(1.02);animation:heroZoom 1.6s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transform:scale(1.02);animation:heroZoom 1.6s cubic-bezier(.2,.7,.2,1) forwards}
   .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(11,16,32,.18) 0%, rgba(11,16,32,0) 30%, rgba(11,16,32,0) 60%, rgba(255,255,255,.06) 100%)}
   .hero-slide{animation:heroFade 18s infinite;opacity:0}
   .hero-slide:nth-child(1){animation-delay:0s}
@@ -981,9 +981,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-photo hero-slide" style="background-image:url('assets/vellfire-fleet-display.png')"></div>
-  <div class="hero-photo hero-slide" style="background-image:url('assets/alphard-exterior-1.png')"></div>
-  <div class="hero-photo hero-slide" style="background-image:url('assets/luxuryvan-fleet-display.png')"></div>
+  <img class="hero-photo hero-slide" src="assets/vellfire-fleet-display.png" alt="Luxury Langkawi transport" />
+  <img class="hero-photo hero-slide" src="assets/alphard-exterior-1.png" alt="Langkawi Alphard transport" />
+  <img class="hero-photo hero-slide" src="assets/luxuryvan-fleet-display.png" alt="Langkawi premium van" />
   <div class="hero-title solid">Transport, Travel &amp; Tour Langkawi</div>
   <div class="hero-title">Transport, Travel &amp; Tour Langkawi</div>
   <div class="hero-chip"><span class="dot"></span> <span data-i18n="hero.chip">Driver included · Book your tour today</span></div>
