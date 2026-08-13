@@ -1154,6 +1154,7 @@
     <button class="pill active" data-cat="all" data-i18n="fleet.all">All Vehicles</button>
     <button class="pill" data-cat="sedan" data-i18n="fleet.sedan">Standard Sedan</button>
     <button class="pill" data-cat="mpv" data-i18n="fleet.mpv">MPV Premium</button>
+    <button class="pill" data-cat="family" data-i18n="fleet.family">Family</button>
     <button class="pill" data-cat="van" data-i18n="fleet.van">Van</button>
     <button class="pill" data-cat="luxury-van" data-i18n="fleet.luxuryVan">Luxury Van</button>
     <button class="pill" data-cat="luxury-car" data-i18n="fleet.luxuryCar">Luxury</button>
@@ -1194,7 +1195,7 @@
       </div>
     </article>
 
-    <article class="card reveal delay-2" data-anim data-cat="mpv">
+    <article class="card reveal delay-2" data-anim data-cat="mpv" data-family="true">
       <div class="photo-wrap"><div class="photo" style="background-image:url('assets/alza-fleet-display.png')"></div><span class="tag" data-i18n="tag.family">FAMILY</span></div>
       <div class="body">
         <div class="row1"><span class="name">Alza New</span><span class="rating" style="font-weight:700;font-size:14px">4.7 <span style="color:var(--star)">★</span></span></div>
@@ -1246,7 +1247,7 @@
       </div>
     </article>
 
-    <article class="card reveal delay-1" data-anim data-cat="van" data-segment="luxury-van">
+    <article class="card reveal delay-1" data-anim data-cat="van" data-segment="luxury-van" data-family="true">
       <div class="photo-wrap"><div class="photo" style="background-image:url('assets/starex-fleet-display.png')"></div><span class="tag" data-i18n="tag.family">FAMILY</span></div>
       <div class="body">
         <div class="row1"><span class="name">Hyundai Starex</span><span class="rating" style="font-weight:700;font-size:14px">4.8 <span style="color:var(--star)">★</span></span></div>
@@ -1948,7 +1949,7 @@
       'fleet.eyebrow':'Our Vehicles',
       'fleet.title':'Choose Your Tour Vehicle',
       'fleet.lead':'Each vehicle comes with a professional driver. Pick the package that suits your itinerary — Airport Transfer, Half-Day Tour, or Full-Day Tour. <strong style="color:var(--ink)">Extra hour RM 30.</strong>',
-      'fleet.all':'All Vehicles','fleet.allType':'All Type','fleet.mpv':'MPV Premium','fleet.suv':'SUVs','fleet.van':'Van','fleet.sedan':'Standard Sedan',
+      'fleet.all':'All Vehicles','fleet.allType':'All Type','fleet.mpv':'MPV Premium','fleet.suv':'SUVs','fleet.van':'Van','fleet.sedan':'Standard Sedan','fleet.family':'Family',
       'fleet.luxuryCar':'Luxury','fleet.luxuryVan':'Luxury Van',
       'fleet.viewBook':'View & Book',
       // Packages
@@ -3506,6 +3507,7 @@
       grid.querySelectorAll('.card').forEach(card => {
         let match;
         if (cat === 'all') match = true;
+        else if (cat === 'family') match = card.dataset.family === 'true';
         else if (cat === 'luxury-van') match = card.dataset.segment === 'luxury-van';
         else if (cat === 'luxury-car') match = card.dataset.segment === 'luxury-car';
         else match = card.dataset.cat === cat;
